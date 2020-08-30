@@ -1,0 +1,19 @@
+- file: intro
+  numbered: true
+- file: Unit1/overview
+  title: Classroom Routines
+  sections:
+    - file: Unit1/Routines/exposure
+    - file: Unit1/Routines/collaboration
+    - file: Unit1/Routines/revision
+    - file: Unit1/Routines/mastery
+    - file: Unit1/Routines/links
+      title: Important Resources
+
+- file: Unit1/IntroToOOP/intro
+  sections:
+  - file: Unit1/IntroToOOP/objects
+  - file: Unit1/IntroToOOP/classes
+  - file: Unit1/IntroToOOP/attributes
+  - file: Unit1/IntroToOOP/methods
+  

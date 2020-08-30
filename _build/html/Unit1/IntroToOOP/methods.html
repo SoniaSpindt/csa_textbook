@@ -1,0 +1,309 @@
+
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta charset="utf-8" />
+    <title>2.4. Methods &#8212; AP CSA</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css" integrity="sha384-KA6wR/X5RY4zFAHpv/CnoG2UW1uogYfdnP67Uv7eULvTveboZJg0qUpmJZb5VqzN" crossorigin="anonymous">
+    <link href="../../_static/css/index.css" rel="stylesheet">
+    <link rel="stylesheet" href="../../_static/sphinx-book-theme.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/jupyter-sphinx.css" />
+    <script id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+    <script src="../../_static/sphinx-book-theme.js"></script>
+    <script src="../../_static/jquery.js"></script>
+    <script src="../../_static/underscore.js"></script>
+    <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/language_data.js"></script>
+    <script src="../../_static/togglebutton.js"></script>
+    <script src="../../_static/clipboard.min.js"></script>
+    <script src="../../_static/copybutton.js"></script>
+    <script src="../../_static/mystnb.js"></script>
+    <script src="../../_static/sphinx-book-theme.js"></script>
+    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    <script src="https://unpkg.com/@jupyter-widgets/html-manager@^0.18.0/dist/embed-amd.js"></script>
+    <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
+    <script >
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
+    </script>
+    <script async="async" src="../../_static/sphinx-thebe.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="prev" title="2.3. Attributes" href="attributes.html" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="docsearch:language" content="en">
+
+
+
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+<a class="navbar-brand text-wrap" href="../../index.html">
+  
+  <img src="../../_static/logo.png" class="logo" alt="logo">
+  
+  
+  <h1 class="site-logo" id="site-title">AP CSA</h1>
+  
+</a>
+</div>
+
+<form class="bd-search d-flex align-items-center" action="../../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form>
+
+<nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
+  <ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../intro.html">
+   Welcome to AP CSA
+  </a>
+ </li>
+</ul>
+<ul class="current nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../overview.html">
+   1. Classroom Routines
+  </a>
+ </li>
+ <li class="toctree-l1 current active">
+  <a class="reference internal" href="intro.html">
+   2. Object Oriented Programming
+  </a>
+  <ul class="current">
+   <li class="toctree-l2">
+    <a class="reference internal" href="objects.html">
+     2.1. Objects
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="classes.html">
+     2.2. Classes
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="attributes.html">
+     2.3. Attributes
+    </a>
+   </li>
+   <li class="toctree-l2 current active">
+    <a class="current reference internal" href="#">
+     2.4. Methods
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+</nav>
+
+ <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="row topbar fixed-top container-xl">
+    <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show">
+    </div>
+    <div class="col pl-2 topbar-main">
+        
+        <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+            data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+            aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+            title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+            <i class="fas fa-bars"></i>
+            <i class="fas fa-arrow-left"></i>
+            <i class="fas fa-arrow-up"></i>
+        </button>
+        
+        <div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="../../_sources/Unit1/IntroToOOP/methods.md"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.md</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+    
+</div>
+        <!-- Source interaction buttons -->
+
+
+        <!-- Full screen (wrap in <a> to have style consistency -->
+        <a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+                data-placement="bottom" onclick="toggleFullScreen()" title="Fullscreen mode"><i
+                    class="fas fa-expand"></i></button></a>
+
+        <!-- Launch buttons -->
+
+    </div>
+
+    <!-- Table of contents -->
+    <div class="d-none d-md-block col-md-2 bd-toc show">
+        <div class="tocsection onthispage pt-5 pb-3">
+            <i class="fas fa-list"></i> On this page
+        </div>
+        <nav id="bd-toc-nav">
+            
+        </nav>
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+        
+              <div>
+                
+  <div class="section" id="methods">
+<h1><span class="section-number">2.4. </span>Methods<a class="headerlink" href="#methods" title="Permalink to this headline">¶</a></h1>
+<p>So objects have state. Cool.</p>
+<p>However, if we want our objects to be like objects in the real world, we need to be able to do two things:</p>
+<ol class="simple">
+<li><p>Interact with our objects.</p></li>
+<li><p>Change the state of our objects. Think about it. Does anything in the real world truly stay
+the same forever <a class="footnote-reference brackets" href="#id2" id="id1">1</a>? NOPE.</p></li>
+</ol>
+<p>Computer scientists recognized these needs too, so they included a way to do both within their object oriented programs. We won’t talk about the specifics of
+the code needed just yet. All I want you to know is that we can satisfy both of these needs with something called <strong><em>methods</em></strong>.</p>
+<p>A method is just a set of directions our computer can follow to do something. That something is entirely up to you and your needs as an object oriented programmer, but most of the time
+these methods will be applied to the objects that you create within your programs.</p>
+<p>Still a little unsure of what this looks like? Let’s go through an example, start to finish. Imagine you want to create a class that makes movie objects.</p>
+<a class="reference internal image-reference" href="https://media.giphy.com/media/dY0U0MLyUvblHItQsK/giphy.gif"><img alt="Avenger meme" src="https://media.giphy.com/media/dY0U0MLyUvblHItQsK/giphy.gif" style="height: 300px;" /></a>
+<br>
+<p>After you come up with a name for your class, you need to think about the attributes you will need. I will use the following attributes, but remember, this is a matter of personal preference.</p>
+<div class="admonition-movie-class-attributes admonition">
+<p class="admonition-title">Movie Class Attributes</p>
+<ol class="simple">
+<li><p>Director</p></li>
+<li><p>Genre</p></li>
+<li><p>Length</p></li>
+<li><p>Title</p></li>
+<li><p>Actors</p></li>
+<li><p>Has jump scares</p></li>
+<li><p>Money earned to date</p></li>
+</ol>
+</div>
+<p>Now let’s create our first movie object! Keeping with the theme of gifs here, I’m going to create a movie object for Avengers: Endgame.</p>
+<div class="admonition-avengers-endgame-object admonition">
+<p class="admonition-title">Avengers: Endgame Object</p>
+<ol class="simple">
+<li><p>Director = Anthony Russo, Joe Russo</p></li>
+<li><p>Genre = Action</p></li>
+<li><p>Length = 181</p></li>
+<li><p>Title = Avengers: Endgame</p></li>
+<li><p>Actors = Robert Downey Jr., Chris Evans, Mark Rufflo, Chris Hemsworth, Scarlett Johansson, Jeremy Renner, Don Cheedle, Paul Rudd, Brie Larson, Bradley Cooper, Gwyneth Paltrow</p></li>
+<li><p>Has jump scares = false</p></li>
+<li><p>Money earned to date = 2,800,000,000.00</p></li>
+</ol>
+</div>
+<p>Here’s the state of our object! Isn’t it nice? The state of this object is relatively steady too; we aren’t going to recast the movie now that it has been filmed after all. However, there are a few
+attributes that stand out to me as something we may want to interact with and change. In order to do this, we will need to use methods because, as I said above, methods allow us to operate on the
+internal state of our objects. Here are three methods that I envision needing for my Movie class:</p>
+<div class="tip admonition">
+<p class="admonition-title">Methods for Movie Class</p>
+<ol class="simple">
+<li><p>getGenre</p></li>
+<li><p>convertMinsToHours</p></li>
+<li><p>addEarnings</p></li>
+</ol>
+</div>
+<p>Yes, yes. I know. The names of my methods look a bit strange. I want you to get into the habit of not using any spaces in your method names because computers HATE spaces in names with a passion.
+These names are great because they also secretly tell you what each method does. For example, the first method probably allows you to retrieve the genre of the movie object in question.
+If we apply this method to our Endgame object, then we will be given “Action” because this is the value we stored within the genre attribute. The second method sounds like it’s going to do some math for
+us and the third method will probably change the value stored within the “Money earned to date” attribute.</p>
+<p>As you can see, methods are really powerful because they allow us to utilize the state of our objects in limitless ways! :D</p>
+<hr class="docutils" />
+<dl class="footnote brackets">
+<dt class="label" id="id2"><span class="brackets"><a class="fn-backref" href="#id1">1</a></span></dt>
+<dd><p>Inflation is real, <a class="reference external" href="https://en.wikipedia.org/wiki/Knuth_reward_check">Knuth</a>! I will give you 5 bucks if you can give me an example of something that stays the same forever in the
+real world.</p>
+</dd>
+</dl>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./Unit1/IntroToOOP"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+        </div>
+    </div>
+    
+    
+    <div class='prev-next-bottom'>
+        
+    <a class='left-prev' id="prev-link" href="attributes.html" title="previous page"><span class="section-number">2.3. </span>Attributes</a>
+
+    </div>
+    <footer class="footer mt-5 mt-md-0">
+    <div class="container">
+      <p>
+        
+          By Sonia Spindt<br/>
+        
+            &copy; Copyright 2020.<br/>
+      </p>
+    </div>
+  </footer>
+</main>
+
+
+      </div>
+    </div>
+
+    <script src="../../_static/js/index.js"></script>
+    
+  </body>
+</html>

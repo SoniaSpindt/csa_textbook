@@ -1,0 +1,292 @@
+
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta charset="utf-8" />
+    <title>2.1. Objects &#8212; AP CSA</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css" integrity="sha384-KA6wR/X5RY4zFAHpv/CnoG2UW1uogYfdnP67Uv7eULvTveboZJg0qUpmJZb5VqzN" crossorigin="anonymous">
+    <link href="../../_static/css/index.css" rel="stylesheet">
+    <link rel="stylesheet" href="../../_static/sphinx-book-theme.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/jupyter-sphinx.css" />
+    <script id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+    <script src="../../_static/sphinx-book-theme.js"></script>
+    <script src="../../_static/jquery.js"></script>
+    <script src="../../_static/underscore.js"></script>
+    <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/language_data.js"></script>
+    <script src="../../_static/togglebutton.js"></script>
+    <script src="../../_static/clipboard.min.js"></script>
+    <script src="../../_static/copybutton.js"></script>
+    <script src="../../_static/mystnb.js"></script>
+    <script src="../../_static/sphinx-book-theme.js"></script>
+    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    <script src="https://unpkg.com/@jupyter-widgets/html-manager@^0.18.0/dist/embed-amd.js"></script>
+    <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
+    <script >
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
+    </script>
+    <script async="async" src="../../_static/sphinx-thebe.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="2.2. Classes" href="classes.html" />
+    <link rel="prev" title="2. Object Oriented Programming" href="intro.html" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="docsearch:language" content="en">
+
+
+
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+<a class="navbar-brand text-wrap" href="../../index.html">
+  
+  <img src="../../_static/logo.png" class="logo" alt="logo">
+  
+  
+  <h1 class="site-logo" id="site-title">AP CSA</h1>
+  
+</a>
+</div>
+
+<form class="bd-search d-flex align-items-center" action="../../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form>
+
+<nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
+  <ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../intro.html">
+   Welcome to AP CSA
+  </a>
+ </li>
+</ul>
+<ul class="current nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../overview.html">
+   1. Classroom Routines
+  </a>
+ </li>
+ <li class="toctree-l1 current active">
+  <a class="reference internal" href="intro.html">
+   2. Object Oriented Programming
+  </a>
+  <ul class="current">
+   <li class="toctree-l2 current active">
+    <a class="current reference internal" href="#">
+     2.1. Objects
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="classes.html">
+     2.2. Classes
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="attributes.html">
+     2.3. Attributes
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="methods.html">
+     2.4. Methods
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+</nav>
+
+ <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="row topbar fixed-top container-xl">
+    <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show">
+    </div>
+    <div class="col pl-2 topbar-main">
+        
+        <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+            data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+            aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+            title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+            <i class="fas fa-bars"></i>
+            <i class="fas fa-arrow-left"></i>
+            <i class="fas fa-arrow-up"></i>
+        </button>
+        
+        <div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="../../_sources/Unit1/IntroToOOP/objects.md"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.md</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+    
+</div>
+        <!-- Source interaction buttons -->
+
+
+        <!-- Full screen (wrap in <a> to have style consistency -->
+        <a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+                data-placement="bottom" onclick="toggleFullScreen()" title="Fullscreen mode"><i
+                    class="fas fa-expand"></i></button></a>
+
+        <!-- Launch buttons -->
+
+    </div>
+
+    <!-- Table of contents -->
+    <div class="d-none d-md-block col-md-2 bd-toc show">
+        <div class="tocsection onthispage pt-5 pb-3">
+            <i class="fas fa-list"></i> On this page
+        </div>
+        <nav id="bd-toc-nav">
+            
+        </nav>
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+        
+              <div>
+                
+  <div class="section" id="objects">
+<h1><span class="section-number">2.1. </span>Objects<a class="headerlink" href="#objects" title="Permalink to this headline">¶</a></h1>
+<p>In order to be a proficient object oriented programmer, you need to know about the term <b><i>object</i></b>. Your English teachers would have
+talked about this word a lot because it’s an important part of English sentences. In most cases, they probably talked about objects
+as nouns, which are people, places or things. Computer scientists use the same definition when they are programming; they’re just more inclined to try and generalize
+the definition to the point at which everything in the world can be considered an object (aka they focus on the “things” component of nouns).
+And it doesn’t stop there! Computer scientists even say that you have the power to create your own objects whenever you feel so inclined.</p>
+<p>So what are some examples of objects that you might see within object oriented programs?</p>
+<div class="figure align-default" id="whale-figure">
+<a class="reference internal image-reference" href="../../_images/Whalemouse.png"><img alt="../../_images/Whalemouse.png" src="../../_images/Whalemouse.png" style="height: 300px;" /></a>
+<p class="caption"><span class="caption-number">Fig. 2.1 </span><span class="caption-text">Here is a whale object and a mouse object.</span><a class="headerlink" href="#whale-figure" title="Permalink to this image">¶</a></p>
+</div>
+<div class="figure align-default" id="tree-figure">
+<a class="reference internal image-reference" href="../../_images/Treeball.png"><img alt="../../_images/Treeball.png" src="../../_images/Treeball.png" style="height: 300px;" /></a>
+<p class="caption"><span class="caption-number">Fig. 2.2 </span><span class="caption-text">Trees, soccer balls, and blades of grass can also be considered objects.</span><a class="headerlink" href="#tree-figure" title="Permalink to this image">¶</a></p>
+</div>
+<div class="figure align-default" id="peaceandlove-figure">
+<a class="reference internal image-reference" href="../../_images/drawPeaceLove.png"><img alt="../../_images/drawPeaceLove.png" src="../../_images/drawPeaceLove.png" style="height: 200px;" /></a>
+<p class="caption"><span class="caption-number">Fig. 2.3 </span><span class="caption-text">Even abstract concepts like peace and love can be considered objects!</span><a class="headerlink" href="#peaceandlove-figure" title="Permalink to this image">¶</a></p>
+</div>
+<p>See! I wasn’t kidding when I said computer scientists will try to describe everything as objects. And they do because their official definition
+of the term is super generic: an object is anything that has some <b><i>state</i></b> and <b><i>behavior</i></b>.
+<br>
+<img width="400px" src="https://66.media.tumblr.com/8c81ee99c3bd4a24fb6e9f6a989ae19c/tumblr_pdt19g8dh91wmjj3po2_500.gif"><img src="https://pa1.narvii.com/5780/9ab01f3bcf61f2b2c4abc0a4f450f175e1c97187_hq.gif" width="340px"><br>
+<br>
+Damn. I thought I could sneak that in without you noticing. Let me rephrase; an object is a bundle of information and all the things we can do to interact with that information.
+Still a bit confused?  Consider our friend the whale object. The bundle of information that makes him a whale object, as opposed to the pencil object, is quite large. This
+information might include the following facts: he is blue, large and alive; he is a mammal that lives in the sea and communicates through song.<br />
+More impressively, he can do things in this world that change some of that information (swimming makes him a tired whale while singing might make him a happy
+whale).</p>
+<p>Need another example? Let’s try to conceptualize an object that is commonly used within music streaming software, the song. The characteristics that
+make up a song object might include: length, artist, writer, key, number of plays, and rank in the world. Obviously, we can change the data that
+represents the number of plays by pressing the play button – this action will increase the number of plays by 1! If the number of plays becomes
+large enough, we might even be able to change the song object’s rank in the world.</p>
+<p>As long as you understand that an object is just a collection of data that can be changed by some action, then you’re good to go. But what about
+our computers? How do they reason <a class="footnote-reference brackets" href="#id3" id="id1">1</a> about objects? And how might we communicate the notion of an object to our computers so that they don’t have a temper tantrum <a class="footnote-reference brackets" href="#id4" id="id2">2</a>?</p>
+<hr class="docutils" />
+<dl class="footnote brackets">
+<dt class="label" id="id3"><span class="brackets"><a class="fn-backref" href="#id1">1</a></span></dt>
+<dd><p>I’m being really generous with the word “reason” here. Computers don’t reason about anything. They’re really dumb. Alas, it’s suprisingly difficult to talk about computers without
+anthropormorphizing them.</p>
+</dd>
+<dt class="label" id="id4"><span class="brackets"><a class="fn-backref" href="#id2">2</a></span></dt>
+<dd><p>Look at me giving computers human characteristics again. Funnily enough, this human trait is a lot more accurate when describing computers.</p>
+</dd>
+</dl>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./Unit1/IntroToOOP"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+        </div>
+    </div>
+    
+    
+    <div class='prev-next-bottom'>
+        
+    <a class='left-prev' id="prev-link" href="intro.html" title="previous page"><span class="section-number">2. </span>Object Oriented Programming</a>
+    <a class='right-next' id="next-link" href="classes.html" title="next page"><span class="section-number">2.2. </span>Classes</a>
+
+    </div>
+    <footer class="footer mt-5 mt-md-0">
+    <div class="container">
+      <p>
+        
+          By Sonia Spindt<br/>
+        
+            &copy; Copyright 2020.<br/>
+      </p>
+    </div>
+  </footer>
+</main>
+
+
+      </div>
+    </div>
+
+    <script src="../../_static/js/index.js"></script>
+    
+  </body>
+</html>

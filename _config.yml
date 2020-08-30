@@ -1,0 +1,10 @@
+# Book settings
+title: AP CSA
+author: Sonia Spindt
+logo: logo.png
+
+latex:
+  latex_documents:
+    targetname: book.tex
+
+#exclude_patterns: [Unit1/IntroToOOP/*]
