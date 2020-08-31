@@ -11,7 +11,7 @@ be based on your beliefs about the world. And that's ok! Remember, computers are
 
  I have included a drawing to help our discussion:
 
-```{figure} Vehicles.png
+```{figure} vehicles.png
 ---
 height: 300px
 name: vehicles-figure
