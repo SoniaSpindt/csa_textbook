@@ -36,8 +36,7 @@ of the term is super generic: an object is anything that has some <b><i>state</i
 <img width="400px" src="https://66.media.tumblr.com/8c81ee99c3bd4a24fb6e9f6a989ae19c/tumblr_pdt19g8dh91wmjj3po2_500.gif"><img src="https://pa1.narvii.com/5780/9ab01f3bcf61f2b2c4abc0a4f450f175e1c97187_hq.gif" width="340px"><br>
 <br>
 Damn. I thought I could sneak that in without you noticing. Let me rephrase; an object is a bundle of information and all the things we can do to interact with that information.
-Still a bit confused?  Consider our friend the whale object. The bundle of information that makes him a whale object, as opposed to the pencil object, is quite large. This
-information might include the following facts: he is blue, large and alive; he is a mammal that lives in the sea and communicates through song.  
+Still a bit confused?  Consider our friend the whale object. The bundle of information that makes him a whale object, as opposed to the pencil object, is quite large. This information might include the following characteristics: he is blue, large and alive; he is a mammal that lives in the sea and communicates through song.  
 More impressively, he can do things in this world that change some of that information (swimming makes him a tired whale while singing might make him a happy
 whale).
 
