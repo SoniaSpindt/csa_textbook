@@ -59,7 +59,7 @@ how we might change the state of an object in our next section.
 What might the state of the bicycle object look like?
 
 ```{admonition} State of Bicycle Object
-1. Has an enginer = false
+1. Has an engine = false
 2. Manufacturer name = Giant
 3. Number of doors = 0
 3. Number of wheels = 2
