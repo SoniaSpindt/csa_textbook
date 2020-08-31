@@ -38,10 +38,7 @@ Got your list? Here are some class attributes that make sense to me:
 5. Number of passengers safely transported 
 ```
 
-I hope you noticed that this list is really generic, and it doesn't account for the fact that our vehicle objects can actually look different for each of the categories listed above. This
-is due to the fact that these 5 attributes are <b>class</b> attributes. They must stay generic so that our classes can make objects that are not exactly the same.
-
-Every vehicle <b>object</b> created will then store specific nuggets of information within each attribute listed. For example, our car object might look like this:
+I hope you noticed that my list of attribtues is looking rather plain right now. In other words, there isn't any specific information associated with the attributes in this list. This is due to the fact that these 5 attributes are <b>class</b> attributes. This makes it possible for our vehicle objects to look different from one another because each vehicle object will store specific nuggets of information within each attribute listed. For example, our car object might look like this:
 
 ```{admonition} Car Object
 1. Has an engine = true
@@ -53,8 +50,7 @@ Every vehicle <b>object</b> created will then store specific nuggets of informat
 
 <br>
 
-We call this the <b><i>state</i></b> of the object! The state of an object just refers to the information that is stored within its attributes at a given moment in time. We'll talk about
-how we might change the state of an object in our next section.
+We call this the <b><i>state</i></b> of the object! The state of an object just refers to the information that is stored within its attributes at a given moment in time. We'll talk about how we might change the state of an object in our next section.
 
 What might the state of the bicycle object look like?
 
@@ -66,7 +62,8 @@ What might the state of the bicycle object look like?
 4. Number of passengers safely transported = 1
 ```
 
-Remember, it's ok if your list of attributes looks different than mine! The attributes included within a class, and consequently, the possible state of a given object, is really a 
-matter of personal preference. I, and many other object oriented programmers, will agree with your design choices as long as you can justify your decisions. 
+As you can see, it's possible for our objects to look different from one another even though they were created from the same class and have the same attributes! All you have to do is store different information in each attribute for each object created.
+
+And remember, it's ok if your list of attributes looks different than mine! The attributes included within a class, and consequently, the possible state of a given object, is really a matter of personal preference. I, and many other object oriented programmers, will agree with your design choices as long as you can justify your decisions. 
 
 [^*]: Planes have wheels. You just can't see them in the pretty picture I drew. Not convinced? Think about how planes take off and land. Wheels are involved.
