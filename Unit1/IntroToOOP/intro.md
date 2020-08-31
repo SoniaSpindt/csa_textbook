@@ -18,9 +18,8 @@ This is what we are going to learn this year, except we won't be thinking in Eng
 fundamentals of a new language called <b><i>Java</i></b>. We'll learn important new words like <b><i>class</i></b>, and we'll perfect how to use these
 words in sentences our computer already understands. More importantly, we will work our way up to embodying a design philosophy computer 
 scientists call <b><i>Object Oriented Programming</i></b>. Think of this as the "five paragraph essay" of computer science, except this 
-structure of writing is SO powerful that it is used to construct every major technological system in the world (Android apps,
-stock market trading, the f@%$ing Mars rover! You name it, object oriented programming was probably used). The power of this one idea is
-the reason why I love teaching this class because it means I get to give that power to you, and what you can do with Object Oriented Programming
+structure of writing is SO powerful that it is used to construct nearly every major technological system in the world (Android apps,
+stock market trading, the f@%$ing Mars rover! You name it, object oriented programming was probably used). I love teaching this class because it means I get to give the power of this idea to you, and what you can do with Object Oriented Programming
 can change the world (no pressure :p).
 
 So let's get started by learning about a few new words!  
