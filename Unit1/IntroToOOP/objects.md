@@ -2,8 +2,7 @@ Objects
 =======
 In order to be a proficient object oriented programmer, you need to know about the term <b><i>object</i></b>. Your English teachers would have
 talked about this word a lot because it's an important part of English sentences. In most cases, they probably talked about objects
-as nouns, which are people, places or things. Computer scientists use the same definition when they are programming; they're just more inclined to try and generalize
-the definition to the point at which everything in the world can be considered an object (aka they focus on the "things" component of nouns). 
+as nouns, which are people, places or things. For computer scientists, objects aren't just people, places or things --- basically *everything* in the world can be an object!
 And it doesn't stop there! Computer scientists even say that you have the power to create your own objects whenever you feel so inclined. 
 
 So what are some examples of objects that you might see within object oriented programs?
