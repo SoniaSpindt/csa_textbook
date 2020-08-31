@@ -12,8 +12,9 @@ the same forever [^*]? NOPE.
 Computer scientists recognized these needs too, so they included a way to do both within their object oriented programs. We won't talk about the specifics of 
 the code needed just yet. All I want you to know is that we can satisfy both of these needs with something called <strong><em>methods</em></strong>. 
 
-A method is just a set of directions our computer can follow to do something. That something is entirely up to you and your needs as an object oriented programmer, but most of the time
-these methods will be applied to the objects that you create within your programs.
+A method is just a set of directions our computer can follow to do something. That something is entirely up to you and your needs as an object oriented programmer, but most of the time these methods will be applied to the objects that you create within your programs. It's important to know that we give each method in our 
+program a unique and fabulous name. The name you choose is up to you but it should point to what the method is used to accomplish because this
+makes it easier for other people to make sense of your code. 
 
 Still a little unsure of what this looks like? Let's go through an example, start to finish. Imagine you want to create a class that makes movie objects. 
 
@@ -59,8 +60,7 @@ internal state of our objects. Here are three methods that I envision needing fo
 
 Yes, yes. I know. The names of my methods look a bit strange. I want you to get into the habit of not using any spaces in your method names because computers HATE spaces in names with a passion.
 These names are great because they also secretly tell you what each method does. For example, the first method probably allows you to retrieve the genre of the movie object in question.
-If we apply this method to our Endgame object, then we will be given "Action" because this is the value we stored within the genre attribute. The second method sounds like it's going to do some math for
-us and the third method will probably change the value stored within the "Money earned to date" attribute. 
+If we apply this method to our Endgame object, then we will be given "Action" because this is the value we stored within the genre attribute. The second method sounds like it's going to do some math for us and the third method will probably change the value stored within the "Money earned to date" attribute. 
 
 As you can see, methods are really powerful because they allow us to utilize the state of our objects in limitless ways! :D
 
