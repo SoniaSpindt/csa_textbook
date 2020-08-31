@@ -1,7 +1,7 @@
 Attributes
 ==========
 
-By now you have probably noticed that objects have a set of characteristics associated with them. These facts are collectively referred to as an object's
+By now you have probably noticed that objects have a set of characteristics associated with them. These characteristics are collectively referred to as an object's
 <b><i>attributes</i></b>. You can think of attributes as the things that make an object itself! Attributes are also an important component of classes --- without attributes our objects
 would be meaningless!
 
