@@ -31,7 +31,7 @@ This is a cat object.
 
 It's possible that this cat object was created from a <b><i>Cat class</i></b>. In other words, someone wrote a recipe for making all kinds of cats; purple cats, big cats, 
 sleepy cats, you name it, the Cat class can create a diverse group of cats!
-```{figure} cats.png
+```{figure} Cats.png
 ---
 height: 300px
 name: catParty-figure

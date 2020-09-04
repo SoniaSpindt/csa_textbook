@@ -38,7 +38,7 @@
     <script async="async" src="../../_static/sphinx-thebe.js"></script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="2.4. Methods" href="methods.html" />
+    <link rel="next" title="3. Programs in Java" href="../../Unit2/ProgramsInJava/intro.html" />
     <link rel="prev" title="2.2. Classes" href="classes.html" />
 
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -105,12 +105,22 @@
      2.3. Attributes
     </a>
    </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="methods.html">
-     2.4. Methods
-    </a>
-   </li>
   </ul>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../Unit2/ProgramsInJava/intro.html">
+   3. Programs in Java
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../Unit2/Variables/intro.html">
+   4. Intro to Variables
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../Unit2/SimpleClasses/intro.html">
+   5. Creating Classes
+  </a>
  </li>
 </ul>
 
@@ -192,15 +202,13 @@
                 
   <div class="section" id="attributes">
 <h1><span class="section-number">2.3. </span>Attributes<a class="headerlink" href="#attributes" title="Permalink to this headline">¶</a></h1>
-<p>By now you have probably noticed that objects have a set of characteristics associated with them. These facts are collectively referred to as an object’s
-<b><i>attributes</i></b>. You can think of attributes as the things that make an object itself! Attributes are also an important component of classes – without attributes our objects
+<p>By now you have probably noticed that objects have a set of characteristics associated with them. These characteristics are collectively referred to as an object’s <b><i>attributes</i></b>. You can think of attributes as the things that make an object itself! Attributes are also an important component of classes — without attributes our objects
 would be meaningless!</p>
-<p>Still a bit confused? That’s ok! Let’s list all the attributes that might be found in a Vehicle class. In other words, what information do we need to make a vehicle object? In
-order to complete this thought exercise, you need to ask yourself what makes a vehicle, well, a vehicle? It’s important to keep in mind that the list of attributes you come up with will
+<p>Still a bit confused? That’s ok! Let’s list all the attributes that might be found in a Vehicle class. In other words, what information do we need to make a vehicle object? In order to complete this thought exercise, you need to ask yourself what makes a vehicle, well, a vehicle? It’s important to keep in mind that the list of attributes you come up with will
 be based on your beliefs about the world. And that’s ok! Remember, computers are dumb. They will believe anything you tell them. ;p</p>
 <p>I have included a drawing to help our discussion:</p>
 <div class="figure align-default" id="vehicles-figure">
-<a class="reference internal image-reference" href="../../_images/Vehicles.png"><img alt="../../_images/Vehicles.png" src="../../_images/Vehicles.png" style="height: 300px;" /></a>
+<a class="reference internal image-reference" href="../../_images/vehicles.png"><img alt="../../_images/vehicles.png" src="../../_images/vehicles.png" style="height: 300px;" /></a>
 <p class="caption"><span class="caption-number">Fig. 2.8 </span><span class="caption-text">These objects are vehicles.</span><a class="headerlink" href="#vehicles-figure" title="Permalink to this image">¶</a></p>
 </div>
 <p>Soak it in. Try to list out all of the characteristics that the vehicles have in common. For example, I notice that all of our vehicles have some number of wheels <a class="footnote-reference brackets" href="#id2" id="id1">1</a>.
@@ -219,9 +227,7 @@ Can you think of anything else that they share?
 <li><p>Number of passengers safely transported</p></li>
 </ol>
 </div>
-<p>I hope you noticed that this list is really generic, and it doesn’t account for the fact that our vehicle objects can actually look different for each of the categories listed above. This
-is due to the fact that these 5 attributes are <b>class</b> attributes. They must stay generic so that our classes can make objects that are not exactly the same.</p>
-<p>Every vehicle <b>object</b> created will then store specific nuggets of information within each attribute listed. For example, our car object might look like this:</p>
+<p>I hope you noticed that my list of attribtues is looking rather plain right now. In other words, there isn’t any specific information associated with the attributes in this list. This is due to the fact that these 5 attributes are <b>class</b> attributes. This makes it possible for our vehicle objects to look different from one another because each vehicle object will store specific nuggets of information within each attribute listed. For example, our car object might look like this:</p>
 <div class="admonition-car-object admonition">
 <p class="admonition-title">Car Object</p>
 <ol class="simple">
@@ -233,21 +239,20 @@ is due to the fact that these 5 attributes are <b>class</b> attributes. They mus
 </ol>
 </div>
 <br>
-<p>We call this the <b><i>state</i></b> of the object! The state of an object just refers to the information that is stored within its attributes at a given moment in time. We’ll talk about
-how we might change the state of an object in our next section.</p>
+<p>We call this the <b><i>state</i></b> of the object! The state of an object just refers to the information that is stored within its attributes at a given moment in time. We’ll talk about how we might change the state of an object in our next section.</p>
 <p>What might the state of the bicycle object look like?</p>
 <div class="admonition-state-of-bicycle-object admonition">
 <p class="admonition-title">State of Bicycle Object</p>
 <ol class="simple">
-<li><p>Has an enginer = false</p></li>
+<li><p>Has an engine = false</p></li>
 <li><p>Manufacturer name = Giant</p></li>
 <li><p>Number of doors = 0</p></li>
 <li><p>Number of wheels = 2</p></li>
 <li><p>Number of passengers safely transported = 1</p></li>
 </ol>
 </div>
-<p>Remember, it’s ok if your list of attributes looks different than mine! The attributes included within a class, and consequently, the possible state of a given object, is really a
-matter of personal preference. I, and many other object oriented programmers, will agree with your design choices as long as you can justify your decisions.</p>
+<p>As you can see, it’s possible for our objects to look different from one another even though they were created from the same class and have the same attributes! All you have to do is store different information in each attribute for each object created.</p>
+<p>And remember, it’s ok if your list of attributes looks different than mine! The attributes included within a class, and consequently, the possible state of a given object, is really a matter of personal preference. I, and many other object oriented programmers, will agree with your design choices as long as you can justify your decisions.</p>
 <hr class="docutils" />
 <dl class="footnote brackets">
 <dt class="label" id="id2"><span class="brackets"><a class="fn-backref" href="#id1">1</a></span></dt>
@@ -285,7 +290,7 @@ matter of personal preference. I, and many other object oriented programmers, wi
     <div class='prev-next-bottom'>
         
     <a class='left-prev' id="prev-link" href="classes.html" title="previous page"><span class="section-number">2.2. </span>Classes</a>
-    <a class='right-next' id="next-link" href="methods.html" title="next page"><span class="section-number">2.4. </span>Methods</a>
+    <a class='right-next' id="next-link" href="../../Unit2/ProgramsInJava/intro.html" title="next page"><span class="section-number">3. </span>Programs in Java</a>
 
     </div>
     <footer class="footer mt-5 mt-md-0">

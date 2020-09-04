@@ -2,8 +2,7 @@ Objects
 =======
 In order to be a proficient object oriented programmer, you need to know about the term <b><i>object</i></b>. Your English teachers would have
 talked about this word a lot because it's an important part of English sentences. In most cases, they probably talked about objects
-as nouns, which are people, places or things. Computer scientists use the same definition when they are programming; they're just more inclined to try and generalize
-the definition to the point at which everything in the world can be considered an object (aka they focus on the "things" component of nouns). 
+as nouns, which are people, places or things. For computer scientists, objects aren't just people, places or things --- basically *everything* in the world can be an object!
 And it doesn't stop there! Computer scientists even say that you have the power to create your own objects whenever you feel so inclined. 
 
 So what are some examples of objects that you might see within object oriented programs?
@@ -37,8 +36,7 @@ of the term is super generic: an object is anything that has some <b><i>state</i
 <img width="400px" src="https://66.media.tumblr.com/8c81ee99c3bd4a24fb6e9f6a989ae19c/tumblr_pdt19g8dh91wmjj3po2_500.gif"><img src="https://pa1.narvii.com/5780/9ab01f3bcf61f2b2c4abc0a4f450f175e1c97187_hq.gif" width="340px"><br>
 <br>
 Damn. I thought I could sneak that in without you noticing. Let me rephrase; an object is a bundle of information and all the things we can do to interact with that information.
-Still a bit confused?  Consider our friend the whale object. The bundle of information that makes him a whale object, as opposed to the pencil object, is quite large. This
-information might include the following facts: he is blue, large and alive; he is a mammal that lives in the sea and communicates through song.  
+Still a bit confused?  Consider our friend the whale object. The bundle of information that makes him a whale object, as opposed to the pencil object, is quite large. This information might include the following characteristics: he is blue, large and alive; he is a mammal that lives in the sea and communicates through song.  
 More impressively, he can do things in this world that change some of that information (swimming makes him a tired whale while singing might make him a happy
 whale).
 

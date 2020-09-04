@@ -1,12 +1,10 @@
 Attributes
 ==========
 
-By now you have probably noticed that objects have a set of characteristics associated with them. These characteristics are collectively referred to as an object's
-<b><i>attributes</i></b>. You can think of attributes as the things that make an object itself! Attributes are also an important component of classes --- without attributes our objects
+By now you have probably noticed that objects have a set of characteristics associated with them. These characteristics are collectively referred to as an object's <b><i>attributes</i></b>. You can think of attributes as the things that make an object itself! Attributes are also an important component of classes --- without attributes our objects
 would be meaningless!
 
-Still a bit confused? That's ok! Let's list all the attributes that might be found in a Vehicle class. In other words, what information do we need to make a vehicle object? In 
-order to complete this thought exercise, you need to ask yourself what makes a vehicle, well, a vehicle? It's important to keep in mind that the list of attributes you come up with will
+Still a bit confused? That's ok! Let's list all the attributes that might be found in a Vehicle class. In other words, what information do we need to make a vehicle object? In order to complete this thought exercise, you need to ask yourself what makes a vehicle, well, a vehicle? It's important to keep in mind that the list of attributes you come up with will
 be based on your beliefs about the world. And that's ok! Remember, computers are dumb. They will believe anything you tell them. ;p
 
  I have included a drawing to help our discussion:

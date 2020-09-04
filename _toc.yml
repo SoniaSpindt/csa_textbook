@@ -16,4 +16,23 @@
   - file: Unit1/IntroToOOP/classes
   - file: Unit1/IntroToOOP/attributes
   - file: Unit1/IntroToOOP/methods
-  
+
+- file: Unit2/ProgramsInJava/intro
+  sections:
+  - file: Unit2/ProgramsInJava/JVM
+  - file: Unit2/ProgramsInJava/compile
+  - file: Unit2/ProgramsInJava/execute
+
+- file: Unit2/Variables/intro
+  sections:
+  - file: Unit2/Variables/numbers
+  - file: Unit2/Variables/booleans
+  - file: Unit2/Variables/strings
+  - file: Unit2/Variables/arrays
+  - file: Unit2/Variables/arraylists
+
+- file: Unit2/SimpleClasses/intro
+  sections:
+    - file: Unit2/SimpleClasses/header
+    - file: Unit2/SimpleClasses/instance_variables
+    - file: Unit2/SimpleClasses/constructors
