@@ -5,7 +5,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
   <head>
     <meta charset="utf-8" />
-    <title>3.1. The Java Virtual Machine &#8212; AP CSA</title>
+    <title>3.2. The Java Virtual Machine &#8212; AP CSA</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css" integrity="sha384-KA6wR/X5RY4zFAHpv/CnoG2UW1uogYfdnP67Uv7eULvTveboZJg0qUpmJZb5VqzN" crossorigin="anonymous">
     <link href="../../_static/css/index.css" rel="stylesheet">
     <link rel="stylesheet" href="../../_static/sphinx-book-theme.css" type="text/css" />
@@ -38,8 +38,8 @@
     <script async="async" src="../../_static/sphinx-thebe.js"></script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="3.2. Compilation" href="compile.html" />
-    <link rel="prev" title="3. Programs in Java" href="intro.html" />
+    <link rel="next" title="3.3. Execution" href="execute.html" />
+    <link rel="prev" title="3.1. Compilation" href="compile.html" />
 
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="docsearch:language" content="en">
@@ -95,14 +95,14 @@
    3. Programs in Java
   </a>
   <ul class="current">
-   <li class="toctree-l2 current active">
-    <a class="current reference internal" href="#">
-     3.1. The Java Virtual Machine
-    </a>
-   </li>
    <li class="toctree-l2">
     <a class="reference internal" href="compile.html">
-     3.2. Compilation
+     3.1. Compilation
+    </a>
+   </li>
+   <li class="toctree-l2 current active">
+    <a class="current reference internal" href="#">
+     3.2. The Java Virtual Machine
     </a>
    </li>
    <li class="toctree-l2">
@@ -111,16 +111,6 @@
     </a>
    </li>
   </ul>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../Variables/intro.html">
-   4. Intro to Variables
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../SimpleClasses/intro.html">
-   5. Creating Classes
-  </a>
  </li>
 </ul>
 
@@ -201,7 +191,21 @@
               <div>
                 
   <div class="section" id="the-java-virtual-machine">
-<h1><span class="section-number">3.1. </span>The Java Virtual Machine<a class="headerlink" href="#the-java-virtual-machine" title="Permalink to this headline">¶</a></h1>
+<h1><span class="section-number">3.2. </span>The Java Virtual Machine<a class="headerlink" href="#the-java-virtual-machine" title="Permalink to this headline">¶</a></h1>
+<p>Back in the day, we had a problem. There were a lot of companies that made all kinds of computers, all with different processors. What’s a processor? It’s a piece of silicon inside of your computer that looks like this:</p>
+<a class="reference internal image-reference" href="../../_images/processor.jpg"><img alt="Processor example" src="../../_images/processor.jpg" style="height: 300px;" /></a>
+<p><br>You can think of it as the brain of your computer! Processors make sense of programs, just like human brains make sense of things like language and mathematics. And much like human brains in the world, processors could only make sense of information that was presented to them in the languages they knew.</p>
+<p>This language barrier was really hard for engineers because they ultimately wanted to write programs that could be run on all kinds of devices without worrying about the type of processor found below.</p>
+<p>One day, a little company called Sun Microsystems decided to fix this problem by creating a translator of sorts for the processors of the world. This translator could make a single program run on any processor because it essentially translated it into the appropriate language first <a class="footnote-reference brackets" href="#id2" id="id1">1</a>. It was a revolutionary idea that not only made it possible to run a single program on a variety of devices, it also made writing great programs easier because it essentially handled all of the tricky stuff engineers hated thinking about by itself.</p>
+<p>Anywho, our CS translator is called the <b><i>Java Virtual Machine</i></b>, or the <b>JVM</b> for short. The JVM converts any program written in Java into the language that a specific processor needs. Here’s a diagram that illustrates how the JVM acts as a bridge between Java programs and the processor:</p>
+<a class="reference internal image-reference" href="../../_images/JVMdiagram.jpeg"><img alt="JVM Diagram" src="../../_images/JVMdiagram.jpeg" style="height: 600px;" /></a>
+<p><br>As you can see, the JVM can save us a lot of time and energy! But what does this translation step actually look like? And how does this effect the programs we write in Java? Keep reading to find out. :)</p>
+<hr class="docutils" />
+<dl class="footnote brackets">
+<dt class="label" id="id2"><span class="brackets"><a class="fn-backref" href="#id1">1</a></span></dt>
+<dd><p>In fact, the slogan for Java was, “Write once, run anywhere.”</p>
+</dd>
+</dl>
 </div>
 
     <script type="text/x-thebe-config">
@@ -232,8 +236,8 @@
     
     <div class='prev-next-bottom'>
         
-    <a class='left-prev' id="prev-link" href="intro.html" title="previous page"><span class="section-number">3. </span>Programs in Java</a>
-    <a class='right-next' id="next-link" href="compile.html" title="next page"><span class="section-number">3.2. </span>Compilation</a>
+    <a class='left-prev' id="prev-link" href="compile.html" title="previous page"><span class="section-number">3.1. </span>Compilation</a>
+    <a class='right-next' id="next-link" href="execute.html" title="next page"><span class="section-number">3.3. </span>Execution</a>
 
     </div>
     <footer class="footer mt-5 mt-md-0">

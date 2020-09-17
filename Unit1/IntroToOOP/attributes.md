@@ -9,7 +9,7 @@ be based on your beliefs about the world. And that's ok! Remember, computers are
 
  I have included a drawing to help our discussion:
 
-```{figure} vehicles.png
+```{figure} Vehicles.png
 ---
 height: 300px
 name: vehicles-figure
@@ -17,7 +17,7 @@ name: vehicles-figure
 These objects are vehicles.
 ```
 Soak it in. Try to list out all of the characteristics that the vehicles have in common. For example, I notice that all of our vehicles have some number of wheels [^*].
-Can you think of anything else that they share? 
+Can you think of anything else that they share?
 <br>
 
 ```{image} https://media.giphy.com/media/DfSXiR60W9MVq/giphy.gif
@@ -31,9 +31,9 @@ Got your list? Here are some class attributes that make sense to me:
 ```{admonition} My Class Attributes
 1. Has an engine
 2. Manufacturer name
-3. Number of doors 
+3. Number of doors
 4. Number of wheels
-5. Number of passengers safely transported 
+5. Number of passengers safely transported
 ```
 
 I hope you noticed that my list of attribtues is looking rather plain right now. In other words, there isn't any specific information associated with the attributes in this list. This is due to the fact that these 5 attributes are <b>class</b> attributes. This makes it possible for our vehicle objects to look different from one another because each vehicle object will store specific nuggets of information within each attribute listed. For example, our car object might look like this:
@@ -62,6 +62,6 @@ What might the state of the bicycle object look like?
 
 As you can see, it's possible for our objects to look different from one another even though they were created from the same class and have the same attributes! All you have to do is store different information in each attribute for each object created.
 
-And remember, it's ok if your list of attributes looks different than mine! The attributes included within a class, and consequently, the possible state of a given object, is really a matter of personal preference. I, and many other object oriented programmers, will agree with your design choices as long as you can justify your decisions. 
+And remember, it's ok if your list of attributes looks different than mine! The attributes included within a class, and consequently, the possible state of a given object, is really a matter of personal preference. I, and many other object oriented programmers, will agree with your design choices as long as you can justify your decisions.
 
 [^*]: Planes have wheels. You just can't see them in the pretty picture I drew. Not convinced? Think about how planes take off and land. Wheels are involved.

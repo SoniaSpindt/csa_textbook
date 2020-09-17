@@ -7,4 +7,4 @@ latex:
   latex_documents:
     targetname: book.tex
 
-exclude_patterns: [Unit1/IntroToOOP/methods.md]
+exclude_patterns: [Unit2/SimpleClasses, Unit2/Variables]
