@@ -1,15 +1,3 @@
----
-jupytext:
-  formats: md:myst
-  text_representation:
-    extension: .md
-    format_name: myst
-kernelspec:
-  display_name: Java
-  language: java
-  name: java
----
-
 Compilation
 ===========
 
@@ -70,13 +58,10 @@ These are the names you give things like attributes and methods.
 These are a small list of keys found on your keyboard. They include characters like the semi-colon and parentheses.
 ```
 
-With just these 5 things, you can create incredibly complex programs that get your computer to do some pretty complex things. This also highlights why it is really important for you to be really careful when writing code; if you forget a semi-colon, or you spell a method name incorrectly, your computer's compiler will FREAK OUT because it wasn't trained to recognize anything outside of the list mentioned above. We call mistakes like this <b><i>compile-time errors</i></b>. And when you do make these mistakes, your compiler will do it's best to let you know what's wrong. Don't believe me? Try to <b><i>compile</i></b> the statement below.  
-
-```{code-cell} java
+With just these 5 things, you can create incredibly complex programs that get your computer to do some pretty complex things. This also highlights why it is really important for you to be really careful when writing code; if you forget a semi-colon, or you spell a method name incorrectly, your computer's compiler will FREAK OUT because it wasn't trained to recognize anything outside of the list mentioned above. We call mistakes like this <b><i>compile-time errors</i></b>. And when you do make these mistakes, your compiler will do it's best to let you know what's wrong. Don't believe me? Try to <b><i>compile</i></b> the statement below.
 
 System.out.println("Hello, world!");
 
-```
 
 See it doesn't work! But the compiler does let you know what it thinks is wrong. See if you can fix the mistake based on the error message that is displayed. Once you're done, move to the next page!
 

@@ -38,7 +38,7 @@
     <script async="async" src="../../_static/sphinx-thebe.js"></script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="prev" title="3.2. The Java Virtual Machine" href="JVM.html" />
+    <link rel="prev" title="3.2. Compilation" href="compile.html" />
 
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="docsearch:language" content="en">
@@ -95,13 +95,13 @@
   </a>
   <ul class="current">
    <li class="toctree-l2">
-    <a class="reference internal" href="compile.html">
-     3.1. Compilation
+    <a class="reference internal" href="statements.html">
+     3.1. Statements
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="JVM.html">
-     3.2. The Java Virtual Machine
+    <a class="reference internal" href="compile.html">
+     3.2. Compilation
     </a>
    </li>
    <li class="toctree-l2 current active">
@@ -191,6 +191,26 @@
                 
   <div class="section" id="execution">
 <h1><span class="section-number">3.3. </span>Execution<a class="headerlink" href="#execution" title="Permalink to this headline">¶</a></h1>
+<p>Once your compiler is happy, it will turn your <b>.java</b> file into a <b>.class</b> file. This new file contains the compiler’s translation of your Java code, and this is what is executed by your computer when you press that shiny “run” button in your text editor<a class="footnote-reference brackets" href="#id2" id="id1">1</a>.</p>
+<p>So what does your computer do? Well, your computer will begin to read the translation from the very top of the file, just like the compiler did. It will work it’s way to the very bottom of the file, <b><i>executing</i></b> each translated statement that it encounters along the way. In other words, your computer will do everything that you (correctly) asked it to do!</p>
+<p>However, there are a few types of errors that can pop up after the compiler has finished compiling your Java code. These mistakes happen when your computer runs the <b>.class</b> file, and are collectively referred to as <b><i>runtime errors</i></b>. Runtime errors are a lot rarer than compile-time errors in this class. Why? Novice programmers simply make more compile-time errors when learning to code. :p In other words, novice programmers are more likely to forget things like semi-colons at the end of statements, and these kinds of mistakes are caught by the compiler. You and your compiler are going to become the best of friends this year!</p>
+<p>How can you tell if you’re experiencing a compile-time error or a runtime error? Well, most IDEs (the place programmers code) will be nice and tell you. In fact, the IDE that we’re using this year has done just that. See if you can tell the difference:</p>
+<div class="figure align-default" id="runtime-figure">
+<a class="reference internal image-reference" href="../../_images/runtime.png"><img alt="../../_images/runtime.png" src="../../_images/runtime.png" style="height: 200px;" /></a>
+<p class="caption"><span class="caption-number">Fig. 3.1 </span><span class="caption-text">Mystery error message 1.</span><a class="headerlink" href="#runtime-figure" title="Permalink to this image">¶</a></p>
+</div>
+<div class="figure align-default" id="compiletime-figure">
+<a class="reference internal image-reference" href="../../_images/compiletime.png"><img alt="../../_images/compiletime.png" src="../../_images/compiletime.png" style="height: 200px;" /></a>
+<p class="caption"><span class="caption-number">Fig. 3.2 </span><span class="caption-text">Mystery error message 2.</span><a class="headerlink" href="#compiletime-figure" title="Permalink to this image">¶</a></p>
+</div>
+<p>If you’re thinking most of that looks like complete gibberish, then you’re not alone — I still want to pull my hair out when trying to decipher error messages. For now, I want you to focus on the glaring red letters. What do they say? Did you notice that mystery message 2 actually includes the word “compiler” in it? If you did, then you’re right! Error message 1 is the runtime error and error message 2 is the compile-time error.</p>
+<p>If you’re feeling really brave, you can try and figure out what went wrong. Hint, the specific description of the mistake is found right above the red letters. <br> <img src="https://i.imgflip.com/4g76nd.jpg" title="made at imgflip.com"/></p>
+<hr class="docutils" />
+<dl class="footnote brackets">
+<dt class="label" id="id2"><span class="brackets"><a class="fn-backref" href="#id1">1</a></span></dt>
+<dd><p>I’m leaving out a few additional steps here. Don’t worry, they’re not terribly important to know for this class, so I’m going to skip over them. However, if you’re curious about this step, google “Java Virtual Machine”.</p>
+</dd>
+</dl>
 </div>
 
     <script type="text/x-thebe-config">
@@ -221,7 +241,7 @@
     
     <div class='prev-next-bottom'>
         
-    <a class='left-prev' id="prev-link" href="JVM.html" title="previous page"><span class="section-number">3.2. </span>The Java Virtual Machine</a>
+    <a class='left-prev' id="prev-link" href="compile.html" title="previous page"><span class="section-number">3.2. </span>Compilation</a>
 
     </div>
     <footer class="footer mt-5 mt-md-0">

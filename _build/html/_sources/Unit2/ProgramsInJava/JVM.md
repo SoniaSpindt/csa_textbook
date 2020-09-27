@@ -1,14 +1,16 @@
 The Java Virtual Machine
 ========================
 
-Back in the day, we had a problem. There were a lot of companies that made all kinds of computers, all with different processors. What's a processor? It's a piece of silicon inside of your computer that looks like this:
+Time for another history lesson!
+
+Back in the day, there were a lot of companies that made all kinds of computers, all with different processors. What's a processor? It's a piece of silicon inside of your computer that looks like this:
 
 ```{image} processor.jpg
 :alt: Processor example
 :height: 300px
 ```
 
-<br>You can think of it as the brain of your computer! Processors make sense of programs, just like human brains make sense of things like language and mathematics. And much like human brains in the world, processors could only make sense of information that was presented to them in the languages they knew.
+<br>You can think of it as the brain of your computer! Processors make sense of programs, just like human brains make sense of things like language and mathematics. And much like human brains in the world, processors could only make sense of information that was presented to them in the languages they knew (cough those 0s and 1s cough).
 
 This language barrier was really hard for engineers because they ultimately wanted to write programs that could be run on all kinds of devices without worrying about the type of processor found below.
 

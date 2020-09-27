@@ -5,7 +5,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
   <head>
     <meta charset="utf-8" />
-    <title>3.1. Compilation &#8212; AP CSA</title>
+    <title>3.2. Compilation &#8212; AP CSA</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css" integrity="sha384-KA6wR/X5RY4zFAHpv/CnoG2UW1uogYfdnP67Uv7eULvTveboZJg0qUpmJZb5VqzN" crossorigin="anonymous">
     <link href="../../_static/css/index.css" rel="stylesheet">
     <link rel="stylesheet" href="../../_static/sphinx-book-theme.css" type="text/css" />
@@ -38,8 +38,8 @@
     <script async="async" src="../../_static/sphinx-thebe.js"></script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="3.2. The Java Virtual Machine" href="JVM.html" />
-    <link rel="prev" title="3. Programs in Java" href="intro.html" />
+    <link rel="next" title="3.3. Execution" href="execute.html" />
+    <link rel="prev" title="3.1. Statements" href="statements.html" />
 
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="docsearch:language" content="en">
@@ -95,14 +95,14 @@
    3. Programs in Java
   </a>
   <ul class="current">
-   <li class="toctree-l2 current active">
-    <a class="current reference internal" href="#">
-     3.1. Compilation
+   <li class="toctree-l2">
+    <a class="reference internal" href="statements.html">
+     3.1. Statements
     </a>
    </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="JVM.html">
-     3.2. The Java Virtual Machine
+   <li class="toctree-l2 current active">
+    <a class="current reference internal" href="#">
+     3.2. Compilation
     </a>
    </li>
    <li class="toctree-l2">
@@ -191,36 +191,73 @@
               <div>
                 
   <div class="section" id="compilation">
-<h1><span class="section-number">3.1. </span>Compilation<a class="headerlink" href="#compilation" title="Permalink to this headline">¶</a></h1>
-<p>It’s time for a history lesson!</p>
+<h1><span class="section-number">3.2. </span>Compilation<a class="headerlink" href="#compilation" title="Permalink to this headline">¶</a></h1>
+<p>Before we continue discussing the life-cycle of a Java program, it’s time for a history lesson!</p>
 <p>In the early days of computer science (late 1940s/early 1950s), programmers had to memorize patterns of 0s and 1s to get their computers to do anything. It was paradise for any computer because they all understood these 0s and 1s perfectly; however, it SUCKED for the engineers because it was impossible to learn.</p>
-<p>Things got a little better when programmers were able to convert these sequences of 0s and 1s into Hex (hey, at least it was shorter) but it still was close to impossible to learn. Not convinced? Here’s how you would get the phrase “Hello world” to display on the monitor of your computer using these Hex codes <a class="footnote-reference brackets" href="#id4" id="id1">1</a>.</p>
+<p>Things got a little better when programmers were able to convert these sequences of 0s and 1s into Hexadecimal — hey, at least it was shorter — but it still was close to impossible to learn. Not convinced? Here’s how you would get the phrase “Hello world” to display on the monitor of your computer using these Hexadecimal codes <a class="footnote-reference brackets" href="#id5" id="id1">1</a>.</p>
 <a class="reference internal image-reference" href="../../_images/machinecode.png"><img alt="Machine Code example" src="../../_images/machinecode.png" style="height: 300px;" /></a>
 <p><br>Obviously, most programmers of the time felt like this:</p>
 <a class="reference internal image-reference" href="https://thumbs.gfycat.com/WiltedCourteousAzurevase-max-1mb.gif"><img alt="Machine Code programmers" src="https://thumbs.gfycat.com/WiltedCourteousAzurevase-max-1mb.gif" style="height: 300px;" /></a>
-<p><br>Eventually, a computer scientist by the name of David J. Wheeler<a class="footnote-reference brackets" href="#id5" id="id2">2</a> suggested an idea to his colleague, Maurice Wilkes. I imagine the conversation went a little something like this:</p>
+<p><br>Eventually, a computer scientist by the name of David J. Wheeler<a class="footnote-reference brackets" href="#id6" id="id2">2</a> suggested an idea to his colleague, Maurice Wilkes. I imagine the conversation went a little something like this:</p>
 <p>Wilkes:</p>
 <a class="reference internal image-reference" href="https://media0.giphy.com/media/ZKZiW6GSx8eSA/200.gif"><img alt="Frustrated programmer" src="https://media0.giphy.com/media/ZKZiW6GSx8eSA/200.gif" style="height: 300px;" /></a>
 <p><br><b>Wilkes</b>: <i>…I can’t keep doing this…there must be a better way!!!!</i>
 <br><b>Wheeler</b>: <i>Here me out…whaaaaat if we just made up some English-esque words to represent this gobbledygook?</i>
 <br><b>Wilkes</b>: <i>Do it. Anything to stop this madness.</i></p>
 <p>And he did! Wheeler created a language called Assembly that made it a bit easier for programmers to write programs because it incorporated English. Don’t get me wrong, it was still pretty difficult to learn, but this idea would shape many of the modern programming languages that we see today (aka if it looks like English, it will be easier to use and learn).</p>
-<p>Fast forward to 1995! This is the year Java is invented, and boy, does it look a lot like English. In fact, this is how you would get the phrase “Hello world” to display on the monitor of your computer using Java:</p>
-<div class="highlight-Java notranslate"><div class="highlight"><pre><span></span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">print</span><span class="p">(</span><span class="s">&quot;Hello world&quot;</span><span class="p">);</span>
+<p>Fast forward to today and you will see that most modern programming languages look even more like English. Remember the Java statement from the previous page that displays the phrase “Hello, world!”?</p>
+<div class="highlight-Java notranslate"><div class="highlight"><pre><span></span>  <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;Hello, world!&quot;</span><span class="p">);</span>  
 </pre></div>
 </div>
-<p>It’s a lot better, right?</p>
-<p>Computer scientists across the world instantly fell in love with these “high-level languages” for their ease of use but they ultimately had a problem — computers couldn’t make sense of any of them! So, in an effort to turn these languages back into those pesky 0s and 1s, Grace Hopper built something called a <b><i>compiler</b></i> <a class="footnote-reference brackets" href="#id6" id="id3">3</a>. A compiler simply reads programs written in a high-level language, like Java, and turns it into something called <b><i>Bytecode</i></b>. Bytecode isn’t quite the 0s and 1s we need, but it is a step in the right direction! AND a compiler can do this without any human intervention.</p>
-<p>But how do we get from Bytecode to 0s and 1s? Keep reading to find out how a generation of programmers embraced a life of efficient programming.</p>
+<p>I bet you notice some English words in there! For example, the words “out” and “print” stand out to me. Obviously, this can help programmers who are fluent in English to remember what code is needed within their programs <a class="footnote-reference brackets" href="#id7" id="id3">3</a>. These English words can also help you make sense of the code you write because the words embedded within each code block were not chosen at random; they point to what each statement does! For example, <code class="docutils literal notranslate"><span class="pre">System.out.println(some_value);</span></code> <b>prints</b> a value <b>out</b> for users to see!</p>
+<p>Computer scientists across the world instantly fell in love with these “high-level languages” for their ease of use but they ultimately had a problem — computers couldn’t make sense of any of them! So, in an effort to turn these languages back into those pesky 0s and 1s, Grace Hopper built something called a <b><i>compiler</b></i> <a class="footnote-reference brackets" href="#id8" id="id4">4</a>. A compiler simply reads programs written in a high-level language, like Java, and turns it into something our computer understands. AND a compiler can do this without any human intervention. WHAT?</p>
+<p>More specifically, the compiler starts by reading the first line of code found in your .java file. This line of code is found near the top of your program. Then, your compiler starts to make its way down, reading each line of code as it goes. As it reads, it notices the code snippets it was trained to notice:</p>
+<div class="admonition-keywords admonition">
+<p class="admonition-title">Keywords</p>
+<p>These are special words like <b><i>class</i></b> or <b><i>if</i></b>.</p>
+</div>
+<div class="admonition-operators admonition">
+<p class="admonition-title">Operators</p>
+<p>These are symbols like <b>+</b> and <b>*</b>.</p>
+</div>
+<div class="admonition-literals admonition">
+<p class="admonition-title">Literals</p>
+<p>These are values like the number 3 or the sentence “Hello, world!”.</p>
+</div>
+<div class="admonition-identifiers admonition">
+<p class="admonition-title">Identifiers</p>
+<p>These are the names you give things like attributes and methods.</p>
+</div>
+<div class="admonition-special-characters admonition">
+<p class="admonition-title">Special Characters</p>
+<p>These are a small list of keys found on your keyboard. They include characters like the semi-colon and parentheses.</p>
+</div>
+<p>With just these 5 things, you can create incredibly complex programs that get your computer to do some pretty complex things. This also highlights why it is really important for you to be really careful when writing code; if you forget a semi-colon, or you spell a method name incorrectly, your computer’s compiler will FREAK OUT because it wasn’t trained to recognize anything outside of the list mentioned above. We call mistakes like this <b><i>compile-time errors</i></b>. And when you do make these mistakes, your compiler will do it’s best to let you know what’s wrong. Don’t believe me? Try to <b><i>compile</i></b> the statement below.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">System</span><span class="o">.</span><span class="n">out</span><span class="o">.</span><span class="n">println</span><span class="p">(</span><span class="s2">&quot;Hello, world!&quot;</span><span class="p">);</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-none notranslate"><div class="highlight"><pre><span></span>Hello, world!
+</pre></div>
+</div>
+</div>
+</div>
+<p>See it doesn’t work! But the compiler does let you know what it thinks is wrong. See if you can fix the mistake based on the error message that is displayed. Once you’re done, move to the next page!</p>
 <hr class="docutils" />
 <dl class="footnote brackets">
-<dt class="label" id="id4"><span class="brackets"><a class="fn-backref" href="#id1">1</a></span></dt>
+<dt class="label" id="id5"><span class="brackets"><a class="fn-backref" href="#id1">1</a></span></dt>
 <dd><p>These weird and random characters are collectively referred to as Machine Code. Computers LOVE it. Humans HATE it.</p>
 </dd>
-<dt class="label" id="id5"><span class="brackets"><a class="fn-backref" href="#id2">2</a></span></dt>
+<dt class="label" id="id6"><span class="brackets"><a class="fn-backref" href="#id2">2</a></span></dt>
 <dd><p>David J. Wheeler was actually the first person to ever receive a PhD in computer science, the highest degree you can get in the field. He got the degree in 1951 from the University of Cambridge.</p>
 </dd>
-<dt class="label" id="id6"><span class="brackets"><a class="fn-backref" href="#id3">3</a></span></dt>
+<dt class="label" id="id7"><span class="brackets"><a class="fn-backref" href="#id3">3</a></span></dt>
+<dd><p>Yup, this totally gives native English speakers a bit of an edge when programming. However, there are some programming languages that are built with other spoken languages in mind! <a target="_blank" href = "https://en.wikipedia.org/wiki/Non-English-based_programming_languages">Check em out if you’re curious!</a></p>
+</dd>
+<dt class="label" id="id8"><span class="brackets"><a class="fn-backref" href="#id4">4</a></span></dt>
 <dd><p>Move over Wheeler, Grace Hopper is in the building! She built the first compiler, and is generally thought of as one of the most distinguished and accomplished computer scientists in the world.</p>
 </dd>
 </dl>
@@ -235,16 +272,16 @@
         },
         codeMirrorConfig: {
             theme: "abcdef",
-            mode: "python"
+            mode: "java"
         },
         kernelOptions: {
-            kernelName: "python3",
+            kernelName: "java",
             path: "./Unit2/ProgramsInJava"
         },
         predefinedOutput: true
     }
     </script>
-    <script>kernelName = 'python3'</script>
+    <script>kernelName = 'java'</script>
 
               </div>
               
@@ -254,8 +291,8 @@
     
     <div class='prev-next-bottom'>
         
-    <a class='left-prev' id="prev-link" href="intro.html" title="previous page"><span class="section-number">3. </span>Programs in Java</a>
-    <a class='right-next' id="next-link" href="JVM.html" title="next page"><span class="section-number">3.2. </span>The Java Virtual Machine</a>
+    <a class='left-prev' id="prev-link" href="statements.html" title="previous page"><span class="section-number">3.1. </span>Statements</a>
+    <a class='right-next' id="next-link" href="execute.html" title="next page"><span class="section-number">3.3. </span>Execution</a>
 
     </div>
     <footer class="footer mt-5 mt-md-0">

@@ -3,7 +3,7 @@ Programs in Java
 
 It's time to start learning how to build classes and objects using <b><i>Java</i></b>, the
 language we are learning this year. It's ok if this feels overwhelming; learning any new language is hard.
-Just remember that no one was born knowing how to code, just like no one was born knowing how to write in English.
+Just remember that no one was born knowing how to code, just like no one was born knowing how to write an essay.
 
 So if you ever feel like you're the only one who doesn't get something or that "Computer Science isn't my thing", I want you to
 think about your English classes and remember that you weren't perfect then either[^*]. It took a lot of time and a lot of mistakes for you to reach the fluency and confidence in English that you have now. I promise that coding is no exception, and that with enough time and mistakes, you will notice all of the patterns you need to successfully write programs in Java.

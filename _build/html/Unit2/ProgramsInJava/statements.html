@@ -5,7 +5,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
   <head>
     <meta charset="utf-8" />
-    <title>The Java Virtual Machine &#8212; AP CSA</title>
+    <title>3.1. Statements &#8212; AP CSA</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css" integrity="sha384-KA6wR/X5RY4zFAHpv/CnoG2UW1uogYfdnP67Uv7eULvTveboZJg0qUpmJZb5VqzN" crossorigin="anonymous">
     <link href="../../_static/css/index.css" rel="stylesheet">
     <link rel="stylesheet" href="../../_static/sphinx-book-theme.css" type="text/css" />
@@ -38,6 +38,8 @@
     <script async="async" src="../../_static/sphinx-thebe.js"></script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="3.2. Compilation" href="compile.html" />
+    <link rel="prev" title="3. Programs in Java" href="intro.html" />
 
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="docsearch:language" content="en">
@@ -77,7 +79,7 @@
   </a>
  </li>
 </ul>
-<ul class="nav sidenav_l1">
+<ul class="current nav sidenav_l1">
  <li class="toctree-l1">
   <a class="reference internal" href="../../Unit1/overview.html">
    1. Classroom Routines
@@ -88,10 +90,27 @@
    2. Object Oriented Programming
   </a>
  </li>
- <li class="toctree-l1">
+ <li class="toctree-l1 current active">
   <a class="reference internal" href="intro.html">
    3. Programs in Java
   </a>
+  <ul class="current">
+   <li class="toctree-l2 current active">
+    <a class="current reference internal" href="#">
+     3.1. Statements
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="compile.html">
+     3.2. Compilation
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="execute.html">
+     3.3. Execution
+    </a>
+   </li>
+  </ul>
  </li>
 </ul>
 
@@ -135,7 +154,7 @@
         <!-- ipynb file if we had a myst markdown file -->
         
         <!-- Download raw file -->
-        <a class="dropdown-buttons" href="../../_sources/Unit2/ProgramsInJava/JVM.md"><button type="button"
+        <a class="dropdown-buttons" href="../../_sources/Unit2/ProgramsInJava/statements.md"><button type="button"
                 class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
                 data-placement="left">.md</button></a>
         <!-- Download PDF via print -->
@@ -171,23 +190,56 @@
         
               <div>
                 
-  <div class="section" id="the-java-virtual-machine">
-<h1>The Java Virtual Machine<a class="headerlink" href="#the-java-virtual-machine" title="Permalink to this headline">¶</a></h1>
-<p>Time for another history lesson!</p>
-<p>Back in the day, there were a lot of companies that made all kinds of computers, all with different processors. What’s a processor? It’s a piece of silicon inside of your computer that looks like this:</p>
-<a class="reference internal image-reference" href="../../_images/processor.jpg"><img alt="Processor example" src="../../_images/processor.jpg" style="height: 300px;" /></a>
-<p><br>You can think of it as the brain of your computer! Processors make sense of programs, just like human brains make sense of things like language and mathematics. And much like human brains in the world, processors could only make sense of information that was presented to them in the languages they knew (cough those 0s and 1s cough).</p>
-<p>This language barrier was really hard for engineers because they ultimately wanted to write programs that could be run on all kinds of devices without worrying about the type of processor found below.</p>
-<p>One day, a little company called Sun Microsystems decided to fix this problem by creating a translator of sorts for the processors of the world. This translator could make a single program run on any processor because it essentially translated it into the appropriate language first <a class="footnote-reference brackets" href="#id2" id="id1">1</a>. It was a revolutionary idea that not only made it possible to run a single program on a variety of devices, it also made writing great programs easier because it essentially handled all of the tricky stuff engineers hated thinking about by itself.</p>
-<p>Anywho, our CS translator is called the <b><i>Java Virtual Machine</i></b>, or the <b>JVM</b> for short. The JVM converts any program written in Java into the language that a specific processor needs. Here’s a diagram that illustrates how the JVM acts as a bridge between Java programs and the processor:</p>
-<a class="reference internal image-reference" href="../../_images/JVMdiagram.jpeg"><img alt="JVM Diagram" src="../../_images/JVMdiagram.jpeg" style="height: 600px;" /></a>
-<p><br>As you can see, the JVM can save us a lot of time and energy! But what does this translation step actually look like? And how does this effect the programs we write in Java? Keep reading to find out. :)</p>
-<hr class="docutils" />
-<dl class="footnote brackets">
-<dt class="label" id="id2"><span class="brackets"><a class="fn-backref" href="#id1">1</a></span></dt>
-<dd><p>In fact, the slogan for Java was, “Write once, run anywhere.”</p>
-</dd>
-</dl>
+  <div class="section" id="statements">
+<h1><span class="section-number">3.1. </span>Statements<a class="headerlink" href="#statements" title="Permalink to this headline">¶</a></h1>
+<blockquote class="epigraph">
+<div><p>To understand a program you must become both the machine and the program.</p>
+<p class="attribution">—Alan Perlis</p>
+</div></blockquote>
+<p>Like Dr. Perlis, I am convinced that you need to know a little bit about how your computer works in order to better understand how to control them. I hope that by explicitly naming some of the underlying components of your computer, you will be better able to explain and predict all of its observable behavior. This ability will not only help you do really well on the AP CSA exam, but it will give you an edge in future computer science classes that you take. :)</p>
+<p>Today, we will begin our exploration of the machine by discussing the general life-cycle of a Java program. This life-cycle starts with you! How? Well, one day you will decide that you need a Java program in your life — maybe that day is today! In order to write this program, you must first create a new file. Think of this like opening a new Google Doc for an essay you need to write. However, instead of writing English sentences in a <b>.doc</b> file, you will write lines of code in a <b>.java</b> file.</p>
+<p>Now imagine that you were super productive and wrote a bit of Java code into your <b>.java</b> file. It looks like this:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span> <span class="n">System</span><span class="o">.</span><span class="n">out</span><span class="o">.</span><span class="n">println</span><span class="p">(</span><span class="s2">&quot;Hello, world!&quot;</span><span class="p">);</span>    
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-none notranslate"><div class="highlight"><pre><span></span>Hello, world!
+</pre></div>
+</div>
+</div>
+</div>
+<p>Don’t panic! It’s normal to look at this code and think it makes no sense! We will talk about the specifics of this code over the next few weeks. For now, I want you to know that this line of code represents something we call a <b><i>statement</i></b> in Java. A statement is an action that we ask our computers to perform. Our Java programs will be riddled with statements because this is how we actually get our computers to do stuff. In this example, I am asking my computer to display the phrase “Hello, world!”. That’s an action. The computer must read this line of code and then DO something (i.e. display the sentence).</p>
+<p>If you’re currently thinking that this sounds a lot like our definition of the term method, then you’re right! In fact, “println” is a method name! However, not all statements will be made up of method names. Sometimes they will be filled with attribute names . Other times, they will be filled with both! In any case, all statements include the use of a semi-colon. If you are ever confused about whether or not you’re looking at a statement, see if you can find a semi-colon nearby.</p>
+<p>What would happen if we gave our computer the following program?</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">System</span><span class="o">.</span><span class="n">out</span><span class="o">.</span><span class="n">println</span><span class="p">(</span><span class="s2">&quot;I&#39;m a savage&quot;</span><span class="p">);</span>  
+<span class="n">System</span><span class="o">.</span><span class="n">out</span><span class="o">.</span><span class="n">println</span><span class="p">(</span><span class="s2">&quot;Classy, bougie, ratchet&quot;</span><span class="p">);</span>
+<span class="n">System</span><span class="o">.</span><span class="n">out</span><span class="o">.</span><span class="n">println</span><span class="p">(</span><span class="s2">&quot;Sassy, moody, nasty&quot;</span><span class="p">);</span>
+<span class="n">System</span><span class="o">.</span><span class="n">out</span><span class="o">.</span><span class="n">println</span><span class="p">(</span><span class="s2">&quot;Acting stupid, what&#39;s happening?&quot;</span><span class="p">);</span>  
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-none notranslate"><div class="highlight"><pre><span></span>I&#39;m a savage
+</pre></div>
+</div>
+<div class="output stream highlight-none notranslate"><div class="highlight"><pre><span></span>Classy, bougie, ratchet
+</pre></div>
+</div>
+<div class="output stream highlight-none notranslate"><div class="highlight"><pre><span></span>Sassy, moody, nasty
+</pre></div>
+</div>
+<div class="output stream highlight-none notranslate"><div class="highlight"><pre><span></span>Acting stupid, what&#39;s happening?
+</pre></div>
+</div>
+</div>
+</div>
+<p>Go ahead! Click on the run button! :)</p>
+<p>As you can see, your computer instantly spits out the chorus of Megan Thee Stallion’s song Savage. This may feel like magic but it’s not! In reality, some super awesome software is systematically working behind the scenes to display these lyrics for you. What is this software? And how does it work? Spoiler alert! Go to the next page of this textbook.</p>
 </div>
 
     <script type="text/x-thebe-config">
@@ -199,16 +251,16 @@
         },
         codeMirrorConfig: {
             theme: "abcdef",
-            mode: "python"
+            mode: "java"
         },
         kernelOptions: {
-            kernelName: "python3",
+            kernelName: "java",
             path: "./Unit2/ProgramsInJava"
         },
         predefinedOutput: true
     }
     </script>
-    <script>kernelName = 'python3'</script>
+    <script>kernelName = 'java'</script>
 
               </div>
               
@@ -218,6 +270,8 @@
     
     <div class='prev-next-bottom'>
         
+    <a class='left-prev' id="prev-link" href="intro.html" title="previous page"><span class="section-number">3. </span>Programs in Java</a>
+    <a class='right-next' id="next-link" href="compile.html" title="next page"><span class="section-number">3.2. </span>Compilation</a>
 
     </div>
     <footer class="footer mt-5 mt-md-0">

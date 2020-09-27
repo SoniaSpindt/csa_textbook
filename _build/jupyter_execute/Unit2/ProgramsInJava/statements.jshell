@@ -1,0 +1,30 @@
+Statements
+==========
+```{epigraph}
+To understand a program you must become both the machine and the program.
+
+-- Alan Perlis
+```
+Like Dr. Perlis, I am convinced that you need to know a little bit about how your computer works in order to better understand how to control them. I hope that by explicitly naming some of the underlying components of your computer, you will be better able to explain and predict all of its observable behavior. This ability will not only help you do really well on the AP CSA exam, but it will give you an edge in future computer science classes that you take. :)
+
+Today, we will begin our exploration of the machine by discussing the general life-cycle of a Java program. This life-cycle starts with you! How? Well, one day you will decide that you need a Java program in your life --- maybe that day is today! In order to write this program, you must first create a new file. Think of this like opening a new Google Doc for an essay you need to write. However, instead of writing English sentences in a <b>.doc</b> file, you will write lines of code in a <b>.java</b> file.
+
+Now imagine that you were super productive and wrote a bit of Java code into your <b>.java</b> file. It looks like this:
+
+ System.out.println("Hello, world!");    
+
+Don't panic! It's normal to look at this code and think it makes no sense! We will talk about the specifics of this code over the next few weeks. For now, I want you to know that this line of code represents something we call a <b><i>statement</i></b> in Java. A statement is an action that we ask our computers to perform. Our Java programs will be riddled with statements because this is how we actually get our computers to do stuff. In this example, I am asking my computer to display the phrase "Hello, world!". That's an action. The computer must read this line of code and then DO something (i.e. display the sentence).
+
+If you're currently thinking that this sounds a lot like our definition of the term method, then you're right! In fact, "println" is a method name! However, not all statements will be made up of method names. Sometimes they will be filled with attribute names . Other times, they will be filled with both! In any case, all statements include the use of a semi-colon. If you are ever confused about whether or not you're looking at a statement, see if you can find a semi-colon nearby.
+
+What would happen if we gave our computer the following program?
+
+System.out.println("I'm a savage");  
+System.out.println("Classy, bougie, ratchet");
+System.out.println("Sassy, moody, nasty");
+System.out.println("Acting stupid, what's happening?");  
+
+
+Go ahead! Click on the run button! :)
+
+As you can see, your computer instantly spits out the chorus of Megan Thee Stallion's song Savage. This may feel like magic but it's not! In reality, some super awesome software is systematically working behind the scenes to display these lyrics for you. What is this software? And how does it work? Spoiler alert! Go to the next page of this textbook.

@@ -5,7 +5,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
   <head>
     <meta charset="utf-8" />
-    <title>The Java Virtual Machine &#8212; AP CSA</title>
+    <title>The Notional Machine &#8212; AP CSA</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css" integrity="sha384-KA6wR/X5RY4zFAHpv/CnoG2UW1uogYfdnP67Uv7eULvTveboZJg0qUpmJZb5VqzN" crossorigin="anonymous">
     <link href="../../_static/css/index.css" rel="stylesheet">
     <link rel="stylesheet" href="../../_static/sphinx-book-theme.css" type="text/css" />
@@ -135,7 +135,7 @@
         <!-- ipynb file if we had a myst markdown file -->
         
         <!-- Download raw file -->
-        <a class="dropdown-buttons" href="../../_sources/Unit2/ProgramsInJava/JVM.md"><button type="button"
+        <a class="dropdown-buttons" href="../../_sources/Unit2/ProgramsInJava/mentalmodels.md"><button type="button"
                 class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
                 data-placement="left">.md</button></a>
         <!-- Download PDF via print -->
@@ -171,21 +171,34 @@
         
               <div>
                 
-  <div class="section" id="the-java-virtual-machine">
-<h1>The Java Virtual Machine<a class="headerlink" href="#the-java-virtual-machine" title="Permalink to this headline">¶</a></h1>
-<p>Time for another history lesson!</p>
-<p>Back in the day, there were a lot of companies that made all kinds of computers, all with different processors. What’s a processor? It’s a piece of silicon inside of your computer that looks like this:</p>
-<a class="reference internal image-reference" href="../../_images/processor.jpg"><img alt="Processor example" src="../../_images/processor.jpg" style="height: 300px;" /></a>
-<p><br>You can think of it as the brain of your computer! Processors make sense of programs, just like human brains make sense of things like language and mathematics. And much like human brains in the world, processors could only make sense of information that was presented to them in the languages they knew (cough those 0s and 1s cough).</p>
-<p>This language barrier was really hard for engineers because they ultimately wanted to write programs that could be run on all kinds of devices without worrying about the type of processor found below.</p>
-<p>One day, a little company called Sun Microsystems decided to fix this problem by creating a translator of sorts for the processors of the world. This translator could make a single program run on any processor because it essentially translated it into the appropriate language first <a class="footnote-reference brackets" href="#id2" id="id1">1</a>. It was a revolutionary idea that not only made it possible to run a single program on a variety of devices, it also made writing great programs easier because it essentially handled all of the tricky stuff engineers hated thinking about by itself.</p>
-<p>Anywho, our CS translator is called the <b><i>Java Virtual Machine</i></b>, or the <b>JVM</b> for short. The JVM converts any program written in Java into the language that a specific processor needs. Here’s a diagram that illustrates how the JVM acts as a bridge between Java programs and the processor:</p>
-<a class="reference internal image-reference" href="../../_images/JVMdiagram.jpeg"><img alt="JVM Diagram" src="../../_images/JVMdiagram.jpeg" style="height: 600px;" /></a>
-<p><br>As you can see, the JVM can save us a lot of time and energy! But what does this translation step actually look like? And how does this effect the programs we write in Java? Keep reading to find out. :)</p>
+  <div class="section" id="the-notional-machine">
+<h1>The Notional Machine<a class="headerlink" href="#the-notional-machine" title="Permalink to this headline">¶</a></h1>
+<blockquote class="epigraph">
+<div><p>To understand a program you must become both the machine and the program.</p>
+<p class="attribution">—Alan Perlis</p>
+</div></blockquote>
+<p>Like Dr. Perlis, I am convinced that you need to know a little bit about how your computer works in order to better understand how to control them. I hope that by explicitly naming some of the underlying components of your computer, you will be better able to explain and predict all of its observable behavior. This ability will not only help you do really well on the AP CSA exam, but it will give you an edge in future computer science classes that you take.</p>
+<p>CS teachers like to call this shared mental model the <b><i>Notional Machine</i></b>. Duh duh duh!!!! You can think of the Notional Machine as the collection of diagrams we will use to illustrate how your computer is reasoning about the programs you give it. The Notional Machine is not something that I can describe on a single page of our textbook; instead, it is a learning tool that we will build up and constantly refer to over time.</p>
+<p>Today, we will begin our exploration of the Notional Machine by discussing the general lifecycle of a Java program. This lifecycle starts with you! How? Well, one day you will decide that you need a Java program in your life. In order to write this program, you must first create a new file! Think of this like opening a new Google Doc for an essay you need to write. However, instead of writing English sentences in a <b>.doc</b> file, you will write lines of code in a <b>.java</b> file.</p>
+<p>Now imagine that you were super productive and wrote a ton of code into your <b>.java</b> file. It looks like this<a class="footnote-reference brackets" href="#id2" id="id1">1</a>:</p>
+<div class="highlight-Java notranslate"><div class="highlight"><pre><span></span><span class="kd">class</span> <span class="nc">Greetings</span><span class="p">{</span>  
+    <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="p">(</span><span class="n">String</span> <span class="n">args</span><span class="o">[]</span><span class="p">){</span>  
+     <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;Hello, world!&quot;</span><span class="p">);</span>  
+    <span class="p">}</span>  
+<span class="p">}</span>  
+</pre></div>
+</div>
+<p>Everything looks good, so you decide it’s time to see if your code actually works! In other words, you decide to “run” your program by pressing enter. Go ahead! Click into the text box above and press enter! :)</p>
+<p>As you can see, your computer instantly spits out the phrase “Hello, world!”. It may feel like magic, but I swear it’s not! I hope that the Notional Machine will help to make these secret, hidden steps a little more obvious for you; and in doing so, we will take a lot of the frustrating guess work out of programming.</p>
+<p>So how does your computer make this magic happen? Spoiler alert! Go to the next page. :)
+Let’s examine this hidden process a bit more because I hope that this will help to take a lot of the frustrating guess work out of programming. Move to the next page!</p>
+<p>is systematically reading each line of this program in a very specific and honestly, predictable way. Understanding a bit more about the compiler will help you make sense of the programs you write before you ever ask your computer to run them! So who is this? And what do they do?</p>
+<p>Today, we will begin our exploration of the Notional Machine by discussing the <b><i>sequence</i></b> in which your computer <b><i>executes</i></b> lines of code within a Java program. In other words, we are going to discuss the general order in which your computer reads and interprets lines of code found within a program. Consider the following four lines of Java code:</p>
+<p>By examining the order in which lines of code are generally executed, we will meet two important players in the world of Object Oriented programming, the <b><i>compiler</i></b> and the <b><i>Java Virtual Machine</i></b>.</p>
 <hr class="docutils" />
 <dl class="footnote brackets">
 <dt class="label" id="id2"><span class="brackets"><a class="fn-backref" href="#id1">1</a></span></dt>
-<dd><p>In fact, the slogan for Java was, “Write once, run anywhere.”</p>
+<dd><p>Don’t panic! It’s normal to look at this code and think it makes no sense! We will talk about the specifics of this code over the next few weeks. :)</p>
 </dd>
 </dl>
 </div>

@@ -19,8 +19,8 @@
 
 - file: Unit2/ProgramsInJava/intro
   sections:
+  - file: Unit2/ProgramsInJava/statements
   - file: Unit2/ProgramsInJava/compile
-  - file: Unit2/ProgramsInJava/JVM
   - file: Unit2/ProgramsInJava/execute
 
 - file: Unit2/Variables/intro
