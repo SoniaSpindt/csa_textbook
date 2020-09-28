@@ -1,5 +1,5 @@
 window.onload = function(){
-  console.log("TRIGGERED");
-  initThebeSBT();
-  console.log("AFTER")
+  if(document.getElementsByClassName('cell_input').length > 0 ){
+    initThebeSBT();
+  }
 }

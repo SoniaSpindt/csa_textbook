@@ -19,3 +19,6 @@ launch_buttons:
 
 
 exclude_patterns: [Unit2/SimpleClasses, Unit2/Variables]
+
+execute:
+  execute_notebooks: 'off'

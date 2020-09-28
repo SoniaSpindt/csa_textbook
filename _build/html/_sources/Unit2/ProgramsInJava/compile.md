@@ -45,7 +45,7 @@ And he did! Wheeler created a language called Assembly that made it a bit easier
 Fast forward to today and you will see that most modern programming languages look even more like English. Remember the Java statement from the previous page that displays the phrase "Hello, world!"?
 
 ```Java
-  System.out.println("Hello, world!"
+  System.out.println("Hello, world!");
 ```
 
 I bet you notice some English words in there! For example, the words "out" and "print" stand out to me. Obviously, this can help programmers who are fluent in English to remember what code is needed within their programs [^***]. These English words can also help you make sense of the code you write because the words embedded within each code block were not chosen at random; they point to what each statement does! For example, `System.out.println(some_value);` <b>prints</b> a value <b>out</b> for users to see!
@@ -70,15 +70,20 @@ These are the names you give things like attributes and methods.
 These are a small list of keys found on your keyboard. They include characters like the semi-colon and parentheses.
 ```
 
-With just these five things, you can create incredibly complex programs that get your computer to do some pretty complex things. This also highlights why it is really important for you to be really careful when writing code; if you forget a semi-colon, or you spell a method name incorrectly, your computer's compiler will FREAK OUT because it wasn't trained to recognize anything outside of the list mentioned above. We call mistakes like this <b><i>compile-time errors</i></b>. And when you do make these mistakes, your compiler will do it's best to let you know what's wrong. Don't believe me? Try to <b><i>compile</i></b> the statement below.  
+With just these five things, you can create incredibly complex programs that get your computer to do some pretty complex things. This also highlights why it is really important for you to be really careful when writing code; if you forget a semi-colon, or you spell a method name incorrectly, your computer's compiler will FREAK OUT because it wasn't trained to recognize anything outside of the list mentioned above. We call mistakes like this <b><i>compile-time errors</i></b>. And when you do make these mistakes, your compiler will do it's best to let you know what's wrong. Don't believe me? Try to <b><i>compile</i></b> the program found below.
 
 ```{code-cell} java
 
-System.out.println("Hello, world!");
+System.out.println("Who runs the world?")
+System.out.println("Java!");
 
 ```
 
-See it doesn't work! But the compiler does let you know what it thinks is wrong. See if you can fix the mistake based on the error message that is displayed. Once you're done, move to the next page!
+See it doesn’t work! But the compiler is nice enough to let you know what it thinks is wrong.
+
+What if you have more than one mistake in your program? As soon as your compiler encounters its first error, it stops and starts yelling at you. It doesn't mention the other mistakes because it hasn't found them yet --- it's too busy being mad about the first mistake it found. This means you will have to fix the first mistake before your compiler will have an opportunity to yell at you for a second or a third.
+
+Anyways, see if you can fix the mistake based on the error message that is displayed. Once you’re done, move to the next page!
 
 [^*]: These weird and random characters are collectively referred to as Machine Code. Computers LOVE it. Humans HATE it.
 [^**]: David J. Wheeler was actually the first person to ever receive a PhD in computer science, the highest degree you can get in the field. He got the degree in 1951 from the University of Cambridge.
