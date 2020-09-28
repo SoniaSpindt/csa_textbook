@@ -32,7 +32,7 @@ Now imagine that you were super productive and wrote a bit of Java code into you
 ```
 Don't panic! It's normal to look at this code and think it makes no sense! We will talk about the specifics of this code over the next few weeks. For now, I want you to know that this line of code represents something we call a <b><i>statement</i></b> in Java. A statement is an action that we ask our computers to perform. Our Java programs will be riddled with statements because this is how we actually get our computers to do stuff. In this example, I am asking my computer to display the phrase "Hello, world!". That's an action. The computer must read this line of code and then DO something (i.e. display the sentence).
 
-If you're currently thinking that this sounds a lot like our definition of the term method, then you're right! In fact, "println" is a method name! However, not all statements will be made up of method names. Sometimes they will be filled with attribute names . Other times, they will be filled with both! In any case, all statements include the use of a semi-colon. If you are ever confused about whether or not you're looking at a statement, see if you can find a semi-colon nearby.
+If you're currently thinking that this sounds a lot like our definition of the term <b>method<b>, then you're right! In fact, "println" is a method name! However, not all statements will be made up of method names. Sometimes they will be filled with attribute names . Other times, they will be filled with both! In any case, all statements include the use of a semi-colon. If you are ever confused about whether or not you're looking at a statement, see if you can find a semi-colon nearby.
 
 What would happen if we gave our computer the following program?
 
