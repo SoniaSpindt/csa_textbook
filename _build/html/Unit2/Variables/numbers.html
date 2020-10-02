@@ -5,7 +5,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
   <head>
     <meta charset="utf-8" />
-    <title>4.1. Integers and Doubles &#8212; AP CSA</title>
+    <title>4.2. Integers and Doubles &#8212; AP CSA</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css" integrity="sha384-KA6wR/X5RY4zFAHpv/CnoG2UW1uogYfdnP67Uv7eULvTveboZJg0qUpmJZb5VqzN" crossorigin="anonymous">
     <link href="../../_static/css/index.css" rel="stylesheet">
     <link rel="stylesheet" href="../../_static/sphinx-book-theme.css" type="text/css" />
@@ -25,21 +25,22 @@
     <script src="../../_static/clipboard.min.js"></script>
     <script src="../../_static/copybutton.js"></script>
     <script src="../../_static/mystnb.js"></script>
+    <script src="../../_static/custom.js"></script>
     <script src="../../_static/sphinx-book-theme.js"></script>
     <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
     <script src="https://unpkg.com/@jupyter-widgets/html-manager@^0.18.0/dist/embed-amd.js"></script>
     <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
     <script >
-        const thebe_selector = ".thebe"
-        const thebe_selector_input = "pre"
-        const thebe_selector_output = ".output"
+        const thebe_selector = ".thebe,.cell"
+        const thebe_selector_input = "pre,.cell_input div.highlight"
+        const thebe_selector_output = ".output,.cell_output"
     </script>
     <script async="async" src="../../_static/sphinx-thebe.js"></script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="4.2. Booleans" href="booleans.html" />
-    <link rel="prev" title="4. Intro to Variables" href="intro.html" />
+    <link rel="next" title="4.3. Booleans" href="booleans.html" />
+    <link rel="prev" title="4.1. Declaring and Initializing Variables" href="declare.html" />
 
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="docsearch:language" content="en">
@@ -100,37 +101,37 @@
    4. Intro to Variables
   </a>
   <ul class="current">
+   <li class="toctree-l2">
+    <a class="reference internal" href="declare.html">
+     4.1. Declaring and Initializing Variables
+    </a>
+   </li>
    <li class="toctree-l2 current active">
     <a class="current reference internal" href="#">
-     4.1. Integers and Doubles
+     4.2. Integers and Doubles
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="booleans.html">
-     4.2. Booleans
+     4.3. Booleans
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="strings.html">
-     4.3. Strings
+     4.4. Strings
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="arrays.html">
-     4.4. Arrays
+     4.5. Arrays
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="arraylists.html">
-     4.5. ArrayLists
+     4.6. ArrayLists
     </a>
    </li>
   </ul>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../SimpleClasses/intro.html">
-   5. Creating Classes
-  </a>
  </li>
 </ul>
 
@@ -211,14 +212,20 @@
               <div>
                 
   <div class="section" id="integers-and-doubles">
-<h1><span class="section-number">4.1. </span>Integers and Doubles<a class="headerlink" href="#integers-and-doubles" title="Permalink to this headline">¶</a></h1>
+<h1><span class="section-number">4.2. </span>Integers and Doubles<a class="headerlink" href="#integers-and-doubles" title="Permalink to this headline">¶</a></h1>
+<p>Now, in your Algebra class, it’s kind of assumed that the values that variables can be assigned to are numbers — makes sense, it is a math class after all. However, in computer science, the collection of values that a variable can be assigned to is much larger. We will learn about all of them over the next few weeks. For now, we’re going to stick with what we know, numbers!</p>
+<p>I want you to notice the strange little <code class="docutils literal notranslate"><span class="pre">int</span></code> word from the example on the previous page:</p>
+<div class="highlight-Java notranslate"><div class="highlight"><pre><span></span>  <span class="kt">int</span> <span class="n">x</span> <span class="o">=</span> <span class="mi">3</span><span class="p">;</span>
+</pre></div>
+</div>
+<p>This keyword tells our computer what <b><i>type</i></b> of value can be found in the variable; in the example above, the type of the variable <code class="docutils literal notranslate"><span class="pre">x</span></code> is an integer because 3 is an integer.</p>
 </div>
 
     <script type="text/x-thebe-config">
     {
         requestKernel: true,
         binderOptions: {
-            repo: "binder-examples/jupyter-stacks-datascience",
+            repo: "SoniaSpindt/csa_textbook",
             ref: "master",
         },
         codeMirrorConfig: {
@@ -242,8 +249,8 @@
     
     <div class='prev-next-bottom'>
         
-    <a class='left-prev' id="prev-link" href="intro.html" title="previous page"><span class="section-number">4. </span>Intro to Variables</a>
-    <a class='right-next' id="next-link" href="booleans.html" title="next page"><span class="section-number">4.2. </span>Booleans</a>
+    <a class='left-prev' id="prev-link" href="declare.html" title="previous page"><span class="section-number">4.1. </span>Declaring and Initializing Variables</a>
+    <a class='right-next' id="next-link" href="booleans.html" title="next page"><span class="section-number">4.3. </span>Booleans</a>
 
     </div>
     <footer class="footer mt-5 mt-md-0">

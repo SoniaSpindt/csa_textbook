@@ -5,7 +5,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
   <head>
     <meta charset="utf-8" />
-    <title>4.3. Strings &#8212; AP CSA</title>
+    <title>4.4. Strings &#8212; AP CSA</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css" integrity="sha384-KA6wR/X5RY4zFAHpv/CnoG2UW1uogYfdnP67Uv7eULvTveboZJg0qUpmJZb5VqzN" crossorigin="anonymous">
     <link href="../../_static/css/index.css" rel="stylesheet">
     <link rel="stylesheet" href="../../_static/sphinx-book-theme.css" type="text/css" />
@@ -25,21 +25,22 @@
     <script src="../../_static/clipboard.min.js"></script>
     <script src="../../_static/copybutton.js"></script>
     <script src="../../_static/mystnb.js"></script>
+    <script src="../../_static/custom.js"></script>
     <script src="../../_static/sphinx-book-theme.js"></script>
     <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
     <script src="https://unpkg.com/@jupyter-widgets/html-manager@^0.18.0/dist/embed-amd.js"></script>
     <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
     <script >
-        const thebe_selector = ".thebe"
-        const thebe_selector_input = "pre"
-        const thebe_selector_output = ".output"
+        const thebe_selector = ".thebe,.cell"
+        const thebe_selector_input = "pre,.cell_input div.highlight"
+        const thebe_selector_output = ".output,.cell_output"
     </script>
     <script async="async" src="../../_static/sphinx-thebe.js"></script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="4.4. Arrays" href="arrays.html" />
-    <link rel="prev" title="4.2. Booleans" href="booleans.html" />
+    <link rel="next" title="4.5. Arrays" href="arrays.html" />
+    <link rel="prev" title="4.3. Booleans" href="booleans.html" />
 
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="docsearch:language" content="en">
@@ -101,36 +102,36 @@
   </a>
   <ul class="current">
    <li class="toctree-l2">
-    <a class="reference internal" href="numbers.html">
-     4.1. Integers and Doubles
+    <a class="reference internal" href="declare.html">
+     4.1. Declaring Variables
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="initialize.html">
+     4.2. Initializing Variables
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="booleans.html">
-     4.2. Booleans
+     4.3. Booleans
     </a>
    </li>
    <li class="toctree-l2 current active">
     <a class="current reference internal" href="#">
-     4.3. Strings
+     4.4. Strings
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="arrays.html">
-     4.4. Arrays
+     4.5. Arrays
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="arraylists.html">
-     4.5. ArrayLists
+     4.6. ArrayLists
     </a>
    </li>
   </ul>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../SimpleClasses/intro.html">
-   5. Creating Classes
-  </a>
  </li>
 </ul>
 
@@ -211,14 +212,14 @@
               <div>
                 
   <div class="section" id="strings">
-<h1><span class="section-number">4.3. </span>Strings<a class="headerlink" href="#strings" title="Permalink to this headline">¶</a></h1>
+<h1><span class="section-number">4.4. </span>Strings<a class="headerlink" href="#strings" title="Permalink to this headline">¶</a></h1>
 </div>
 
     <script type="text/x-thebe-config">
     {
         requestKernel: true,
         binderOptions: {
-            repo: "binder-examples/jupyter-stacks-datascience",
+            repo: "SoniaSpindt/csa_textbook",
             ref: "master",
         },
         codeMirrorConfig: {
@@ -242,8 +243,8 @@
     
     <div class='prev-next-bottom'>
         
-    <a class='left-prev' id="prev-link" href="booleans.html" title="previous page"><span class="section-number">4.2. </span>Booleans</a>
-    <a class='right-next' id="next-link" href="arrays.html" title="next page"><span class="section-number">4.4. </span>Arrays</a>
+    <a class='left-prev' id="prev-link" href="booleans.html" title="previous page"><span class="section-number">4.3. </span>Booleans</a>
+    <a class='right-next' id="next-link" href="arrays.html" title="next page"><span class="section-number">4.5. </span>Arrays</a>
 
     </div>
     <footer class="footer mt-5 mt-md-0">

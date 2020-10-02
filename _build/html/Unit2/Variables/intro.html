@@ -25,20 +25,21 @@
     <script src="../../_static/clipboard.min.js"></script>
     <script src="../../_static/copybutton.js"></script>
     <script src="../../_static/mystnb.js"></script>
+    <script src="../../_static/custom.js"></script>
     <script src="../../_static/sphinx-book-theme.js"></script>
     <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
     <script src="https://unpkg.com/@jupyter-widgets/html-manager@^0.18.0/dist/embed-amd.js"></script>
     <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
     <script >
-        const thebe_selector = ".thebe"
-        const thebe_selector_input = "pre"
-        const thebe_selector_output = ".output"
+        const thebe_selector = ".thebe,.cell"
+        const thebe_selector_input = "pre,.cell_input div.highlight"
+        const thebe_selector_output = ".output,.cell_output"
     </script>
     <script async="async" src="../../_static/sphinx-thebe.js"></script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="4.1. Integers and Doubles" href="numbers.html" />
+    <link rel="next" title="4.1. Declaring Variables" href="declare.html" />
     <link rel="prev" title="3.3. Execution" href="../ProgramsInJava/execute.html" />
 
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -101,36 +102,36 @@
   </a>
   <ul>
    <li class="toctree-l2">
-    <a class="reference internal" href="numbers.html">
-     4.1. Integers and Doubles
+    <a class="reference internal" href="declare.html">
+     4.1. Declaring Variables
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="initialize.html">
+     4.2. Initializing Variables
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="booleans.html">
-     4.2. Booleans
+     4.3. Booleans
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="strings.html">
-     4.3. Strings
+     4.4. Strings
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="arrays.html">
-     4.4. Arrays
+     4.5. Arrays
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="arraylists.html">
-     4.5. ArrayLists
+     4.6. ArrayLists
     </a>
    </li>
   </ul>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../SimpleClasses/intro.html">
-   5. Creating Classes
-  </a>
  </li>
 </ul>
 
@@ -212,15 +213,39 @@
                 
   <div class="section" id="intro-to-variables">
 <h1><span class="section-number">4. </span>Intro to Variables<a class="headerlink" href="#intro-to-variables" title="Permalink to this headline">¶</a></h1>
+<p>It’s time to learn how to create attributes within our Java programs! The way we do this is with a programming concept called <b><i>variables</i></b>. Does this term sound super familiar to you? It’s possible that you heard about it in your Algebra class, which is a class all about variables! The variables you learned about in your Algebra class are very similar to the variables that you will see and create in this class; in both cases, <b><i>they are the names we give values</i></b>.</p>
+<p>For example, you may have seen a simple equation in your Algebra class that looks like this:</p>
+<div class="highlight-Java notranslate"><div class="highlight"><pre><span></span>  <span class="n">x</span> <span class="o">=</span> <span class="mi">3</span>
+</pre></div>
+</div>
+<p>If I asked you “What is x?” you would (hopefully) answer with “3”. See, the name <code class="docutils literal notranslate"><span class="pre">x</span></code> is given to the value <code class="docutils literal notranslate"><span class="pre">3</span></code>! We will do the same thing in this class, except it will look something like this:</p>
+<div class="highlight-Java notranslate"><div class="highlight"><pre><span></span>  <span class="kt">int</span> <span class="n">x</span> <span class="o">=</span> <span class="mi">3</span><span class="p">;</span>
+</pre></div>
+</div>
+<p>As you can see, this line of code is a statement<a class="footnote-reference brackets" href="#id3" id="id1">1</a>! Remember, that means we are asking our computer to do something. But what exactly are we asking it to do? Well, we are asking our computer to associate the name <code class="docutils literal notranslate"><span class="pre">x</span></code> with the value <code class="docutils literal notranslate"><span class="pre">3</span></code>. So, when I ask you what <code class="docutils literal notranslate"><span class="pre">x</span></code> is in this class, you can respond with “x is 3”, or “x gets 3”, or “x is assigned to 3”. All of these responses are valid and they all mean the same thing.</p>
+<p>I prefer the last response, “x is assigned to 3”, because this secretly refers to the name computer scientists give the equal sign; they call it the <b><i>assignment operator</i></b>. The assignment operator is responsible for actually telling our computer that you ship a particular name and value.</p>
+<a class="reference internal image-reference" href="https://media.giphy.com/media/HkA9xsCxJCRWw/giphy.gif"><img alt="Shipping variables" src="https://media.giphy.com/media/HkA9xsCxJCRWw/giphy.gif" style="height: 200px;" /></a>
+<p><br>Remember how I said it was important to know a little bit about how your computer works when learning to program? We want to keep thinking about this as we learn new stuff because it will help make your prediction skills sharp<a class="footnote-reference brackets" href="#id4" id="id2">2</a>. Most of the time, this involves me drawing pretty pictures. :P So here’s a picture of how your computer might “think” about variables:</p>
+<p><br>Your computer actually has a memory system like you and I do, and just like our memory system, our computer’s memory is used to store information that can be used later on. A computer’s memory is far less complex than the memory system found in our brains, and can literally be thought of as boxes or containers that store something for later; this is why many people say that variables “store” values in them. If it helps you to think of a variable as a little box used to store a value, then cool! You do you, boo. :)</p>
 <div class="toctree-wrapper compound">
 </div>
+<hr class="docutils" />
+<dl class="footnote brackets">
+<dt class="label" id="id3"><span class="brackets"><a class="fn-backref" href="#id1">1</a></span></dt>
+<dd><p>You can tell it’s a statement because it ends in a semi-colon.</p>
+</dd>
+<dt class="label" id="id4"><span class="brackets"><a class="fn-backref" href="#id2">2</a></span></dt>
+<dd><p>It’s also important to be able to do this because “predict the output” questions will make up a large part of the AP CSA exam.
+[^***]:</p>
+</dd>
+</dl>
 </div>
 
     <script type="text/x-thebe-config">
     {
         requestKernel: true,
         binderOptions: {
-            repo: "binder-examples/jupyter-stacks-datascience",
+            repo: "SoniaSpindt/csa_textbook",
             ref: "master",
         },
         codeMirrorConfig: {
@@ -245,7 +270,7 @@
     <div class='prev-next-bottom'>
         
     <a class='left-prev' id="prev-link" href="../ProgramsInJava/execute.html" title="previous page"><span class="section-number">3.3. </span>Execution</a>
-    <a class='right-next' id="next-link" href="numbers.html" title="next page"><span class="section-number">4.1. </span>Integers and Doubles</a>
+    <a class='right-next' id="next-link" href="declare.html" title="next page"><span class="section-number">4.1. </span>Declaring Variables</a>
 
     </div>
     <footer class="footer mt-5 mt-md-0">

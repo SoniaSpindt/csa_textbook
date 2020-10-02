@@ -18,7 +18,7 @@ launch_buttons:
   thebe: true
 
 
-exclude_patterns: [Unit2/SimpleClasses, Unit2/Variables]
+exclude_patterns: [Unit2/SimpleClasses]
 
 execute:
   execute_notebooks: 'off'
