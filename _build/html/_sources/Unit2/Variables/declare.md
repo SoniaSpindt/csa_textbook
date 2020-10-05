@@ -23,7 +23,7 @@ I want you to notice the strange little `int` word in the example above. This ke
 
 The second variable has the keyword `double` out front and this is how we tell our computer that we plan to store a decimal value in a variable.
 
-Java is a HELLA picky language, so we ALWAYS have to list the <b>type</b> of the value we plan on storing in a variable [^***]. You cannot change your mind later or try to slyly store a different value type in the variable; once a variable is declared, it will forever be that type! Need a different type? Well tough; you're gunna need to declare a new variable with a different type.
+Java is a HELLA picky language, so we ALWAYS have to list the <b>type</b> of the value we plan on storing in a variable [^***]. You cannot change your mind later or try to slyly store a different value type in the variable; once a variable is declared, it will forever be that type! Need a different type? Well tough! You're gunna need to declare a new variable with a different type.
 
 What happens when you're ready to give your variable a value? Keep reading to find out. :D
 

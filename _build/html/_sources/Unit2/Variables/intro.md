@@ -13,9 +13,9 @@ If I asked you "What is x?" you would (hopefully) answer with "3". See, the name
 ```Java
   1. int x = 3;
 ```
-As you can see, this line of code is a statement that was written on line 1 of our program[^*]! This means we are asking our computer to do something on line 1. But what exactly are we asking it to do? Well, we are asking our computer to associate the name `x` with the value `3`. So, when I ask you what `x` is in this class, you can respond with "x is 3", or "x gets 3", or "x is assigned to 3". All of these responses are valid and they all mean the same thing.
+As you can see, this line of code is a statement that was written on line 1 of our program[^*]! This means we are asking our computer to do something on line 1. But what exactly are we asking it to do? Well, we are asking our computer to associate the name `x` with the value `3`. So, when I ask you what `x` is in this class, you can respond with "x is 3", or "x gets 3", or "3 is assigned to x". All of these responses are valid and they all mean the same thing.
 
-I prefer the last response, "x is assigned to 3", because this secretly refers to the name computer scientists give the equal sign; they call it the <b><i>assignment operator</i></b>. The assignment operator is responsible for actually telling our computer that you ship a particular name and value.
+I prefer the last response, "3 is assigned to x", because this secretly refers to the name computer scientists give the equal sign; they call it the <b><i>assignment operator</i></b>. The assignment operator is responsible for actually telling our computer that you ship a particular name and value.
 
 ```{image} https://media.giphy.com/media/HkA9xsCxJCRWw/giphy.gif
 :alt: Shipping variables

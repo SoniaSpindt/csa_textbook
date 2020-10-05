@@ -1,6 +1,6 @@
 Initializing Variables
 ======================
-When you're ready to give your variable a value for the very first time in your program, you will need to <b><i>initialize</i></b> it to said value. We can initialize the `score` and  `percentChange` variables to values using the assignment operator (cough the equal sign cough). Now, our program will look like this:
+When you're ready to give your variable a value for the very first time in your program, you will need to <b><i>initialize</i></b> it to said value. We can initialize the `score` and  `percentChange` variables to values using the assignment operator (<i>cough</i> the equal sign <i>cough</i>). Now, our program will look like this:
 
 ```Java
   1. int score;
@@ -15,7 +15,7 @@ When you're ready to give your variable a value for the very first time in your 
 :alt: Notional Machine variables 3
 :height: 200px
 ```
-<br>What if you want to change the value that is stored in your variable? No problema! We can change our minds by <b><i>assigning</i></b> our variables to new values (cough use the equal sign again cough). Our computer is happy to chuck the old value and replace it with a new one. Here's what it might look like to <b><i>assign</i></b> our variables to new values[^*]:
+<br>What if you want to change the value that is stored in your variable? No problema! We can change the values that are stored in variables by <b><i>assigning</i></b> our variables to new values (<i>cough</i> use the equal sign again <i>cough</i>). Our computer is happy to chuck the old value and replace it with a new one. Here's what it might look like to <b><i>assign</i></b> our variables to new values[^*]:
 
 ```Java
   1. int score;
@@ -29,7 +29,7 @@ When you're ready to give your variable a value for the very first time in your 
 :alt: Notional Machine variables 4
 :height: 200px
 ```
-<br>I REALLY need you to notice that the values stored in `score` and `percentChange` are the MOST RECENT values assigned to the variables. What makes something the most recent value? That's decided by our compiler, and remember, our compiler reads from top to bottom. So, the most recent assignment is the assignment which occurs last. In this case, that is line 5 and 6 of the program above. All other values are instantly forgotten by our computer because they no longer occupy any space in our computer's memory.
+<br>I REALLY need you to notice that the values stored in `score` and `percentChange` are the MOST RECENT values assigned to the variables after program execution has completed. What makes something the most recent value? That depends on how many lines of code our computer has executed. If we were to ask this question right after our computer executed line 4 of the program above, then the most recent values of `score` and `percentChange` would be 100 and 45.7 respectively. Our computer has no awareness of what has happened or what will happen --- it lives in the moment! So, the most recent assignment is the assignment which occurs closest to the most recent line of code that has been executed. If we assume the entire program has just been executed, then 200 and 11.2 would be the most recent values assigned to `score` and `percentChange`.
 
 Ok, ok, so we can store numbers in our variables. Big deal. Can we store anything a little more complex in variables?
 
