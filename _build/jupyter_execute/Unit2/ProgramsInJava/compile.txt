@@ -33,7 +33,7 @@ And he did! Wheeler created a language called Assembly that made it a bit easier
 Fast forward to today and you will see that most modern programming languages look even more like English. Remember the Java statement from the previous page that displays the phrase "Hello, world!"?
 
 ```Java
-  System.out.println("Hello, world!");
+  1. System.out.println("Hello, world!");
 ```
 
 I bet you notice some English words in there! For example, the words "out" and "print" stand out to me. Obviously, this can help programmers who are fluent in English to remember what code is needed within their programs [^***]. These English words can also help you make sense of the code you write because the words embedded within each code block were not chosen at random; they point to what each statement does! For example, `System.out.println(some_value);` <b>prints</b> a value <b>out</b> for users to see!

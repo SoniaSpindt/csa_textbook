@@ -1,14 +1,3 @@
----
-jupytext:
-  formats: md:myst
-  text_representation:
-    extension: .md
-    format_name: myst
-kernelspec:
-  display_name: Java
-  language: java
-  name: java
----
 Expressions
 ===========
 
@@ -34,12 +23,11 @@ Need another example? Let's see how a Java program can be used in medicine to he
 
 Guess what! Doctors use computers to determine the concentration of these proteins in the blood (computer science really is everywhere these days)! You can imagine that if a patient has a lot of Troponin in his/her/their blood, then their heart is really struggling! Here is a simple program that can determine if someone is having a heart attack.
 
-```{code-cell} java
 double enzymesHour0 = 2.0;
 double enzymesHour6 = 320.0;
 double rateOfChange = (enzymesHour6 - enzymesHour0) / (6 - 0);
 System.out.println(rateOfChange);
-```
+
 Take a moment to read this program, line by line. See if you can predict what your compiler and consequently, your computer will do once this program is compiled and executed. Once you are done, press the run button to see if you are right!
 
 Again, here is how your computer might make sense of these 4 lines of code:

@@ -112,23 +112,8 @@
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="booleans.html">
-     4.3. Booleans
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="strings.html">
-     4.4. Strings
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="arrays.html">
-     4.5. Arrays
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="arraylists.html">
-     4.6. ArrayLists
+    <a class="reference internal" href="expressions.html">
+     4.3. Expressions
     </a>
    </li>
   </ul>
@@ -214,24 +199,33 @@
   <div class="section" id="declaring-variables">
 <h1><span class="section-number">4.1. </span>Declaring Variables<a class="headerlink" href="#declaring-variables" title="Permalink to this headline">¶</a></h1>
 <p>Sometimes you know you will need a variable in your program but you won’t have a value to give it right away. That’s ok! Your computer is totally down for you to create a variable that doesn’t have a value associated with it just yet.</p>
-<p>When you create a variable for the first time, regardless of whether or not you assign it to a value right away, we say we are <b><i>declaring</i></b> a variable. Here’s an example of what it looks like to <b>declare</b> two different variables, both of which are not assigned to any values.</p>
-<div class="highlight-Java notranslate"><div class="highlight"><pre><span></span>  <span class="kt">int</span> <span class="n">score</span><span class="p">;</span>
-  <span class="kt">double</span> <span class="n">percentChange</span><span class="p">;</span>
+<p>When you create a variable for the first time, regardless of whether or not you assign it to a value right away, we say we are <b><i>declaring</i></b> a variable. When you are declaring a variable, it is important that you do not include any spaces in your variable’s name or any numbers at the very beginning of the name <a class="footnote-reference brackets" href="#id4" id="id1">1</a>. Here’s an example of what it looks like to <b>declare</b> two different variables, both of which have valid names and are not assigned to any values.</p>
+<div class="highlight-Java notranslate"><div class="highlight"><pre><span></span>  <span class="mf">1.</span> <span class="kt">int</span> <span class="n">score</span><span class="p">;</span>
+  <span class="mf">2.</span> <span class="kt">double</span> <span class="n">percentChange</span><span class="p">;</span>
 </pre></div>
 </div>
-<p>Again, these are statements<a class="footnote-reference brackets" href="#id3" id="id1">1</a>. We are telling our computer that we would like to create two variables, one with the name <code class="docutils literal notranslate"><span class="pre">score</span></code> and one with the name <code class="docutils literal notranslate"><span class="pre">percentChange</span></code>. Here is how these variables might look in your computer’s memory:</p>
+<p>Again, these are statements<a class="footnote-reference brackets" href="#id5" id="id2">2</a>. We are telling our computer that we would like to create two variables, one with the name <code class="docutils literal notranslate"><span class="pre">score</span></code> and one with the name <code class="docutils literal notranslate"><span class="pre">percentChange</span></code>. Here is how our computer might interpret these two lines of code:</p>
+<a class="reference internal image-reference" href="https://media.giphy.com/media/O0Dbaz4AjhthzQ508L/giphy.gif"><img alt="Notional Machine variables 2" src="https://media.giphy.com/media/O0Dbaz4AjhthzQ508L/giphy.gif" style="height: 200px;" /></a>
 <p><br>Notice that there isn’t any value in the box yet? That’s because we haven’t told our computer to assign a value to either of these names.</p>
 <p>Now, in your Algebra class, it’s kind of assumed that the values that variables can store are numbers — makes sense, it is a math class after all. However, in computer science, the collection of values that a variable can store is much larger. We will learn about all of these values over the next few weeks. For now, we’re going to stick with what we know, numbers!</p>
 <p>I want you to notice the strange little <code class="docutils literal notranslate"><span class="pre">int</span></code> word in the example above. This keyword tells our computer what <b><i>type</i></b> of value can be found in the variable. In this example, we are telling our computer that it can expect an integer to be assigned to the variable <code class="docutils literal notranslate"><span class="pre">score</span></code>.</p>
 <p>The second variable has the keyword <code class="docutils literal notranslate"><span class="pre">double</span></code> out front and this is how we tell our computer that we plan to store a decimal value in a variable.</p>
-<p>Java is a HELLA picky language, so we ALWAYS have to list the <b>type</b> of the value we plan on storing in a variable <a class="footnote-reference brackets" href="#id4" id="id2">2</a>. You cannot change your mind later or try to slyly store a different value type in the variable; once a variable is declared, it will forever be that type! Need a different type? Well tough; you’re gunna need to declare a new variable with a different type.</p>
+<p>Java is a HELLA picky language, so we ALWAYS have to list the <b>type</b> of the value we plan on storing in a variable <a class="footnote-reference brackets" href="#id6" id="id3">3</a>. You cannot change your mind later or try to slyly store a different value type in the variable; once a variable is declared, it will forever be that type! Need a different type? Well tough; you’re gunna need to declare a new variable with a different type.</p>
 <p>What happens when you’re ready to give your variable a value? Keep reading to find out. :D</p>
+<div class="warning admonition">
+<p class="admonition-title">TL;DR</p>
+<p>This is the pattern you should follow if you want to <b><i>declare</i></b> a variable:
+<br><code class="docutils literal notranslate"><span class="pre">type</span> <span class="pre">name;</span></code></p>
+</div>
 <hr class="docutils" />
 <dl class="footnote brackets">
-<dt class="label" id="id3"><span class="brackets"><a class="fn-backref" href="#id1">1</a></span></dt>
+<dt class="label" id="id4"><span class="brackets"><a class="fn-backref" href="#id1">1</a></span></dt>
+<dd><p><code class="docutils literal notranslate"><span class="pre">10score</span></code> and <code class="docutils literal notranslate"><span class="pre">percent</span> <span class="pre">Change</span></code> are not valid variables names because the first one includes a number out front and the second includes a space. Want to know more about naming variables? Check out <a href="https://mathbits.com/MathBits/Java/DataBasics/Namingrules.htm">this website</a>!</p>
+</dd>
+<dt class="label" id="id5"><span class="brackets"><a class="fn-backref" href="#id2">2</a></span></dt>
 <dd><p>Notice the semi-colons at the end?</p>
 </dd>
-<dt class="label" id="id4"><span class="brackets"><a class="fn-backref" href="#id2">2</a></span></dt>
+<dt class="label" id="id6"><span class="brackets"><a class="fn-backref" href="#id3">3</a></span></dt>
 <dd><p>Computer scientists call hella picky languages like Java “statically typed” languages. I guess it sounds a little more professional that way. :P</p>
 </dd>
 </dl>

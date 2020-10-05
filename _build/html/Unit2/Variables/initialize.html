@@ -39,7 +39,7 @@
     <script async="async" src="../../_static/sphinx-thebe.js"></script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="4.3. Booleans" href="booleans.html" />
+    <link rel="next" title="4.3. Expressions" href="expressions.html" />
     <link rel="prev" title="4.1. Declaring Variables" href="declare.html" />
 
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -112,23 +112,8 @@
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="booleans.html">
-     4.3. Booleans
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="strings.html">
-     4.4. Strings
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="arrays.html">
-     4.5. Arrays
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="arraylists.html">
-     4.6. ArrayLists
+    <a class="reference internal" href="expressions.html">
+     4.3. Expressions
     </a>
    </li>
   </ul>
@@ -214,23 +199,33 @@
   <div class="section" id="initializing-variables">
 <h1><span class="section-number">4.2. </span>Initializing Variables<a class="headerlink" href="#initializing-variables" title="Permalink to this headline">¶</a></h1>
 <p>When you’re ready to give your variable a value for the very first time in your program, you will need to <b><i>initialize</i></b> it to said value. We can initialize the <code class="docutils literal notranslate"><span class="pre">score</span></code> and  <code class="docutils literal notranslate"><span class="pre">percentChange</span></code> variables to values using the assignment operator (cough the equal sign cough). Now, our program will look like this:</p>
-<div class="highlight-Java notranslate"><div class="highlight"><pre><span></span>  <span class="kt">int</span> <span class="n">score</span><span class="p">;</span>
-  <span class="kt">double</span> <span class="n">percentChange</span><span class="p">;</span>
-  <span class="n">score</span> <span class="o">=</span> <span class="mi">100</span><span class="p">;</span>
-  <span class="n">percentChange</span> <span class="o">=</span> <span class="mf">45.7</span><span class="p">;</span>
+<div class="highlight-Java notranslate"><div class="highlight"><pre><span></span>  <span class="mf">1.</span> <span class="kt">int</span> <span class="n">score</span><span class="p">;</span>
+  <span class="mf">2.</span> <span class="kt">double</span> <span class="n">percentChange</span><span class="p">;</span>
+  <span class="mf">3.</span> <span class="n">score</span> <span class="o">=</span> <span class="mi">100</span><span class="p">;</span>
+  <span class="mf">4.</span> <span class="n">percentChange</span> <span class="o">=</span> <span class="mf">45.7</span><span class="p">;</span>
 </pre></div>
 </div>
-<p><br> As you can see, we are declaring the variables <code class="docutils literal notranslate"><span class="pre">score</span></code> and  <code class="docutils literal notranslate"><span class="pre">percentChange</span></code> on line 1 and 2 of our program, and initializing them to the numbers 100 and 45.7 on lines 3 and 4 of the program. Once our compiler was done reading each line of code, our computer’s memory might look something like this:</p>
-<p>What if you want to change the value that is stored in your variable? No problema! We can change our minds by <b><i>assigning</i></b> our variables to new values (cough use the equal sign again cough). Our computer is happy to chuck the old value and replace it with a new one. Here’s what it might look like to <b><i>assign</i></b> our variables to new values<a class="footnote-reference brackets" href="#id2" id="id1">1</a>:</p>
-<div class="highlight-Java notranslate"><div class="highlight"><pre><span></span>  <span class="kt">int</span> <span class="n">score</span><span class="p">;</span>
-  <span class="kt">double</span> <span class="n">percentChange</span><span class="p">;</span>
-  <span class="n">score</span> <span class="o">=</span> <span class="mi">100</span><span class="p">;</span>
-  <span class="n">percentChange</span> <span class="o">=</span> <span class="mf">45.7</span><span class="p">;</span>
-  <span class="n">score</span> <span class="o">=</span> <span class="mi">200</span><span class="p">;</span>
-  <span class="n">percentChange</span> <span class="o">=</span> <span class="mf">11.2</span><span class="p">;</span>
+<p><br> As you can see, we are declaring the variables <code class="docutils literal notranslate"><span class="pre">score</span></code> and  <code class="docutils literal notranslate"><span class="pre">percentChange</span></code> on line 1 and 2 of our program, and initializing them to the numbers 100 and 45.7 on lines 3 and 4 of the program. Here’s how your computer might interpret this program:</p>
+<a class="reference internal image-reference" href="https://media.giphy.com/media/qd4KyIfroda2Tt1QeT/giphy.gif"><img alt="Notional Machine variables 3" src="https://media.giphy.com/media/qd4KyIfroda2Tt1QeT/giphy.gif" style="height: 200px;" /></a>
+<p><br>What if you want to change the value that is stored in your variable? No problema! We can change our minds by <b><i>assigning</i></b> our variables to new values (cough use the equal sign again cough). Our computer is happy to chuck the old value and replace it with a new one. Here’s what it might look like to <b><i>assign</i></b> our variables to new values<a class="footnote-reference brackets" href="#id2" id="id1">1</a>:</p>
+<div class="highlight-Java notranslate"><div class="highlight"><pre><span></span>  <span class="mf">1.</span> <span class="kt">int</span> <span class="n">score</span><span class="p">;</span>
+  <span class="mf">2.</span> <span class="kt">double</span> <span class="n">percentChange</span><span class="p">;</span>
+  <span class="mf">3.</span> <span class="n">score</span> <span class="o">=</span> <span class="mi">100</span><span class="p">;</span>
+  <span class="mf">4.</span> <span class="n">percentChange</span> <span class="o">=</span> <span class="mf">45.7</span><span class="p">;</span>
+  <span class="mf">5.</span> <span class="n">score</span> <span class="o">=</span> <span class="mi">200</span><span class="p">;</span>
+  <span class="mf">6.</span> <span class="n">percentChange</span> <span class="o">=</span> <span class="mf">11.2</span><span class="p">;</span>
 </pre></div>
 </div>
+<a class="reference internal image-reference" href="https://media.giphy.com/media/QrAP7jWVHbpGkeb58x/giphy.gif"><img alt="Notional Machine variables 4" src="https://media.giphy.com/media/QrAP7jWVHbpGkeb58x/giphy.gif" style="height: 200px;" /></a>
 <p><br>I REALLY need you to notice that the values stored in <code class="docutils literal notranslate"><span class="pre">score</span></code> and <code class="docutils literal notranslate"><span class="pre">percentChange</span></code> are the MOST RECENT values assigned to the variables. What makes something the most recent value? That’s decided by our compiler, and remember, our compiler reads from top to bottom. So, the most recent assignment is the assignment which occurs last. In this case, that is line 5 and 6 of the program above. All other values are instantly forgotten by our computer because they no longer occupy any space in our computer’s memory.</p>
+<p>Ok, ok, so we can store numbers in our variables. Big deal. Can we store anything a little more complex in variables?</p>
+<div class="warning admonition">
+<p class="admonition-title">TL;DR</p>
+<p>You will always follow this pattern when you need to initialize or assign your variable to a value:
+<br><code class="docutils literal notranslate"><span class="pre">name</span> <span class="pre">=</span> <span class="pre">value;</span></code>
+<br>If you want to declare and initialize in a single line, you will follow this pattern:
+<br><code class="docutils literal notranslate"><span class="pre">type</span> <span class="pre">name</span> <span class="pre">=</span> <span class="pre">value;</span></code></p>
+</div>
 <hr class="docutils" />
 <dl class="footnote brackets">
 <dt class="label" id="id2"><span class="brackets"><a class="fn-backref" href="#id1">1</a></span></dt>
@@ -268,7 +263,7 @@
     <div class='prev-next-bottom'>
         
     <a class='left-prev' id="prev-link" href="declare.html" title="previous page"><span class="section-number">4.1. </span>Declaring Variables</a>
-    <a class='right-next' id="next-link" href="booleans.html" title="next page"><span class="section-number">4.3. </span>Booleans</a>
+    <a class='right-next' id="next-link" href="expressions.html" title="next page"><span class="section-number">4.3. </span>Expressions</a>
 
     </div>
     <footer class="footer mt-5 mt-md-0">

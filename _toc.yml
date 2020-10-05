@@ -28,10 +28,6 @@
   - file: Unit2/Variables/declare
   - file: Unit2/Variables/initialize
   - file: Unit2/Variables/expressions
-  - file: Unit2/Variables/booleans
-  - file: Unit2/Variables/strings
-  - file: Unit2/Variables/arrays
-  - file: Unit2/Variables/arraylists
 
 - file: Unit2/SimpleClasses/intro
   sections:

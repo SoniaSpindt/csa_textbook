@@ -1,0 +1,320 @@
+
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta charset="utf-8" />
+    <title>4.3. Expressions &#8212; AP CSA</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css" integrity="sha384-KA6wR/X5RY4zFAHpv/CnoG2UW1uogYfdnP67Uv7eULvTveboZJg0qUpmJZb5VqzN" crossorigin="anonymous">
+    <link href="../../_static/css/index.css" rel="stylesheet">
+    <link rel="stylesheet" href="../../_static/sphinx-book-theme.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/jupyter-sphinx.css" />
+    <script id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+    <script src="../../_static/sphinx-book-theme.js"></script>
+    <script src="../../_static/jquery.js"></script>
+    <script src="../../_static/underscore.js"></script>
+    <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/language_data.js"></script>
+    <script src="../../_static/togglebutton.js"></script>
+    <script src="../../_static/clipboard.min.js"></script>
+    <script src="../../_static/copybutton.js"></script>
+    <script src="../../_static/mystnb.js"></script>
+    <script src="../../_static/custom.js"></script>
+    <script src="../../_static/sphinx-book-theme.js"></script>
+    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    <script src="https://unpkg.com/@jupyter-widgets/html-manager@^0.18.0/dist/embed-amd.js"></script>
+    <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
+    <script >
+        const thebe_selector = ".thebe,.cell"
+        const thebe_selector_input = "pre,.cell_input div.highlight"
+        const thebe_selector_output = ".output,.cell_output"
+    </script>
+    <script async="async" src="../../_static/sphinx-thebe.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="prev" title="4.2. Initializing Variables" href="initialize.html" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="docsearch:language" content="en">
+
+
+
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+<a class="navbar-brand text-wrap" href="../../index.html">
+  
+  <img src="../../_static/logo.png" class="logo" alt="logo">
+  
+  
+  <h1 class="site-logo" id="site-title">AP CSA</h1>
+  
+</a>
+</div>
+
+<form class="bd-search d-flex align-items-center" action="../../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form>
+
+<nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
+  <ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../intro.html">
+   Welcome to AP CSA
+  </a>
+ </li>
+</ul>
+<ul class="current nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../Unit1/overview.html">
+   1. Classroom Routines
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../Unit1/IntroToOOP/intro.html">
+   2. Object Oriented Programming
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../ProgramsInJava/intro.html">
+   3. Programs in Java
+  </a>
+ </li>
+ <li class="toctree-l1 current active">
+  <a class="reference internal" href="intro.html">
+   4. Intro to Variables
+  </a>
+  <ul class="current">
+   <li class="toctree-l2">
+    <a class="reference internal" href="declare.html">
+     4.1. Declaring Variables
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="initialize.html">
+     4.2. Initializing Variables
+    </a>
+   </li>
+   <li class="toctree-l2 current active">
+    <a class="current reference internal" href="#">
+     4.3. Expressions
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+</nav>
+
+ <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="row topbar fixed-top container-xl">
+    <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show">
+    </div>
+    <div class="col pl-2 topbar-main">
+        
+        <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+            data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+            aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+            title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+            <i class="fas fa-bars"></i>
+            <i class="fas fa-arrow-left"></i>
+            <i class="fas fa-arrow-up"></i>
+        </button>
+        
+        <div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        <a class="dropdown-buttons"
+            href="../../_sources/Unit2/Variables/expressions.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download notebook file" data-toggle="tooltip"
+                data-placement="left">.ipynb</button></a>
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="../../_sources/Unit2/Variables/expressions.md"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.md</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+    
+</div>
+        <!-- Source interaction buttons -->
+
+
+        <!-- Full screen (wrap in <a> to have style consistency -->
+        <a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+                data-placement="bottom" onclick="toggleFullScreen()" title="Fullscreen mode"><i
+                    class="fas fa-expand"></i></button></a>
+
+        <!-- Launch buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
+    <div class="dropdown-buttons">
+        
+        <a class="binder-button" href="https://mybinder.org/v2/gh/SoniaSpindt/csa_textbook/master?urlpath=tree/Unit2/Variables/expressions.md"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
+                data-placement="left"><img class="binder-button-logo"
+                    src="../../_static/images/logo_binder.svg"
+                    alt="Interact on binder">Binder</button></a>
+        
+        
+        
+        <button type="button" class="btn btn-secondary topbarbtn"
+            onclick="initThebeSBT()" title="Launch Thebe" data-toggle="tooltip" data-placement="left"><i
+                class="fas fa-play"></i><span style="margin-left: .4em;">Live Code</span></button>
+        
+    </div>
+</div>
+
+    </div>
+
+    <!-- Table of contents -->
+    <div class="d-none d-md-block col-md-2 bd-toc show">
+        <div class="tocsection onthispage pt-5 pb-3">
+            <i class="fas fa-list"></i> On this page
+        </div>
+        <nav id="bd-toc-nav">
+            
+        </nav>
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+        
+              <div>
+                
+  <div class="section" id="expressions">
+<h1><span class="section-number">4.3. </span>Expressions<a class="headerlink" href="#expressions" title="Permalink to this headline">¶</a></h1>
+<p>That was quite the cliffhanger! :p Let me put you out of your misery and say that the answer is “hell yah, we can!”</p>
+<p>We can combine numbers and variables with mathematical operators like <code class="docutils literal notranslate"><span class="pre">+</span></code> (addition), <code class="docutils literal notranslate"><span class="pre">-</span></code> (subtraction), <code class="docutils literal notranslate"><span class="pre">*</span></code> (multiplication) and <code class="docutils literal notranslate"><span class="pre">/</span></code> (division). Here is an example of a variable that is declared and initialized to something that is more complex:</p>
+<div class="highlight-Java notranslate"><div class="highlight"><pre><span></span>  <span class="mf">1.</span> <span class="kt">int</span> <span class="n">example</span> <span class="o">=</span> <span class="p">(</span><span class="mi">3</span> <span class="o">+</span> <span class="mi">12</span><span class="p">)</span> <span class="o">/</span> <span class="mi">5</span><span class="p">;</span>
+</pre></div>
+</div>
+<p>Here is what our computer’s memory will look like after our computer reads this line of code:</p>
+<a class="reference internal image-reference" href="https://media.giphy.com/media/zFK7sPYUpw4k36izxD/giphy.gif"><img alt="Notional Machine variables 5" src="https://media.giphy.com/media/zFK7sPYUpw4k36izxD/giphy.gif" style="height: 200px;" /></a>
+<p><br>WHAT?! It’s not storing all of <code class="docutils literal notranslate"><span class="pre">(3</span> <span class="pre">+</span> <span class="pre">12)</span> <span class="pre">/</span> <span class="pre">5</span></code>? Nope. Your computer will always try to simplify these things because it takes up less space in memory and our computer only has so much of that to use. Consequently, your computer will store the value that you would get if you actually did the math <a class="footnote-reference brackets" href="#id3" id="id1">1</a>.</p>
+<p>And as always, we have a name for this! The lines of code that can be evaluated by our computer and turned into a single value are called <b><i>expressions</i></b>. Your programs will be filled with expressions because they allow us to describe abstract concepts and relationships with code.</p>
+<p>Need another example? Let’s see how a Java program can be used in medicine to help doctors diagnose patients who might be having a heart attack. One thing that doctors do when they suspect their patient is having a heart attack is draw their blood every few hours. They do this because the heart will release a special protein called Troponin into the blood if it is experiencing a heart attack.</p>
+<p>Guess what! Doctors use computers to determine the concentration of these proteins in the blood (computer science really is everywhere these days)! You can imagine that if a patient has a lot of Troponin in his/her/their blood, then their heart is really struggling! Here is a simple program that can determine if someone is having a heart attack.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">double</span> <span class="n">enzymesHour0</span> <span class="o">=</span> <span class="mf">2.0</span><span class="p">;</span>
+<span class="n">double</span> <span class="n">enzymesHour6</span> <span class="o">=</span> <span class="mf">320.0</span><span class="p">;</span>
+<span class="n">double</span> <span class="n">rateOfChange</span> <span class="o">=</span> <span class="p">(</span><span class="n">enzymesHour6</span> <span class="o">-</span> <span class="n">enzymesHour0</span><span class="p">)</span> <span class="o">/</span> <span class="p">(</span><span class="mi">6</span> <span class="o">-</span> <span class="mi">0</span><span class="p">);</span>
+<span class="n">System</span><span class="o">.</span><span class="n">out</span><span class="o">.</span><span class="n">println</span><span class="p">(</span><span class="n">rateOfChange</span><span class="p">);</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Take a moment to read this program, line by line. See if you can predict what your compiler and consequently, your computer will do once this program is compiled and executed. Once you are done, press the run button to see if you are right!</p>
+<p>Again, here is how your computer might make sense of these 4 lines of code:</p>
+<a class="reference internal image-reference" href="https://media.giphy.com/media/RX82QdG4dT725vnwSt/giphy.gif"><img alt="Notional Machine variables 6" src="https://media.giphy.com/media/RX82QdG4dT725vnwSt/giphy.gif" style="height: 200px;" /></a>
+<p>I want to explicitly name that there are <b>TWO</b> expressions in this program. The first one is more obvious than the other. Can you figure out where they are?</p>
+<a class="reference internal image-reference" href="https://d.wattpad.com/story_parts/498804209/images/14f9e6d1b4ec938a73803243043.gif"><img alt="Thinking hard" src="https://d.wattpad.com/story_parts/498804209/images/14f9e6d1b4ec938a73803243043.gif" style="height: 200px;" /></a>
+<p><br>The first expression is found on line 3 of the program above, and it is <code class="docutils literal notranslate"><span class="pre">(enzymesHour6</span> <span class="pre">-</span> <span class="pre">enzymesHour0)</span> <span class="pre">/</span> <span class="pre">(6</span> <span class="pre">-</span> <span class="pre">0)</span></code>. Like we saw before, your computer will try to turn this into a single value. That means it will grab the values that are stored in <code class="docutils literal notranslate"><span class="pre">enzymesHour6</span></code> and <code class="docutils literal notranslate"><span class="pre">enzymesHour0</span></code> and plug them into the expression where ever it sees these variable names <a class="footnote-reference brackets" href="#id4" id="id2">2</a>. Then, it will complete the subtraction and division necessary to arrive at the number 53.0. The variable <code class="docutils literal notranslate"><span class="pre">rateOfChange</span></code> is then assigned to this number. I know that was hard to follow, so here’s a little diagram I drew to help you see how your computer substitutes values in for variables used within expressions:</p>
+<p>The second expression is found on line 4 of the program, and it is <code class="docutils literal notranslate"><span class="pre">rateOfChange</span></code>. I know it looks like a single value already but it’s actually one step away from becoming the simple value it has always wanted to become! Why? Well, your computer has to actually retrieve the value from memory before the <code class="docutils literal notranslate"><span class="pre">System.out.println</span></code> statement tells our computer to display the value in an output window.</p>
+<div class="warning admonition">
+<p class="admonition-title">TL;DR</p>
+<ol class="simple">
+<li><p>Expressions are the combination of one or more values that our computer can evaluate in order to produce a new value.</p></li>
+<li><p>Variables can be assigned to expressions, like complex math equations or other variables!</p></li>
+<li><p>Expressions are always evaluated by your computer and turned into their simplest form.</p></li>
+</ol>
+</div>
+<hr class="docutils" />
+<dl class="footnote brackets">
+<dt class="label" id="id3"><span class="brackets"><a class="fn-backref" href="#id1">1</a></span></dt>
+<dd><p>Computers also care about PEMDAS! They will follow the order of operations described in your Algebra classes, so use parentheses if you’re ever unsure about how execution will occur. Parentheses takes the highest priority!</p>
+</dd>
+<dt class="label" id="id4"><span class="brackets"><a class="fn-backref" href="#id2">2</a></span></dt>
+<dd><p>Algebra strikes again! This is very much like the algebraic concept of substitution.</p>
+</dd>
+</dl>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "SoniaSpindt/csa_textbook",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "java"
+        },
+        kernelOptions: {
+            kernelName: "java",
+            path: "./Unit2/Variables"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'java'</script>
+
+              </div>
+              
+        </div>
+    </div>
+    
+    
+    <div class='prev-next-bottom'>
+        
+    <a class='left-prev' id="prev-link" href="initialize.html" title="previous page"><span class="section-number">4.2. </span>Initializing Variables</a>
+
+    </div>
+    <footer class="footer mt-5 mt-md-0">
+    <div class="container">
+      <p>
+        
+          By Sonia Spindt<br/>
+        
+            &copy; Copyright 2020.<br/>
+      </p>
+    </div>
+  </footer>
+</main>
+
+
+      </div>
+    </div>
+
+    <script src="../../_static/js/index.js"></script>
+    
+  </body>
+</html>
