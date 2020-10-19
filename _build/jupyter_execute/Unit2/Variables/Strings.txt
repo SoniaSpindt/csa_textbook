@@ -1,15 +1,3 @@
----
-jupytext:
-  formats: md:myst
-  text_representation:
-    extension: .md
-    format_name: myst
-kernelspec:
-  display_name: Java
-  language: java
-  name: java
----
-
 Strings
 =======
 
@@ -45,7 +33,6 @@ Here is how our computer would think about these three lines of code:
 ```
 <br>This new and improved data type is called a <b><i>String</i></b>, and it represents all of the characters you can find on your computer's keyboard. Here's what it would look like to declare and initialize a variable of <i>type</i> <b>String</b>:
 
-```{code-cell} java
 /* Declare a variable of type String */
 String brand;
 
@@ -53,7 +40,6 @@ String brand;
 brand = "Ford";
 
 System.out.println(brand);
-```
 
 Notice how the keyword `String` begins with a capital letter? This tells us that the type is an object. More specifically, it's an object created from the String class. You should also notice that the variable `brand` is initialized to the value `"Ford"`, which is a collection of letters found on your keyboard, surrounded by quotation marks. The quotation marks MUST be placed around all String values. It doesn't matter what characters you put inside; as long as you surround those characters with quotation marks it will be seen by your compiler as <i>type</i> `String`.
 

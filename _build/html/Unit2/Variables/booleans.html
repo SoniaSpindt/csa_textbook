@@ -39,7 +39,7 @@
     <script async="async" src="../../_static/sphinx-thebe.js"></script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="4.5. Strings" href="strings.html" />
+    <link rel="next" title="4.5. Boolean Expressions" href="boolean_expressions.html" />
     <link rel="prev" title="4.3. Expressions" href="expressions.html" />
 
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -122,18 +122,23 @@
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="strings.html">
-     4.5. Strings
+    <a class="reference internal" href="boolean_expressions.html">
+     4.5. Boolean Expressions
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="arrays.html">
-     4.6. Arrays
+    <a class="reference internal" href="Strings.html">
+     4.6. Strings
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="arraylists.html">
-     4.7. ArrayLists
+    <a class="reference internal" href="references.html">
+     4.7. Reference Variables
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="String_expressions.html">
+     4.8. Strings in Expressions
     </a>
    </li>
   </ul>
@@ -218,6 +223,37 @@
                 
   <div class="section" id="booleans">
 <h1><span class="section-number">4.4. </span>Booleans<a class="headerlink" href="#booleans" title="Permalink to this headline">¶</a></h1>
+<p>So far, we have seen that we can store integers and decimals in our variables. Sweet! However, this is not all we can store in our variables. Today, we are going to discuss a new value <i>type</i> called <b><i>booleans</i></b>. Ignore the weird sounding name! These values are really useful when programming because they allow our computers to communicate the idea of something being <i>true</i> or <i>false</i>. In my opinion, the boolean is one of the most powerful data types that we can use in our programs because it allows our computers to make decisions!</p>
+<p>Like I said, <b><i>booleans</i></b> are the values <i>true</i> and <i>false</i>. That’s it! These two little words make up this super awesome data type. If we wanted to declare a variable that stores a boolean value, we might write something like this:</p>
+<div class="highlight-Java notranslate"><div class="highlight"><pre><span></span><span class="mf">1.</span> <span class="kt">boolean</span> <span class="n">answer</span><span class="p">;</span>
+<span class="mf">2.</span> <span class="kt">boolean</span> <span class="n">result</span><span class="p">;</span>
+</pre></div>
+</div>
+<p>Here is how our computer would think about these lines of code:</p>
+<a class="reference internal image-reference" href="https://media.giphy.com/media/O5xj7zzJQU2pmYfYWV/giphy.gif"><img alt="Notional machine boolean variable." src="https://media.giphy.com/media/O5xj7zzJQU2pmYfYWV/giphy.gif" style="height: 200px;" /></a>
+<p><br>Notice that the type of these variables is <code class="docutils literal notranslate"><span class="pre">boolean</span></code>. What if we wanted to initialize these variables to boolean values? Well, it might looks something like this:</p>
+<div class="highlight-Java notranslate"><div class="highlight"><pre><span></span><span class="cm">/* Declare boolean variables */</span>
+<span class="mf">1.</span> <span class="kt">boolean</span> <span class="n">answer</span><span class="p">;</span>
+<span class="mf">2.</span> <span class="kt">boolean</span> <span class="n">result</span><span class="p">;</span>
+<span class="cm">/* Initialize variables to boolean values */</span>
+<span class="mf">3.</span> <span class="n">answer</span> <span class="o">=</span> <span class="kc">true</span><span class="p">;</span>
+<span class="mf">4.</span> <span class="n">result</span> <span class="o">=</span> <span class="kc">false</span><span class="p">;</span>
+</pre></div>
+</div>
+<p>Our computer would think about this program like so:</p>
+<a class="reference internal image-reference" href="https://media.giphy.com/media/6vwrVSwUyI1RDm0s6j/giphy.gif"><img alt="Notional machine boolean variable." src="https://media.giphy.com/media/6vwrVSwUyI1RDm0s6j/giphy.gif" style="height: 200px;" /></a>
+<p><br>Need to declare and initialize a boolean variable all in a single line? That will look something like this:</p>
+<div class="highlight-Java notranslate"><div class="highlight"><pre><span></span><span class="mf">1.</span> <span class="kt">boolean</span> <span class="n">gameWon</span> <span class="o">=</span> <span class="kc">false</span><span class="p">;</span>
+</pre></div>
+</div>
+<a class="reference internal image-reference" href="https://media.giphy.com/media/kef9klv146Wv5oS0fl/giphy.gif"><img alt="Notional machine boolean variable." src="https://media.giphy.com/media/kef9klv146Wv5oS0fl/giphy.gif" style="height: 200px;" /></a>
+<div class="warning admonition">
+<p class="admonition-title">TL;DR</p>
+<ol class="simple">
+<li><p>A boolean value can be either true or false. That’s it!</p></li>
+<li><p>When declaring boolean variables, you must use the keyword <code class="docutils literal notranslate"><span class="pre">boolean</span></code> for its type.</p></li>
+</ol>
+</div>
 </div>
 
     <script type="text/x-thebe-config">
@@ -249,7 +285,7 @@
     <div class='prev-next-bottom'>
         
     <a class='left-prev' id="prev-link" href="expressions.html" title="previous page"><span class="section-number">4.3. </span>Expressions</a>
-    <a class='right-next' id="next-link" href="strings.html" title="next page"><span class="section-number">4.5. </span>Strings</a>
+    <a class='right-next' id="next-link" href="boolean_expressions.html" title="next page"><span class="section-number">4.5. </span>Boolean Expressions</a>
 
     </div>
     <footer class="footer mt-5 mt-md-0">

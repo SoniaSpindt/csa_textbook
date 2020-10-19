@@ -5,7 +5,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
   <head>
     <meta charset="utf-8" />
-    <title>4.6. Strings &#8212; AP CSA</title>
+    <title>4.8. Strings in Expressions &#8212; AP CSA</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css" integrity="sha384-KA6wR/X5RY4zFAHpv/CnoG2UW1uogYfdnP67Uv7eULvTveboZJg0qUpmJZb5VqzN" crossorigin="anonymous">
     <link href="../../_static/css/index.css" rel="stylesheet">
     <link rel="stylesheet" href="../../_static/sphinx-book-theme.css" type="text/css" />
@@ -39,8 +39,7 @@
     <script async="async" src="../../_static/sphinx-thebe.js"></script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="4.7. Reference Variables" href="references.html" />
-    <link rel="prev" title="4.5. Boolean Expressions" href="boolean_expressions.html" />
+    <link rel="prev" title="4.7. Reference Variables" href="references.html" />
 
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="docsearch:language" content="en">
@@ -126,8 +125,8 @@
      4.5. Boolean Expressions
     </a>
    </li>
-   <li class="toctree-l2 current active">
-    <a class="current reference internal" href="#">
+   <li class="toctree-l2">
+    <a class="reference internal" href="Strings.html">
      4.6. Strings
     </a>
    </li>
@@ -136,8 +135,8 @@
      4.7. Reference Variables
     </a>
    </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="String_expressions.html">
+   <li class="toctree-l2 current active">
+    <a class="current reference internal" href="#">
      4.8. Strings in Expressions
     </a>
    </li>
@@ -184,11 +183,11 @@
     <div class="dropdown-buttons">
         <!-- ipynb file if we had a myst markdown file -->
         <a class="dropdown-buttons"
-            href="../../_sources/Unit2/Variables/Strings.ipynb"><button type="button"
+            href="../../_sources/Unit2/Variables/String_expressions.ipynb"><button type="button"
                 class="btn btn-secondary topbarbtn" title="Download notebook file" data-toggle="tooltip"
                 data-placement="left">.ipynb</button></a>
         <!-- Download raw file -->
-        <a class="dropdown-buttons" href="../../_sources/Unit2/Variables/Strings.md"><button type="button"
+        <a class="dropdown-buttons" href="../../_sources/Unit2/Variables/String_expressions.md"><button type="button"
                 class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
                 data-placement="left">.md</button></a>
         <!-- Download PDF via print -->
@@ -212,7 +211,7 @@
         aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
     <div class="dropdown-buttons">
         
-        <a class="binder-button" href="https://mybinder.org/v2/gh/SoniaSpindt/csa_textbook/master?urlpath=tree/Unit2/Variables/Strings.md"><button type="button"
+        <a class="binder-button" href="https://mybinder.org/v2/gh/SoniaSpindt/csa_textbook/master?urlpath=tree/Unit2/Variables/String_expressions.md"><button type="button"
                 class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
                 data-placement="left"><img class="binder-button-logo"
                     src="../../_static/images/logo_binder.svg"
@@ -244,51 +243,24 @@
         
               <div>
                 
-  <div class="section" id="strings">
-<h1><span class="section-number">4.6. </span>Strings<a class="headerlink" href="#strings" title="Permalink to this headline">¶</a></h1>
-<p>Before we begin talking about a new data <i>type</i>, I want us to take a quick second to admire the data <i>types</i> that we have seen so far. They are:</p>
-<div class="admonition-data-types admonition">
-<p class="admonition-title">Data Types</p>
-<ol class="simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">int</span></code></p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">double</span></code></p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">boolean</span></code></p></li>
-</ol>
-</div>
-<p>It is important to notice that these three data <i>types</i> have a few things in common. First of all, the keywords that represent all of these data types begin with a lowercase letter. I know this doesn’t seem particularly special or important, but this fact can help you determine if a type is considered a “primitive data type”. I like to think of the primitive data types as the fundamental building-blocks of programming in Java; they are like a single brick in a giant building or a single atom found in an insanely complex molecule!</p>
-<p>Secondly, these data types are relatively small in size! This means they can be stored directly in variables. Consider the following Java program that declares and initializes three variables, one of each data type that we have seen so far:</p>
-<div class="highlight-Java notranslate"><div class="highlight"><pre><span></span><span class="mf">1.</span> <span class="kt">int</span> <span class="n">airPodsPurchased</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>
-<span class="mf">2.</span> <span class="kt">double</span> <span class="n">price</span> <span class="o">=</span> <span class="mf">124.99</span><span class="p">;</span>
-<span class="mf">3.</span> <span class="kt">boolean</span> <span class="n">wireless</span> <span class="o">=</span> <span class="kc">true</span><span class="p">;</span>
-</pre></div>
-</div>
-<p>Here is how our computer would think about these three lines of code:</p>
-<a class="reference internal image-reference" href="https://media.giphy.com/media/polVkhmJJmfO8OexvP/giphy.gif"><img alt="Notional machine primitive data types." src="https://media.giphy.com/media/polVkhmJJmfO8OexvP/giphy.gif" style="height: 300px;" /></a>
-<p><br>As you can see, these values sit directly in the boxes that represent each variable. They can do this because they are primitive data types. This is important to remember because the data type that we are learning about today does not do this. Why? Because it’s secretly an object. GASP!!!</p>
-<a class="reference internal image-reference" href="https://media3.giphy.com/media/3oEjHKvjqt5pssL99C/giphy.gif"><img alt="Shock and awe gif." src="https://media3.giphy.com/media/3oEjHKvjqt5pssL99C/giphy.gif" style="height: 200px;" /></a>
-<p><br>This new and improved data type is called a <b><i>String</i></b>, and it represents all of the characters you can find on your computer’s keyboard. Here’s what it would look like to declare and initialize a variable of <i>type</i> <b>String</b>:</p>
+  <div class="section" id="strings-in-expressions">
+<h1><span class="section-number">4.8. </span>Strings in Expressions<a class="headerlink" href="#strings-in-expressions" title="Permalink to this headline">¶</a></h1>
+<p>Years of math classes have probably convinced you that it’s possible to add numbers together. What about Strings? Can we add them together? Yup! However, it’s not as fancy a process as adding numbers together; when we add Strings together, we simply squish the strings together, so they become one giant String.</p>
+<p>Take a look at this program and try to predict what will be displayed as a result of executing this program (don’t press run until you’re ready to check your answer!):</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">/*</span> <span class="n">Declare</span> <span class="n">a</span> <span class="n">variable</span> <span class="n">of</span> <span class="nb">type</span> <span class="n">String</span> <span class="o">*/</span>
-<span class="n">String</span> <span class="n">brand</span><span class="p">;</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">String</span> <span class="n">firstName</span> <span class="o">=</span> <span class="s2">&quot;Greatest&quot;</span><span class="p">;</span>
+<span class="n">String</span> <span class="n">lastName</span> <span class="o">=</span> <span class="s2">&quot;Ever&quot;</span><span class="p">;</span>
+<span class="n">String</span> <span class="n">fullName</span> <span class="o">=</span> <span class="n">firstName</span> <span class="o">+</span> <span class="s2">&quot; &quot;</span> <span class="o">+</span> <span class="n">lastName</span><span class="p">;</span>
 
-<span class="o">/*</span> <span class="n">Initialize</span> <span class="n">the</span> <span class="n">variable</span> <span class="n">to</span> <span class="n">a</span> <span class="n">String</span> <span class="n">value</span> <span class="o">*/</span>
-<span class="n">brand</span> <span class="o">=</span> <span class="s2">&quot;Ford&quot;</span><span class="p">;</span>
-
-<span class="n">System</span><span class="o">.</span><span class="n">out</span><span class="o">.</span><span class="n">println</span><span class="p">(</span><span class="n">brand</span><span class="p">);</span>
+<span class="n">System</span><span class="o">.</span><span class="n">out</span><span class="o">.</span><span class="n">println</span><span class="p">(</span><span class="n">fullName</span><span class="p">);</span>
 </pre></div>
 </div>
 </div>
 </div>
-<p>Notice how the keyword <code class="docutils literal notranslate"><span class="pre">String</span></code> begins with a capital letter? This tells us that the type is an object. More specifically, it’s an object created from the String class. You should also notice that the variable <code class="docutils literal notranslate"><span class="pre">brand</span></code> is initialized to the value <code class="docutils literal notranslate"><span class="pre">&quot;Ford&quot;</span></code>, which is a collection of letters found on your keyboard, surrounded by quotation marks. The quotation marks MUST be placed around all String values. It doesn’t matter what characters you put inside; as long as you surround those characters with quotation marks it will be seen by your compiler as <i>type</i> <code class="docutils literal notranslate"><span class="pre">String</span></code>.</p>
-<p>This isn’t all you should know about Strings! Keep reading to see how our computer thinks about Strings stored in variables.</p>
-<div class="warning admonition">
-<p class="admonition-title">TL;DR</p>
-<ol class="simple">
-<li><p>The data type <code class="docutils literal notranslate"><span class="pre">String</span></code> is an object, not a primitive.</p></li>
-<li><p>All Strings need quotation marks!</p></li>
-</ol>
-</div>
+<p>Take a look at the third line of the program. This statement contains the expression, <code class="docutils literal notranslate"><span class="pre">firstName</span> <span class="pre">+</span> <span class="pre">&quot;</span> <span class="pre">&quot;</span> <span class="pre">+</span> <span class="pre">lastName</span></code>. Your computer will simplify this expression by first grabbing the Strings that are referenced by the variables <code class="docutils literal notranslate"><span class="pre">firstName</span></code> and <code class="docutils literal notranslate"><span class="pre">lastName</span></code>. Then, your computer will add all of the Strings together to make a new String object. It’s this String that is assigned to the variable <code class="docutils literal notranslate"><span class="pre">fullName</span></code>.</p>
+<p>To summarize, your computer might process this program like so:</p>
+<a class="reference internal image-reference" href="https://media.giphy.com/media/2dzz7dRZaiOPoJVOci/giphy.gif"><img alt="Notional machine String concatenation." src="https://media.giphy.com/media/2dzz7dRZaiOPoJVOci/giphy.gif" style="height: 300px;" /></a>
 </div>
 
     <script type="text/x-thebe-config">
@@ -319,8 +291,7 @@
     
     <div class='prev-next-bottom'>
         
-    <a class='left-prev' id="prev-link" href="boolean_expressions.html" title="previous page"><span class="section-number">4.5. </span>Boolean Expressions</a>
-    <a class='right-next' id="next-link" href="references.html" title="next page"><span class="section-number">4.7. </span>Reference Variables</a>
+    <a class='left-prev' id="prev-link" href="references.html" title="previous page"><span class="section-number">4.7. </span>Reference Variables</a>
 
     </div>
     <footer class="footer mt-5 mt-md-0">

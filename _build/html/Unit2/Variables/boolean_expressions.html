@@ -1,0 +1,358 @@
+
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta charset="utf-8" />
+    <title>4.5. Boolean Expressions &#8212; AP CSA</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css" integrity="sha384-KA6wR/X5RY4zFAHpv/CnoG2UW1uogYfdnP67Uv7eULvTveboZJg0qUpmJZb5VqzN" crossorigin="anonymous">
+    <link href="../../_static/css/index.css" rel="stylesheet">
+    <link rel="stylesheet" href="../../_static/sphinx-book-theme.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/jupyter-sphinx.css" />
+    <script id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+    <script src="../../_static/sphinx-book-theme.js"></script>
+    <script src="../../_static/jquery.js"></script>
+    <script src="../../_static/underscore.js"></script>
+    <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/language_data.js"></script>
+    <script src="../../_static/togglebutton.js"></script>
+    <script src="../../_static/clipboard.min.js"></script>
+    <script src="../../_static/copybutton.js"></script>
+    <script src="../../_static/mystnb.js"></script>
+    <script src="../../_static/custom.js"></script>
+    <script src="../../_static/sphinx-book-theme.js"></script>
+    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    <script src="https://unpkg.com/@jupyter-widgets/html-manager@^0.18.0/dist/embed-amd.js"></script>
+    <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
+    <script >
+        const thebe_selector = ".thebe,.cell"
+        const thebe_selector_input = "pre,.cell_input div.highlight"
+        const thebe_selector_output = ".output,.cell_output"
+    </script>
+    <script async="async" src="../../_static/sphinx-thebe.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="4.6. Strings" href="Strings.html" />
+    <link rel="prev" title="4.4. Booleans" href="booleans.html" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="docsearch:language" content="en">
+
+
+
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+<a class="navbar-brand text-wrap" href="../../index.html">
+  
+  <img src="../../_static/logo.png" class="logo" alt="logo">
+  
+  
+  <h1 class="site-logo" id="site-title">AP CSA</h1>
+  
+</a>
+</div>
+
+<form class="bd-search d-flex align-items-center" action="../../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form>
+
+<nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
+  <ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../intro.html">
+   Welcome to AP CSA
+  </a>
+ </li>
+</ul>
+<ul class="current nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../Unit1/overview.html">
+   1. Classroom Routines
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../Unit1/IntroToOOP/intro.html">
+   2. Object Oriented Programming
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../ProgramsInJava/intro.html">
+   3. Programs in Java
+  </a>
+ </li>
+ <li class="toctree-l1 current active">
+  <a class="reference internal" href="intro.html">
+   4. Intro to Variables
+  </a>
+  <ul class="current">
+   <li class="toctree-l2">
+    <a class="reference internal" href="declare.html">
+     4.1. Declaring Variables
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="initialize.html">
+     4.2. Initializing Variables
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="expressions.html">
+     4.3. Expressions
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="booleans.html">
+     4.4. Booleans
+    </a>
+   </li>
+   <li class="toctree-l2 current active">
+    <a class="current reference internal" href="#">
+     4.5. Boolean Expressions
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="Strings.html">
+     4.6. Strings
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="references.html">
+     4.7. Reference Variables
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="String_expressions.html">
+     4.8. Strings in Expressions
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+</nav>
+
+ <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="row topbar fixed-top container-xl">
+    <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show">
+    </div>
+    <div class="col pl-2 topbar-main">
+        
+        <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+            data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+            aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+            title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+            <i class="fas fa-bars"></i>
+            <i class="fas fa-arrow-left"></i>
+            <i class="fas fa-arrow-up"></i>
+        </button>
+        
+        <div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="../../_sources/Unit2/Variables/boolean_expressions.md"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.md</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+    
+</div>
+        <!-- Source interaction buttons -->
+
+
+        <!-- Full screen (wrap in <a> to have style consistency -->
+        <a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+                data-placement="bottom" onclick="toggleFullScreen()" title="Fullscreen mode"><i
+                    class="fas fa-expand"></i></button></a>
+
+        <!-- Launch buttons -->
+
+    </div>
+
+    <!-- Table of contents -->
+    <div class="d-none d-md-block col-md-2 bd-toc show">
+        <div class="tocsection onthispage pt-5 pb-3">
+            <i class="fas fa-list"></i> On this page
+        </div>
+        <nav id="bd-toc-nav">
+            
+        </nav>
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+        
+              <div>
+                
+  <div class="section" id="boolean-expressions">
+<h1><span class="section-number">4.5. </span>Boolean Expressions<a class="headerlink" href="#boolean-expressions" title="Permalink to this headline">¶</a></h1>
+<p>It may be hard to imagine how two little words can be so powerful. I promise this will become more obvious as we use booleans within more complex statements. For now, let’s focus on how booleans can be used within expressions. YUP. You heard me correctly; booleans can be used within expressions!</p>
+<p>Remember, an expression is the combination of one or more values that our computer can evaluate in order to produce a new value. The value that our computer produces will be the simplest version of that particular data type. When we are looking at a mathematical expression, like ((25 * 3) - (62 / 4)) + 587, our computer will perform the math and reduce this expression to a single numeric value, in this case 646.5. In the case of mathematical expressions, the integer and double data types are the simplest values a mathematical expression can become.</p>
+<p>What about expressions that contain booleans? It’s the same idea, except instead of simplifying the expression to an integer or a decimal, our computer simplifies these expressions to either <code class="docutils literal notranslate"><span class="pre">true</span></code> or <code class="docutils literal notranslate"><span class="pre">false</span></code>.</p>
+<p>However, it’s a little less obvious that an expression will turn into a boolean value because these expressions often contain values of <i>type</i> int and double. The trick is to see if the expression in question contains one or more of the following special operators:</p>
+<div class="admonition-comparison-operators admonition">
+<p class="admonition-title">Comparison Operators</p>
+<ol class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">&gt;</span></code> (Greater than)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">&lt;</span></code> (Less than)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">&gt;=</span></code> (Greater than or equal to)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">&lt;=</span></code> (Less than or equal to)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">==</span></code> (Equal to)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">!=</span></code> (Not equal to)</p></li>
+</ol>
+</div>
+<div class="admonition-logical-operators admonition">
+<p class="admonition-title">Logical Operators</p>
+<ol class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">&amp;&amp;</span></code> (AND)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">||</span></code> (OR)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">!</span></code> (NOT)</p></li>
+</ol>
+</div>
+<p>As soon as you see one of these operators used in an expression, then you know your computer will turn that expression into <code class="docutils literal notranslate"><span class="pre">true</span></code> or <code class="docutils literal notranslate"><span class="pre">false</span></code>. Here is an example of an expression that will produce the value <code class="docutils literal notranslate"><span class="pre">true</span></code>:</p>
+<div class="highlight-Java notranslate"><div class="highlight"><pre><span></span><span class="p">(</span><span class="mi">5</span> <span class="o">+</span> <span class="mi">2</span><span class="p">)</span> <span class="o">==</span> <span class="mi">7</span><span class="p">;</span>
+</pre></div>
+</div>
+<p>Notice the <i>equal to (<code class="docutils literal notranslate"><span class="pre">==</span></code>)</i> comparison operator? It’s important that you’re especially careful with this operator because it looks A LOT like our assignment operator (<code class="docutils literal notranslate"><span class="pre">=</span></code>). Don’t confuse the two! They do very different things — the comparison operator (<code class="docutils literal notranslate"><span class="pre">==</span></code>) compares two values and the assignment operator (<code class="docutils literal notranslate"><span class="pre">=</span></code>) assigns a value to a variable.</p>
+<p>If we were to translate this expression into English, we would be asking our computer, “Is the sum of 5 and 2 equal to 7?” The answer to this question is “yes” in English. The word for “yes” in Java is “true”!</p>
+<p>Here is an example of an expression that will produce the value <code class="docutils literal notranslate"><span class="pre">false</span></code>:</p>
+<div class="highlight-Java notranslate"><div class="highlight"><pre><span></span><span class="p">((</span><span class="mi">5</span> <span class="o">+</span> <span class="mi">2</span><span class="p">)</span> <span class="o">!=</span> <span class="mi">7</span><span class="p">)</span> <span class="o">&amp;&amp;</span> <span class="p">((</span><span class="mi">10</span> <span class="o">-</span> <span class="mi">5</span><span class="p">)</span> <span class="o">&gt;=</span> <span class="mi">1</span><span class="p">);</span>
+</pre></div>
+</div>
+<p>This expression is definitely a bit extra because it contains a bunch of smaller expressions inside of the overall expression. Let’s break it down piece by piece to really see what’s going on here.</p>
+<p>First of all, we know our computers follow the standard order of operations <a class="footnote-reference brackets" href="#id3" id="id1">1</a>. This means our computers will begin by evaluating the smaller expression found on the left side of the <code class="docutils literal notranslate"><span class="pre">&amp;&amp;</span></code> operator, ((5 + 2) != 7), because this is contained within multiple sets of parentheses. In fact, our computer will start on the inside of this expression because 5 + 2 is technically contained within TWO sets of parentheses and that takes higher priority than just one set of parentheses. Once our computer performs this evaluation, our expression will be simplified to this:</p>
+<div class="highlight-Java notranslate"><div class="highlight"><pre><span></span><span class="p">(</span><span class="mi">7</span> <span class="o">!=</span> <span class="mi">7</span><span class="p">)</span> <span class="o">&amp;&amp;</span> <span class="p">((</span><span class="mi">10</span> <span class="o">-</span> <span class="mi">5</span><span class="p">)</span> <span class="o">&gt;=</span> <span class="mi">1</span><span class="p">);</span>
+</pre></div>
+</div>
+<p>What subexpression do you think our computer will tackle next?</p>
+<a class="reference internal image-reference" href="https://thumbs.gfycat.com/DemandingFrighteningKinglet-max-1mb.gif"><img alt="Fresh Prince thinking" src="https://thumbs.gfycat.com/DemandingFrighteningKinglet-max-1mb.gif" style="height: 200px;" /></a>
+<p><br>If you chose (10 - 5) then you’re right <a class="footnote-reference brackets" href="#id4" id="id2">2</a>! Once our computer performs this evaluation, our expression will be simplified to look like this:</p>
+<div class="highlight-Java notranslate"><div class="highlight"><pre><span></span><span class="p">(</span><span class="mi">7</span> <span class="o">!=</span> <span class="mi">7</span><span class="p">)</span> <span class="o">&amp;&amp;</span> <span class="p">(</span><span class="mi">5</span> <span class="o">&gt;=</span> <span class="mi">1</span><span class="p">);</span>
+</pre></div>
+</div>
+<p>Now, our computer will evaluate the expressions found in just a single set of parentheses, working its way from left to right. The expression found to the left of the <code class="docutils literal notranslate"><span class="pre">&amp;&amp;</span></code> operator, 7 != 7, is how we ask our computer the question, “Is 7 not equal to 7?” in Java. Obviously the answer to this question is “no”, so (7 != 7) becomes <code class="docutils literal notranslate"><span class="pre">false</span></code>. The expression found to the right of the <code class="docutils literal notranslate"><span class="pre">&amp;&amp;</span></code> operator is how we ask our computer the question, “Is 5 greater than or equal to 1?” in Java. The answer to this question is “yes”, so the expression becomes <code class="docutils literal notranslate"><span class="pre">true</span></code>. Now our expression looks like this to our computer:</p>
+<div class="highlight-Java notranslate"><div class="highlight"><pre><span></span><span class="kc">false</span> <span class="o">&amp;&amp;</span> <span class="kc">true</span><span class="p">;</span>
+</pre></div>
+</div>
+<p>WHAT THE HELL DOES THAT MEAN??? This is where the <code class="docutils literal notranslate"><span class="pre">&amp;&amp;</span></code> logical operator kicks in. Logical operators (<code class="docutils literal notranslate"><span class="pre">&amp;&amp;</span></code>, <code class="docutils literal notranslate"><span class="pre">||</span></code>, <code class="docutils literal notranslate"><span class="pre">!</span></code>) allow us to combine multiple boolean expressions in a single line of code. The logical operators actually represent how electricity flows through your computer’s circuitry, but understanding how this works is outside the scope of this class; instead, you should just memorize what happens when our computer stumbles upon a logical operator:</p>
+<a class="reference internal image-reference" href="../../_images/truthTable.png"><img alt="Truth Table for AND/OR" src="../../_images/truthTable.png" style="height: 233px;" /></a>
+<a class="reference internal image-reference" href="../../_images/truethTable2.png"><img alt="Truth Table for NOT" src="../../_images/truethTable2.png" style="height: 100px;" /></a>
+<p><br>Please notice that the <code class="docutils literal notranslate"><span class="pre">&amp;&amp;</span></code> and <code class="docutils literal notranslate"><span class="pre">||</span></code> logical operators have TWO boolean inputs, one on either side, while the <code class="docutils literal notranslate"><span class="pre">!</span></code> operator only has ONE boolean input.</p>
+<p>If you take a look at the first table, you’ll be able to see how our giant boolean expression is simplified to <code class="docutils literal notranslate"><span class="pre">false</span></code> — if one of the boolean inputs for <code class="docutils literal notranslate"><span class="pre">&amp;&amp;</span></code> is false, then the entire expression becomes false! The AND operator is picky like that; the OR operator is a little more forgiving.</p>
+<p>The NOT operator is fun because it has the power to turn a boolean into its opposite value; true becomes false, and false becomes true. Make sure you memorize these tables! This information ALWAYS shows up on the exam. :/</p>
+<p>Check your understanding of how boolean expressions are evaluated by reasoning through the program found below. As yourself, “what will be displayed as a result of executing this program?” Take it line by line, and don’t forget about PEMDAS!</p>
+<div class="highlight-Java notranslate"><div class="highlight"><pre><span></span><span class="mf">1.</span> <span class="kt">boolean</span> <span class="n">gotIt</span><span class="p">;</span>
+<span class="mf">2.</span> <span class="n">gotIt</span> <span class="o">=</span> <span class="o">!</span><span class="p">(((</span><span class="mi">3</span> <span class="o">+</span> <span class="mi">3</span> <span class="o">==</span> <span class="mi">9</span><span class="p">)</span> <span class="o">||</span> <span class="p">(</span><span class="mi">150</span> <span class="o">/</span> <span class="mi">50</span> <span class="o">!=</span> <span class="mi">3</span><span class="p">))</span> <span class="o">&amp;&amp;</span> <span class="p">(</span><span class="mi">2</span> <span class="o">*</span> <span class="mi">2</span> <span class="o">&gt;=</span> <span class="mi">8</span><span class="p">));</span>
+<span class="mf">3.</span> <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">gotIt</span><span class="p">);</span>
+</pre></div>
+</div>
+<p>When you’re ready, scroll down to see if you’re right. :)</p>
+<a class="reference internal image-reference" href="https://media.giphy.com/media/uODr8dOfe9kU8cnrC8/giphy.gif"><img alt="Example complex boolean expression" src="https://media.giphy.com/media/uODr8dOfe9kU8cnrC8/giphy.gif" style="height: 200px;" /></a>
+<div class="warning admonition">
+<p class="admonition-title">TL;DR</p>
+<ol class="simple">
+<li><p>Boolean expressions turn into either <code class="docutils literal notranslate"><span class="pre">true</span></code> or <code class="docutils literal notranslate"><span class="pre">false</span></code>.</p></li>
+<li><p>Our comparison operators are: <code class="docutils literal notranslate"><span class="pre">&gt;</span></code>,<code class="docutils literal notranslate"><span class="pre">&lt;</span></code>, <code class="docutils literal notranslate"><span class="pre">&gt;=</span></code>, <code class="docutils literal notranslate"><span class="pre">&lt;=</span></code>, <code class="docutils literal notranslate"><span class="pre">!=</span></code>, <code class="docutils literal notranslate"><span class="pre">==</span></code></p></li>
+<li><p>Our logical operators are: <code class="docutils literal notranslate"><span class="pre">&amp;&amp;</span></code>, <code class="docutils literal notranslate"><span class="pre">||</span></code>, <code class="docutils literal notranslate"><span class="pre">!</span></code></p></li>
+</ol>
+</div>
+<hr class="docutils" />
+<dl class="footnote brackets">
+<dt class="label" id="id3"><span class="brackets"><a class="fn-backref" href="#id1">1</a></span></dt>
+<dd><p>PEMDAS alert!</p>
+</dd>
+<dt class="label" id="id4"><span class="brackets"><a class="fn-backref" href="#id2">2</a></span></dt>
+<dd><p>The reason why is because this expression is in encased within two sets of parentheses. The more parentheses you use, the more our computer will want to evaluate these expressions first.</p>
+</dd>
+</dl>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "SoniaSpindt/csa_textbook",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./Unit2/Variables"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+        </div>
+    </div>
+    
+    
+    <div class='prev-next-bottom'>
+        
+    <a class='left-prev' id="prev-link" href="booleans.html" title="previous page"><span class="section-number">4.4. </span>Booleans</a>
+    <a class='right-next' id="next-link" href="Strings.html" title="next page"><span class="section-number">4.6. </span>Strings</a>
+
+    </div>
+    <footer class="footer mt-5 mt-md-0">
+    <div class="container">
+      <p>
+        
+          By Sonia Spindt<br/>
+        
+            &copy; Copyright 2020.<br/>
+      </p>
+    </div>
+  </footer>
+</main>
+
+
+      </div>
+    </div>
+
+    <script src="../../_static/js/index.js"></script>
+    
+  </body>
+</html>
