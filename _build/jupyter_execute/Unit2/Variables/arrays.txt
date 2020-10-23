@@ -1,21 +1,8 @@
----
-jupytext:
-  formats: md:myst
-  text_representation:
-    extension: .md
-    format_name: myst
-kernelspec:
-  display_name: Java
-  language: java
-  name: java
----
-
 Arrays
 ======
 
 Take a look at this Java program:
 
-```{code-cell} java
 String sneaker1 = "Air Jordan 1";
 Stirng sneaker2 = "Buscemi 100 MM Diamond";
 String sneaker3 = "Air Jordan 12 (Flu Game)";
@@ -26,7 +13,7 @@ String sneaker7 = "Nike Yeezy 2 Red October";
 String sneaker8 = "Solid Gold OVO x Air Jordan";
 String sneaker9 = "Nike Moon Shoe";
 String sneaker10 = "Air Jordan Silver Shoes";
-```
+
 <br>Is this you right now?
 ```{image} https://media.giphy.com/media/aMO3tYzgitW8c8u2Si/giphy.gif
 :alt: Doing too much
@@ -34,9 +21,8 @@ String sneaker10 = "Air Jordan Silver Shoes";
 ```
 <br>I'm right there with you; there are SO many variables in the program above! Technically speaking, there's nothing wrong with this program, but it sure would be nice to embrace our lazy selves again. How could be streamline this a bit more? Well, we could do something like this!
 
-```{code-cell} java
 String[] sneakers = {"Air Jordan 1", "Buscemi 100 MM Diamond", "Air Jordan 12 (Flu Game)", "Air Jordan 11 'Jeter'", "Nike Air Mag Back to the Future", "Adidas NMD_R1 Friends and Family", "Nike Yeezy 2 Red October", "Solid Gold OVO x Air Jordan", "Nike Moon Shoe", "Air Jordan Silver Shoes"};
-```
+
 ```{image} https://i.imgur.com/3v3NsPD.gif
 :alt: SO nice
 :height: 200px
@@ -48,12 +34,11 @@ When we need to store multiple values in a single variable we use something call
 Initialization is also very similar to what we have seen so far. In this case, all you need to do is list every value that you would like to use in between a pair of curly braces (`{}`). The commas are important to include within your list because they separate the values from one other. Everything else about our data types is the same; booleans are never capitalized, Strings must be contained within quotes, and your numbers are either integers or decimal values.
 
 Here is what it would look like to declare variables of the four data types that we have seen so far, and initialize them to arrays:
-```{code-cell} java
+
 int[] ids = {034192, 229382, 718203};
 double[] temps = {98.6, 95.9, 104.2};
 boolean test_results = {false, false, true};
 String[] patients = {"Robert Blah", "Jane Smith", "John Doe"};
-```
 
 I know that it's hard to tell from the program above, but arrays are objects!
 

@@ -5,7 +5,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
   <head>
     <meta charset="utf-8" />
-    <title>4.6. Arrays &#8212; AP CSA</title>
+    <title>4.9. Arrays &#8212; AP CSA</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css" integrity="sha384-KA6wR/X5RY4zFAHpv/CnoG2UW1uogYfdnP67Uv7eULvTveboZJg0qUpmJZb5VqzN" crossorigin="anonymous">
     <link href="../../_static/css/index.css" rel="stylesheet">
     <link rel="stylesheet" href="../../_static/sphinx-book-theme.css" type="text/css" />
@@ -39,8 +39,7 @@
     <script async="async" src="../../_static/sphinx-thebe.js"></script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="4.7. ArrayLists" href="arraylists.html" />
-    <link rel="prev" title="4.5. Strings" href="strings.html" />
+    <link rel="prev" title="4.8. Strings in Expressions" href="string_expressions.html" />
 
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="docsearch:language" content="en">
@@ -122,18 +121,28 @@
     </a>
    </li>
    <li class="toctree-l2">
+    <a class="reference internal" href="boolean_expressions.html">
+     4.5. Boolean Expressions
+    </a>
+   </li>
+   <li class="toctree-l2">
     <a class="reference internal" href="strings.html">
-     4.5. Strings
+     4.6. Strings
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="references.html">
+     4.7. Reference Variables
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="string_expressions.html">
+     4.8. Strings in Expressions
     </a>
    </li>
    <li class="toctree-l2 current active">
     <a class="current reference internal" href="#">
-     4.6. Arrays
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="arraylists.html">
-     4.7. ArrayLists
+     4.9. Arrays
     </a>
    </li>
   </ul>
@@ -178,7 +187,10 @@
     
     <div class="dropdown-buttons">
         <!-- ipynb file if we had a myst markdown file -->
-        
+        <a class="dropdown-buttons"
+            href="../../_sources/Unit2/Variables/arrays.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download notebook file" data-toggle="tooltip"
+                data-placement="left">.ipynb</button></a>
         <!-- Download raw file -->
         <a class="dropdown-buttons" href="../../_sources/Unit2/Variables/arrays.md"><button type="button"
                 class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
@@ -199,6 +211,26 @@
 
         <!-- Launch buttons -->
 
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
+    <div class="dropdown-buttons">
+        
+        <a class="binder-button" href="https://mybinder.org/v2/gh/SoniaSpindt/csa_textbook/master?urlpath=tree/Unit2/Variables/arrays.md"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
+                data-placement="left"><img class="binder-button-logo"
+                    src="../../_static/images/logo_binder.svg"
+                    alt="Interact on binder">Binder</button></a>
+        
+        
+        
+        <button type="button" class="btn btn-secondary topbarbtn"
+            onclick="initThebeSBT()" title="Launch Thebe" data-toggle="tooltip" data-placement="left"><i
+                class="fas fa-play"></i><span style="margin-left: .4em;">Live Code</span></button>
+        
+    </div>
+</div>
+
     </div>
 
     <!-- Table of contents -->
@@ -217,7 +249,51 @@
               <div>
                 
   <div class="section" id="arrays">
-<h1><span class="section-number">4.6. </span>Arrays<a class="headerlink" href="#arrays" title="Permalink to this headline">¶</a></h1>
+<h1><span class="section-number">4.9. </span>Arrays<a class="headerlink" href="#arrays" title="Permalink to this headline">¶</a></h1>
+<p>Take a look at this Java program:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">String</span> <span class="n">sneaker1</span> <span class="o">=</span> <span class="s2">&quot;Air Jordan 1&quot;</span><span class="p">;</span>
+<span class="n">Stirng</span> <span class="n">sneaker2</span> <span class="o">=</span> <span class="s2">&quot;Buscemi 100 MM Diamond&quot;</span><span class="p">;</span>
+<span class="n">String</span> <span class="n">sneaker3</span> <span class="o">=</span> <span class="s2">&quot;Air Jordan 12 (Flu Game)&quot;</span><span class="p">;</span>
+<span class="n">String</span> <span class="n">sneaker4</span> <span class="o">=</span> <span class="s2">&quot;Air Jordan 11 &#39;Jeter&#39;&quot;</span><span class="p">;</span>
+<span class="n">String</span> <span class="n">sneaker5</span> <span class="o">=</span> <span class="s2">&quot;Nike Air Mag Back to the Future&quot;</span><span class="p">;</span>
+<span class="n">String</span> <span class="n">sneaker6</span> <span class="o">=</span> <span class="s2">&quot;Adidas NMD_R1 Friends and Family&quot;</span><span class="p">;</span>
+<span class="n">String</span> <span class="n">sneaker7</span> <span class="o">=</span> <span class="s2">&quot;Nike Yeezy 2 Red October&quot;</span><span class="p">;</span>
+<span class="n">String</span> <span class="n">sneaker8</span> <span class="o">=</span> <span class="s2">&quot;Solid Gold OVO x Air Jordan&quot;</span><span class="p">;</span>
+<span class="n">String</span> <span class="n">sneaker9</span> <span class="o">=</span> <span class="s2">&quot;Nike Moon Shoe&quot;</span><span class="p">;</span>
+<span class="n">String</span> <span class="n">sneaker10</span> <span class="o">=</span> <span class="s2">&quot;Air Jordan Silver Shoes&quot;</span><span class="p">;</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p><br>Is this you right now?</p>
+<a class="reference internal image-reference" href="https://media.giphy.com/media/aMO3tYzgitW8c8u2Si/giphy.gif"><img alt="Doing too much" src="https://media.giphy.com/media/aMO3tYzgitW8c8u2Si/giphy.gif" style="height: 200px;" /></a>
+<p><br>I’m right there with you; there are SO many variables in the program above! Technically speaking, there’s nothing wrong with this program, but it sure would be nice to embrace our lazy selves again. How could be streamline this a bit more? Well, we could do something like this!</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">String</span><span class="p">[]</span> <span class="n">sneakers</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;Air Jordan 1&quot;</span><span class="p">,</span> <span class="s2">&quot;Buscemi 100 MM Diamond&quot;</span><span class="p">,</span> <span class="s2">&quot;Air Jordan 12 (Flu Game)&quot;</span><span class="p">,</span> <span class="s2">&quot;Air Jordan 11 &#39;Jeter&#39;&quot;</span><span class="p">,</span> <span class="s2">&quot;Nike Air Mag Back to the Future&quot;</span><span class="p">,</span> <span class="s2">&quot;Adidas NMD_R1 Friends and Family&quot;</span><span class="p">,</span> <span class="s2">&quot;Nike Yeezy 2 Red October&quot;</span><span class="p">,</span> <span class="s2">&quot;Solid Gold OVO x Air Jordan&quot;</span><span class="p">,</span> <span class="s2">&quot;Nike Moon Shoe&quot;</span><span class="p">,</span> <span class="s2">&quot;Air Jordan Silver Shoes&quot;</span><span class="p">};</span>
+</pre></div>
+</div>
+</div>
+</div>
+<a class="reference internal image-reference" href="https://i.imgur.com/3v3NsPD.gif"><img alt="SO nice" src="https://i.imgur.com/3v3NsPD.gif" style="height: 200px;" /></a>
+<p><br>SO much better, right?</p>
+<p>When we need to store multiple values in a single variable we use something called an <b><i>array</i></b> in Java. How are they used? Pay attention to how I declared the sneakers variable: <code class="docutils literal notranslate"><span class="pre">String[]</span> <span class="pre">sneakers</span></code>. It looks a lot like how we declare reference variables for Strings! However, if you squint really hard, you’ll notice that there are now square brackets (<code class="docutils literal notranslate"><span class="pre">[]</span></code>) after the keyword <code class="docutils literal notranslate"><span class="pre">String</span></code>. The square brackets are how we let our computer know that we plan on initializing <code class="docutils literal notranslate"><span class="pre">sneakers</span></code> to a list of String objects, instead of single String.</p>
+<p>Initialization is also very similar to what we have seen so far. In this case, all you need to do is list every value that you would like to use in between a pair of curly braces (<code class="docutils literal notranslate"><span class="pre">{}</span></code>). The commas are important to include within your list because they separate the values from one other. Everything else about our data types is the same; booleans are never capitalized, Strings must be contained within quotes, and your numbers are either integers or decimal values.</p>
+<p>Here is what it would look like to declare variables of the four data types that we have seen so far, and initialize them to arrays:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="nb">int</span><span class="p">[]</span> <span class="n">ids</span> <span class="o">=</span> <span class="p">{</span><span class="mi">034192</span><span class="p">,</span> <span class="mi">229382</span><span class="p">,</span> <span class="mi">718203</span><span class="p">};</span>
+<span class="n">double</span><span class="p">[]</span> <span class="n">temps</span> <span class="o">=</span> <span class="p">{</span><span class="mf">98.6</span><span class="p">,</span> <span class="mf">95.9</span><span class="p">,</span> <span class="mf">104.2</span><span class="p">};</span>
+<span class="n">boolean</span> <span class="n">test_results</span> <span class="o">=</span> <span class="p">{</span><span class="n">false</span><span class="p">,</span> <span class="n">false</span><span class="p">,</span> <span class="n">true</span><span class="p">};</span>
+<span class="n">String</span><span class="p">[]</span> <span class="n">patients</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;Robert Blah&quot;</span><span class="p">,</span> <span class="s2">&quot;Jane Smith&quot;</span><span class="p">,</span> <span class="s2">&quot;John Doe&quot;</span><span class="p">};</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>I know that it’s hard to tell from the program above, but arrays are objects!</p>
+<p>, even though their name starts with a lowercase letter. I know this doesn’t appear to be consistent with what we discovered about object types in our section on Strings, but it is; there is an array object for each data type</p>
 </div>
 
     <script type="text/x-thebe-config">
@@ -229,16 +305,16 @@
         },
         codeMirrorConfig: {
             theme: "abcdef",
-            mode: "python"
+            mode: "java"
         },
         kernelOptions: {
-            kernelName: "python3",
+            kernelName: "java",
             path: "./Unit2/Variables"
         },
         predefinedOutput: true
     }
     </script>
-    <script>kernelName = 'python3'</script>
+    <script>kernelName = 'java'</script>
 
               </div>
               
@@ -248,8 +324,7 @@
     
     <div class='prev-next-bottom'>
         
-    <a class='left-prev' id="prev-link" href="strings.html" title="previous page"><span class="section-number">4.5. </span>Strings</a>
-    <a class='right-next' id="next-link" href="arraylists.html" title="next page"><span class="section-number">4.7. </span>ArrayLists</a>
+    <a class='left-prev' id="prev-link" href="string_expressions.html" title="previous page"><span class="section-number">4.8. </span>Strings in Expressions</a>
 
     </div>
     <footer class="footer mt-5 mt-md-0">

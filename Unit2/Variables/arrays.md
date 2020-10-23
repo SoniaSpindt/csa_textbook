@@ -17,7 +17,7 @@ Take a look at this Java program:
 
 ```{code-cell} java
 String sneaker1 = "Air Jordan 1";
-Stirng sneaker2 = "Buscemi 100 MM Diamond";
+String sneaker2 = "Buscemi 100 MM Diamond";
 String sneaker3 = "Air Jordan 12 (Flu Game)";
 String sneaker4 = "Air Jordan 11 'Jeter'";
 String sneaker5 = "Nike Air Mag Back to the Future";
@@ -49,12 +49,24 @@ Initialization is also very similar to what we have seen so far. In this case, a
 
 Here is what it would look like to declare variables of the four data types that we have seen so far, and initialize them to arrays:
 ```{code-cell} java
-int[] ids = {034192, 229382, 718203};
+int[] ids = {0341, 2293, 7182};
 double[] temps = {98.6, 95.9, 104.2};
-boolean test_results = {false, false, true};
+boolean[] test_results = {false, false, true};
 String[] patients = {"Robert Blah", "Jane Smith", "John Doe"};
+System.out.println(patients);
 ```
 
-I know that it's hard to tell from the program above, but arrays are objects!
+If you haven't already executed this program, please do so now. You will notice that when we use the System.out.println statement to display the `patients` array, we see something hella weird: `[Ljava.lang.String;@b2e0fdf`.
 
-, even though their name starts with a lowercase letter. I know this doesn't appear to be consistent with what we discovered about object types in our section on Strings, but it is; there is an array object for each data type
+This is how your computer tells you that there is an object stored in a chunk of memory called "b2e0fdf". In other words, this is what it looks like to display the value of a reference variable; it displays the actual reference!
+
+You know what this also means? This means that arrays are objects! I know it's hard to tell in this case because we can't check to see if the keyword in our declaration statement is capitalized because there is no `array` keyword to look at. Instead, you will just have to memorize the fact that arrays are objects and the variables that store them are reference variables.
+
+If it helps, this is how our computer will think about the program above:
+
+```{image}
+:alt: Notional machine arrays
+:height: 300px
+```
+
+One last thing! You cannot store values of different types in a single array. Remember, Java is hella picky when it comes to the types of values that are stored in variables. This trend continues into the use of arrays. If you try to mix values together, like int and double, in a single array, your compiler will yell at you.  

@@ -30,9 +30,10 @@
   - file: Unit2/Variables/expressions
   - file: Unit2/Variables/booleans
   - file: Unit2/Variables/boolean_expressions
-  - file: Unit2/Variables/Strings
+  - file: Unit2/Variables/strings
   - file: Unit2/Variables/references
-  - file: Unit2/Variables/String_expressions 
+  - file: Unit2/Variables/string_expressions
+  - file: Unit2/Variables/arrays
 
 - file: Unit2/SimpleClasses/intro
   sections:
