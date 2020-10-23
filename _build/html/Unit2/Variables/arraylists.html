@@ -260,7 +260,7 @@
                 
   <div class="section" id="arraylists">
 <h1><span class="section-number">4.11. </span>ArrayLists<a class="headerlink" href="#arraylists" title="Permalink to this headline">¶</a></h1>
-<p>The creators of Java heard everyone’s pleas and decided to add create a class that every programmer could use, and they called it ‘ArrayLists’. ArrayLists are JUST like arrays, except their size can change depending on how much information that you need to store within them.</p>
+<p>The creators of Java heard everyone’s pleas and decided to create a class that every programmer could use, and they called it <b><i>ArrayLists</i></b>. ArrayLists are very similar to arrays, except their size can change depending on how much information that you need to store within them.</p>
 <p>Here is an example of how you would declare and initialize a variable to an ArrayList instead of an array.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -273,12 +273,27 @@ ArrayList&lt;String&gt; brands = new ArrayList&lt;String&gt;();
 </div>
 </div>
 </div>
-<p>Because ArrayLists were added later on, they are not a part of the standard Java library. This means our computers will have no idea what you’re talking about until you import the ArrayList class. Importing classes gives your program access to them! When you want to use ArrayLists in your program, you write the statement <code class="docutils literal notranslate"><span class="pre">import</span> <span class="pre">java.util.ArrayList</span></code> at the very top. This line of code will always live at the top of your program! Once you do this, you can <b><i>instantiate</i></b> as many ArrayLists in your program as you would like.</p>
-<p>As you can see, we have a new data type keyword, <code class="docutils literal notranslate"><span class="pre">ArrayList</span></code>, and because it is capitalized, we know that it is an object! Just like arrays, you cannot mix data types in ArrayLists! That’s why we have to list the data type yet again, and you do this by putting the data type inside of brackets (<code class="docutils literal notranslate"><span class="pre">&lt;&gt;</span></code>). In the example above, Strings are found in the <code class="docutils literal notranslate"><span class="pre">brands</span></code> ArrayList.</p>
-<p>On the right side of the assignment operator, you will see the <code class="docutils literal notranslate"><span class="pre">new</span></code> keyword. Follow that with the type again, a set of parentheses, and a semi-colon, and you have just instantiated your first ArrayList! We will talk more about why this statement needs a set of parentheses at the end next week. Until then, memorize that they are needed at the end of the statement.</p>
+<p>Because ArrayLists were added later on, they are not a part of the standard Java library. This means our computers will have no idea what you’re talking about until you import the ArrayList class. Importing classes gives your program access to them! When you want to use ArrayLists, you write the statement <code class="docutils literal notranslate"><span class="pre">import</span> <span class="pre">java.util.ArrayList</span></code> at the very top of your program. This line of code will always live at the top of your program, and once you add it, you can <b><i>instantiate</i></b> as many ArrayLists in your program as you would like.</p>
+<p>As you can see, we have a new data type, <code class="docutils literal notranslate"><span class="pre">ArrayList</span></code>, and because it is capitalized, we know that it is an object! Just like arrays, you cannot mix data types in ArrayLists. Java is especially picky when it comes to naming the types of values to be stored within an ArrayLists; you actually have to name it twice, once on either side of the assignment operator. The type of values stored within an ArrayList will always go within brackets (<code class="docutils literal notranslate"><span class="pre">&lt;&gt;</span></code>). In the example above, String objects are found in the <code class="docutils literal notranslate"><span class="pre">brands</span></code> ArrayList. I know this because the keyword <code class="docutils literal notranslate"><span class="pre">String</span></code> is contained within the brackets. This also means, that <code class="docutils literal notranslate"><span class="pre">brands</span></code> will only ever contain String objects.</p>
+<p>Have you noticed that I didn’t provide an example of what it looks like to store values of type <code class="docutils literal notranslate"><span class="pre">int</span></code>, <code class="docutils literal notranslate"><span class="pre">double</span></code>, or <code class="docutils literal notranslate"><span class="pre">boolean</span></code> in an ArrayList? That’s because you can’t actually do this!!! ArrayLists can only store object types. :(</p>
+<a class="reference internal image-reference" href="https://www.picgifs.com/gifs/movies-and-series/lord-of-the-rings/lord-of-the-rings-5zXkpf.gif"><img alt="Nervous" src="https://www.picgifs.com/gifs/movies-and-series/lord-of-the-rings/lord-of-the-rings-5zXkpf.gif" style="height: 200px;" /></a>
+<p><br>Don’t be too sad because the creators of Java created a loophole for our numeric primitive types — they created a class called <code class="docutils literal notranslate"><span class="pre">Integer</span></code> and a class called <code class="docutils literal notranslate"><span class="pre">Double</span></code>, both of which can be used to instantiate Integer and Double objects. You don’t have to worry about importing these classes because they are a part of the Java standard library. Here is an example of what it would look like to declare and instantiate an ArrayList that contains Integer and Double objects:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>/* Import the ArrayList class */
+import java.util.ArrayList;
+
+/* Declare and initialize the variable brands to an ArrayList of Strings. */
+ArrayList&lt;Integer&gt; integers = new ArrayList&lt;Integer&gt;();
+ArrayList&lt;Double&gt; decimals = new ArrayList&lt;Double&gt;();
+</pre></div>
+</div>
+</div>
+</div>
+<p>As you can see, the pattern for declaring and initializing variables to ArrayLists is consistent: <code class="docutils literal notranslate"><span class="pre">ArrayList&lt;Object</span> <span class="pre">Type&gt;</span> <span class="pre">name</span> <span class="pre">=</span> <span class="pre">new</span> <span class="pre">ArrayList&lt;Object</span> <span class="pre">Type&gt;();</span></code>. For now, I want you to memorize that these statements need to end with a set of parentheses. We will talk about why this is needed within our next unit. We will also wait to talk about how to add values to an ArrayLists in our next unit. Until then, our ArrayLists will remain empty.</p>
 <div class="warning admonition">
 <p class="admonition-title">TL;DR</p>
-<p>ArrayLists are like arrays except they can change in size!</p>
+<p>ArrayLists are like arrays except they can change in size! However, you cannot store primitive types in ArrayLists. You should use Integer objects or Double objects instead!</p>
 </div>
 </div>
 

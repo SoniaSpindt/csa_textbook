@@ -52,7 +52,7 @@ Here is what it would look like to declare variables of the four data types that
 int[] ids = {0341, 2293, 7182};
 double[] temps = {98.6, 95.9, 104.2};
 boolean[] test_results = {false, false, true};
-String[] patients = {"Robert Blah", "Jane Smith", "John Doe"};
+String[] patients = {"Jane", "Jack", "Jill"};
 System.out.println(patients);
 ```
 
@@ -64,7 +64,7 @@ You know what this also means? This means that arrays are objects! I know it's h
 
 If it helps, this is how our computer will think about the program above:
 
-```{image} https://media.giphy.com/media/E6HeNCJLpSFF9AqhYK/giphy.gif
+```{image} https://media.giphy.com/media/F7vjIo8UygzD0QU1xP/giphy.gif
 :alt: Notional machine arrays
 :height: 300px
 ```
