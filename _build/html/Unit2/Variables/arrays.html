@@ -39,6 +39,7 @@
     <script async="async" src="../../_static/sphinx-thebe.js"></script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="4.10. Size of Arrays" href="array_size.html" />
     <link rel="prev" title="4.8. Strings in Expressions" href="string_expressions.html" />
 
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -143,6 +144,16 @@
    <li class="toctree-l2 current active">
     <a class="current reference internal" href="#">
      4.9. Arrays
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="array_size.html">
+     4.10. Size of Arrays
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="arraylists.html">
+     4.11. ArrayLists
     </a>
    </li>
   </ul>
@@ -254,7 +265,7 @@
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">String</span> <span class="n">sneaker1</span> <span class="o">=</span> <span class="s2">&quot;Air Jordan 1&quot;</span><span class="p">;</span>
-<span class="n">Stirng</span> <span class="n">sneaker2</span> <span class="o">=</span> <span class="s2">&quot;Buscemi 100 MM Diamond&quot;</span><span class="p">;</span>
+<span class="n">String</span> <span class="n">sneaker2</span> <span class="o">=</span> <span class="s2">&quot;Buscemi 100 MM Diamond&quot;</span><span class="p">;</span>
 <span class="n">String</span> <span class="n">sneaker3</span> <span class="o">=</span> <span class="s2">&quot;Air Jordan 12 (Flu Game)&quot;</span><span class="p">;</span>
 <span class="n">String</span> <span class="n">sneaker4</span> <span class="o">=</span> <span class="s2">&quot;Air Jordan 11 &#39;Jeter&#39;&quot;</span><span class="p">;</span>
 <span class="n">String</span> <span class="n">sneaker5</span> <span class="o">=</span> <span class="s2">&quot;Nike Air Mag Back to the Future&quot;</span><span class="p">;</span>
@@ -284,16 +295,28 @@
 <p>Here is what it would look like to declare variables of the four data types that we have seen so far, and initialize them to arrays:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="nb">int</span><span class="p">[]</span> <span class="n">ids</span> <span class="o">=</span> <span class="p">{</span><span class="mi">034192</span><span class="p">,</span> <span class="mi">229382</span><span class="p">,</span> <span class="mi">718203</span><span class="p">};</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="nb">int</span><span class="p">[]</span> <span class="n">ids</span> <span class="o">=</span> <span class="p">{</span><span class="mi">0341</span><span class="p">,</span> <span class="mi">2293</span><span class="p">,</span> <span class="mi">7182</span><span class="p">};</span>
 <span class="n">double</span><span class="p">[]</span> <span class="n">temps</span> <span class="o">=</span> <span class="p">{</span><span class="mf">98.6</span><span class="p">,</span> <span class="mf">95.9</span><span class="p">,</span> <span class="mf">104.2</span><span class="p">};</span>
-<span class="n">boolean</span> <span class="n">test_results</span> <span class="o">=</span> <span class="p">{</span><span class="n">false</span><span class="p">,</span> <span class="n">false</span><span class="p">,</span> <span class="n">true</span><span class="p">};</span>
+<span class="n">boolean</span><span class="p">[]</span> <span class="n">test_results</span> <span class="o">=</span> <span class="p">{</span><span class="n">false</span><span class="p">,</span> <span class="n">false</span><span class="p">,</span> <span class="n">true</span><span class="p">};</span>
 <span class="n">String</span><span class="p">[]</span> <span class="n">patients</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;Robert Blah&quot;</span><span class="p">,</span> <span class="s2">&quot;Jane Smith&quot;</span><span class="p">,</span> <span class="s2">&quot;John Doe&quot;</span><span class="p">};</span>
+<span class="n">System</span><span class="o">.</span><span class="n">out</span><span class="o">.</span><span class="n">println</span><span class="p">(</span><span class="n">patients</span><span class="p">);</span>
 </pre></div>
 </div>
 </div>
 </div>
-<p>I know that it’s hard to tell from the program above, but arrays are objects!</p>
-<p>, even though their name starts with a lowercase letter. I know this doesn’t appear to be consistent with what we discovered about object types in our section on Strings, but it is; there is an array object for each data type</p>
+<p>If you haven’t already executed this program, please do so now. You will notice that when we use the System.out.println statement to display the <code class="docutils literal notranslate"><span class="pre">patients</span></code> array, we see something hella weird: <code class="docutils literal notranslate"><span class="pre">[Ljava.lang.String;&#64;b2e0fdf</span></code>.</p>
+<p>This is how your computer tells you that there is an object stored in a chunk of memory called “b2e0fdf”. In other words, this is what it looks like to display the value of a reference variable; it displays the actual reference!</p>
+<p>You know what this also means? This means that arrays are objects! I know it’s hard to tell in this case because we can’t check to see if the keyword in our declaration statement is capitalized because there is no <code class="docutils literal notranslate"><span class="pre">array</span></code> keyword to look at. Instead, you will just have to memorize the fact that arrays are objects and the variables that store them are reference variables.</p>
+<p>If it helps, this is how our computer will think about the program above:</p>
+<a class="reference internal image-reference" href="https://media.giphy.com/media/E6HeNCJLpSFF9AqhYK/giphy.gif"><img alt="Notional machine arrays" src="https://media.giphy.com/media/E6HeNCJLpSFF9AqhYK/giphy.gif" style="height: 300px;" /></a>
+<p>One last thing! You cannot store values of different <b><i>types</i></b> in a single array. Remember, Java is hella picky when it comes to the types of values that are stored in variables. This trend continues into the use of arrays. If you try to mix values together, like int and double, in a single array, your compiler will yell at you.</p>
+<div class="warning admonition">
+<p class="admonition-title">TL;DR</p>
+<ol class="simple">
+<li><p>Arrays are how we store multiple values in a single variable!</p></li>
+<li><p>Don’t forget to use your square brackets and curly braces when declaring and initializing variables to arrays.</p></li>
+</ol>
+</div>
 </div>
 
     <script type="text/x-thebe-config">
@@ -325,6 +348,7 @@
     <div class='prev-next-bottom'>
         
     <a class='left-prev' id="prev-link" href="string_expressions.html" title="previous page"><span class="section-number">4.8. </span>Strings in Expressions</a>
+    <a class='right-next' id="next-link" href="array_size.html" title="next page"><span class="section-number">4.10. </span>Size of Arrays</a>
 
     </div>
     <footer class="footer mt-5 mt-md-0">

@@ -5,7 +5,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
   <head>
     <meta charset="utf-8" />
-    <title>4.2. Initializing Variables &#8212; AP CSA</title>
+    <title>4.10. Size of Arrays &#8212; AP CSA</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css" integrity="sha384-KA6wR/X5RY4zFAHpv/CnoG2UW1uogYfdnP67Uv7eULvTveboZJg0qUpmJZb5VqzN" crossorigin="anonymous">
     <link href="../../_static/css/index.css" rel="stylesheet">
     <link rel="stylesheet" href="../../_static/sphinx-book-theme.css" type="text/css" />
@@ -39,8 +39,8 @@
     <script async="async" src="../../_static/sphinx-thebe.js"></script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="4.3. Expressions" href="expressions.html" />
-    <link rel="prev" title="4.1. Declaring Variables" href="declare.html" />
+    <link rel="next" title="4.11. ArrayLists" href="arraylists.html" />
+    <link rel="prev" title="4.9. Arrays" href="arrays.html" />
 
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="docsearch:language" content="en">
@@ -106,8 +106,8 @@
      4.1. Declaring Variables
     </a>
    </li>
-   <li class="toctree-l2 current active">
-    <a class="current reference internal" href="#">
+   <li class="toctree-l2">
+    <a class="reference internal" href="initialize.html">
      4.2. Initializing Variables
     </a>
    </li>
@@ -146,8 +146,8 @@
      4.9. Arrays
     </a>
    </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="array_size.html">
+   <li class="toctree-l2 current active">
+    <a class="current reference internal" href="#">
      4.10. Size of Arrays
     </a>
    </li>
@@ -198,9 +198,12 @@
     
     <div class="dropdown-buttons">
         <!-- ipynb file if we had a myst markdown file -->
-        
+        <a class="dropdown-buttons"
+            href="../../_sources/Unit2/Variables/array_size.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download notebook file" data-toggle="tooltip"
+                data-placement="left">.ipynb</button></a>
         <!-- Download raw file -->
-        <a class="dropdown-buttons" href="../../_sources/Unit2/Variables/initialize.md"><button type="button"
+        <a class="dropdown-buttons" href="../../_sources/Unit2/Variables/array_size.md"><button type="button"
                 class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
                 data-placement="left">.md</button></a>
         <!-- Download PDF via print -->
@@ -219,6 +222,26 @@
 
         <!-- Launch buttons -->
 
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
+    <div class="dropdown-buttons">
+        
+        <a class="binder-button" href="https://mybinder.org/v2/gh/SoniaSpindt/csa_textbook/master?urlpath=tree/Unit2/Variables/array_size.md"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
+                data-placement="left"><img class="binder-button-logo"
+                    src="../../_static/images/logo_binder.svg"
+                    alt="Interact on binder">Binder</button></a>
+        
+        
+        
+        <button type="button" class="btn btn-secondary topbarbtn"
+            onclick="initThebeSBT()" title="Launch Thebe" data-toggle="tooltip" data-placement="left"><i
+                class="fas fa-play"></i><span style="margin-left: .4em;">Live Code</span></button>
+        
+    </div>
+</div>
+
     </div>
 
     <!-- Table of contents -->
@@ -236,42 +259,26 @@
         
               <div>
                 
-  <div class="section" id="initializing-variables">
-<h1><span class="section-number">4.2. </span>Initializing Variables<a class="headerlink" href="#initializing-variables" title="Permalink to this headline">¶</a></h1>
-<p>When you’re ready to give your variable a value for the very first time in your program, you will need to <b><i>initialize</i></b> it to said value. We can initialize the <code class="docutils literal notranslate"><span class="pre">score</span></code> and  <code class="docutils literal notranslate"><span class="pre">percentChange</span></code> variables to values using the assignment operator (<i>cough</i> the equal sign <i>cough</i>). Now, our program will look like this:</p>
-<div class="highlight-Java notranslate"><div class="highlight"><pre><span></span>  <span class="mf">1.</span> <span class="kt">int</span> <span class="n">score</span><span class="p">;</span>
-  <span class="mf">2.</span> <span class="kt">double</span> <span class="n">percentChange</span><span class="p">;</span>
-  <span class="mf">3.</span> <span class="n">score</span> <span class="o">=</span> <span class="mi">100</span><span class="p">;</span>
-  <span class="mf">4.</span> <span class="n">percentChange</span> <span class="o">=</span> <span class="mf">45.7</span><span class="p">;</span>
+  <div class="section" id="size-of-arrays">
+<h1><span class="section-number">4.10. </span>Size of Arrays<a class="headerlink" href="#size-of-arrays" title="Permalink to this headline">¶</a></h1>
+<p>You may have noticed on the previous page that all of our example arrays were declared and initialized on a single line of code. This is great for when you already know what values you are going to list in your array. However, there are going to be times where you’re not sure what values you want to list in your array! We need a way to create an array without listing any values in it yet. In other words, how do you declare a variable and initialize it to an empty array?</p>
+<p>Here is an example of how you would do just this:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="nb">int</span><span class="p">[]</span> <span class="n">emptyArray</span> <span class="o">=</span> <span class="n">new</span> <span class="nb">int</span><span class="p">[</span><span class="mi">20</span><span class="p">];</span>
 </pre></div>
 </div>
-<p><br> As you can see, we are declaring the variables <code class="docutils literal notranslate"><span class="pre">score</span></code> and  <code class="docutils literal notranslate"><span class="pre">percentChange</span></code> on line 1 and 2 of our program, and initializing them to the numbers 100 and 45.7 on lines 3 and 4 of the program. Here’s how your computer might interpret this program:</p>
-<a class="reference internal image-reference" href="https://media.giphy.com/media/qd4KyIfroda2Tt1QeT/giphy.gif"><img alt="Notional Machine variables 3" src="https://media.giphy.com/media/qd4KyIfroda2Tt1QeT/giphy.gif" style="height: 200px;" /></a>
-<p><br>What if you want to change the value that is stored in your variable? No problema! We can change the values that are stored in variables by <b><i>assigning</i></b> our variables to new values (<i>cough</i> use the equal sign again <i>cough</i>). Our computer is happy to chuck the old value and replace it with a new one. Here’s what it might look like to <b><i>assign</i></b> our variables to new values<a class="footnote-reference brackets" href="#id2" id="id1">1</a>:</p>
-<div class="highlight-Java notranslate"><div class="highlight"><pre><span></span>  <span class="mf">1.</span> <span class="kt">int</span> <span class="n">score</span><span class="p">;</span>
-  <span class="mf">2.</span> <span class="kt">double</span> <span class="n">percentChange</span><span class="p">;</span>
-  <span class="mf">3.</span> <span class="n">score</span> <span class="o">=</span> <span class="mi">100</span><span class="p">;</span>
-  <span class="mf">4.</span> <span class="n">percentChange</span> <span class="o">=</span> <span class="mf">45.7</span><span class="p">;</span>
-  <span class="mf">5.</span> <span class="n">score</span> <span class="o">=</span> <span class="mi">200</span><span class="p">;</span>
-  <span class="mf">6.</span> <span class="n">percentChange</span> <span class="o">=</span> <span class="mf">11.2</span><span class="p">;</span>
-</pre></div>
 </div>
-<a class="reference internal image-reference" href="https://media.giphy.com/media/QrAP7jWVHbpGkeb58x/giphy.gif"><img alt="Notional Machine variables 4" src="https://media.giphy.com/media/QrAP7jWVHbpGkeb58x/giphy.gif" style="height: 200px;" /></a>
-<p><br>I REALLY need you to notice that the values stored in <code class="docutils literal notranslate"><span class="pre">score</span></code> and <code class="docutils literal notranslate"><span class="pre">percentChange</span></code> are the MOST RECENT values assigned to the variables after program execution has completed. What makes something the most recent value? That depends on how many lines of code our computer has executed. If we were to ask this question right after our computer executed line 4 of the program above, then the most recent values of <code class="docutils literal notranslate"><span class="pre">score</span></code> and <code class="docutils literal notranslate"><span class="pre">percentChange</span></code> would be 100 and 45.7 respectively. Our computer has no awareness of what has happened or what will happen — it lives in the moment! So, the most recent assignment is the assignment which occurs closest to the most recent line of code that has been executed. If we assume the entire program has just been executed, then 200 and 11.2 would be the most recent values assigned to <code class="docutils literal notranslate"><span class="pre">score</span></code> and <code class="docutils literal notranslate"><span class="pre">percentChange</span></code>.</p>
-<p>Ok, ok, so we can store numbers in our variables. Big deal. Can we store anything a little more complex in variables?</p>
+</div>
+<p>The left side of this statement should look very familiar to you; this array is of type <code class="docutils literal notranslate"><span class="pre">int</span></code> and the variable’s name is <code class="docutils literal notranslate"><span class="pre">emptyArray</span></code>. This means that eventually, <code class="docutils literal notranslate"><span class="pre">emptyArray</span></code> will contain integers!</p>
+<p>What the hell is happening on the right side of the assignment operator though? Let’s first focus on the keyword <code class="docutils literal notranslate"><span class="pre">new</span></code>. This is a VERY SPECIAL keyword in Java because this is how we tell our computer that we would like to create a new object from a class. When engineers do this in their programs, they say that they are <b><i>instantiating</i></b> an object. You might also hear them say something like, “x is an <b><i>instance</i></b> of class y”; just fill in x with the reference variable’s name, and y with the name of the class that is being used to create the new object. In the above example, we are instantiating a new array object! We could also say, “<code class="docutils literal notranslate"><span class="pre">emptyArray</span></code> is an instance of class <code class="docutils literal notranslate"><span class="pre">Array</span></code>”.</p>
+<p>Next, you will notice that the type of the array is listed again (in this case, <code class="docutils literal notranslate"><span class="pre">int</span></code>) and it is immediately followed by square brackets with an integer inside (in this case, 20). The type shouldn’t be too shocking at this point – again, this is because Java wants you to be really explicit about the type of information you’re putting in your variables. The square brackets are a hallmark component of arrays; as soon as you see square brackets, you should know you’re dealing with an array. The integer inside of the square brackets refers to the size of the array that you need to create. In the above example, we are creating an array that has 20 slots, all of which can be used for storing integer values. However, once you choose your size, your array is stuck that way. So if you need 21 integers in  <code class="docutils literal notranslate"><span class="pre">emptyArray</span></code> instead of 20, you’re screwed.</p>
+<a class="reference internal image-reference" href="https://i.gifer.com/XcG0.gif"><img alt="Nervous" src="https://i.gifer.com/XcG0.gif" style="height: 300px;" /></a>
+<p><br>If that sounds possibly problematic, don’t worry! A ton of people complained about this feature until the creators of Java came up with a solution. Keep reading to hear about what they did.</p>
 <div class="warning admonition">
 <p class="admonition-title">TL;DR</p>
-<p>You will always follow this pattern when you need to initialize or assign your variable to a value:
-<br><code class="docutils literal notranslate"><span class="pre">name</span> <span class="pre">=</span> <span class="pre">value;</span></code>
-<br>If you want to declare and initialize in a single line, you will follow this pattern:
-<br><code class="docutils literal notranslate"><span class="pre">type</span> <span class="pre">name</span> <span class="pre">=</span> <span class="pre">value;</span></code></p>
+<p>You can declare and initialize a variable to an empty array! However, you have to be really thoughtful about the size that you choose because you can’t change it later.</p>
 </div>
-<hr class="docutils" />
-<dl class="footnote brackets">
-<dt class="label" id="id2"><span class="brackets"><a class="fn-backref" href="#id1">1</a></span></dt>
-<dd><p><i>Initialize</i> is only used to refer to the first value that is given to our variables. <i>Assign</i> is used to generally talk about giving variables values. It’s very much like the math saying of “every square is a rectangle but not every rectangle is a square.” Initialization is a form of assignment. Assignment is not a form of initialization.</p>
-</dd>
-</dl>
 </div>
 
     <script type="text/x-thebe-config">
@@ -283,16 +290,16 @@
         },
         codeMirrorConfig: {
             theme: "abcdef",
-            mode: "python"
+            mode: "java"
         },
         kernelOptions: {
-            kernelName: "python3",
+            kernelName: "java",
             path: "./Unit2/Variables"
         },
         predefinedOutput: true
     }
     </script>
-    <script>kernelName = 'python3'</script>
+    <script>kernelName = 'java'</script>
 
               </div>
               
@@ -302,8 +309,8 @@
     
     <div class='prev-next-bottom'>
         
-    <a class='left-prev' id="prev-link" href="declare.html" title="previous page"><span class="section-number">4.1. </span>Declaring Variables</a>
-    <a class='right-next' id="next-link" href="expressions.html" title="next page"><span class="section-number">4.3. </span>Expressions</a>
+    <a class='left-prev' id="prev-link" href="arrays.html" title="previous page"><span class="section-number">4.9. </span>Arrays</a>
+    <a class='right-next' id="next-link" href="arraylists.html" title="next page"><span class="section-number">4.11. </span>ArrayLists</a>
 
     </div>
     <footer class="footer mt-5 mt-md-0">

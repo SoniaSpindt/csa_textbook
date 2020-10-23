@@ -1,15 +1,3 @@
----
-jupytext:
-  formats: md:myst
-  text_representation:
-    extension: .md
-    format_name: myst
-kernelspec:
-  display_name: Java
-  language: java
-  name: java
----
-
 ArrayLists
 ==========
 
@@ -17,13 +5,11 @@ The creators of Java heard everyone's pleas and decided to add create a class th
 
 Here is an example of how you would declare and initialize a variable to an ArrayList instead of an array.
 
-```{code-cell} java
 /* Import the ArrayList class */
 import java.util.ArrayList;
 
 /* Declare and initialize the variable brands to an ArrayList of Strings. */
 ArrayList<String> brands = new ArrayList<String>();
-```
 
 Because ArrayLists were added later on, they are not a part of the standard Java library. This means our computers will have no idea what you're talking about until you import the ArrayList class. Importing classes gives your program access to them! When you want to use ArrayLists in your program, you write the statement `import java.util.ArrayList` at the very top. This line of code will always live at the top of your program! Once you do this, you can <b><i>instantiate</i></b> as many ArrayLists in your program as you would like.
 

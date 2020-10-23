@@ -34,6 +34,8 @@
   - file: Unit2/Variables/references
   - file: Unit2/Variables/string_expressions
   - file: Unit2/Variables/arrays
+  - file: Unit2/Variables/array_size
+  - file: Unit2/Variables/arraylists
 
 - file: Unit2/SimpleClasses/intro
   sections:

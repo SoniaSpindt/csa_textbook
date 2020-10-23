@@ -64,9 +64,15 @@ You know what this also means? This means that arrays are objects! I know it's h
 
 If it helps, this is how our computer will think about the program above:
 
-```{image}
+```{image} https://media.giphy.com/media/E6HeNCJLpSFF9AqhYK/giphy.gif
 :alt: Notional machine arrays
 :height: 300px
 ```
 
-One last thing! You cannot store values of different types in a single array. Remember, Java is hella picky when it comes to the types of values that are stored in variables. This trend continues into the use of arrays. If you try to mix values together, like int and double, in a single array, your compiler will yell at you.  
+One last thing! You cannot store values of different <b><i>types</i></b> in a single array. Remember, Java is hella picky when it comes to the types of values that are stored in variables. This trend continues into the use of arrays. If you try to mix values together, like int and double, in a single array, your compiler will yell at you.  
+
+```{admonition} TL;DR
+:class: warning
+1. Arrays are how we store multiple values in a single variable!
+2. Don't forget to use your square brackets and curly braces when declaring and initializing variables to arrays.
+```

@@ -13,7 +13,7 @@ kernelspec:
 ArrayLists
 ==========
 
-The creators of Java heard everyone's pleas and decided to add create a class that every programmer could use, and they called it 'ArrayLists'. ArrayLists are JUST like arrays, except their size can change depending on how much information that you need to store within them.
+The creators of Java heard everyone's pleas and decided to create a class that every programmer could use, and they called it <b><i>ArrayLists</i></b>. ArrayLists are JUST like arrays, except their size can change depending on how much information that you need to store within them.
 
 Here is an example of how you would declare and initialize a variable to an ArrayList instead of an array.
 

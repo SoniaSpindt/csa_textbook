@@ -1,0 +1,39 @@
+---
+jupytext:
+  formats: md:myst
+  text_representation:
+    extension: .md
+    format_name: myst
+kernelspec:
+  display_name: Java
+  language: java
+  name: java
+---
+
+Size of Arrays
+==============
+
+You may have noticed on the previous page that all of our example arrays were declared and initialized on a single line of code. This is great for when you already know what values you are going to list in your array. However, there are going to be times where you're not sure what values you want to list in your array! We need a way to create an array without listing any values in it yet. In other words, how do you declare a variable and initialize it to an empty array?
+
+Here is an example of how you would do just this:
+
+```{code-cell} java
+int[] emptyArray = new int[20];
+```
+
+The left side of this statement should look very familiar to you; this array is of type `int` and the variable's name is `emptyArray`. This means that eventually, `emptyArray` will contain integers!
+
+What the hell is happening on the right side of the assignment operator though? Let's first focus on the keyword `new`. This is a VERY SPECIAL keyword in Java because this is how we tell our computer that we would like to create a new object from a class. When engineers do this in their programs, they say that they are <b><i>instantiating</i></b> an object. You might also hear them say something like, "x is an <b><i>instance</i></b> of class y"; just fill in x with the reference variable's name, and y with the name of the class that is being used to create the new object. In the above example, we are instantiating a new array object! We could also say, "`emptyArray` is an instance of class `Array`".
+
+Next, you will notice that the type of the array is listed again (in this case, `int`) and it is immediately followed by square brackets with an integer inside (in this case, 20). The type shouldn't be too shocking at this point -- again, this is because Java wants you to be really explicit about the type of information you're putting in your variables. The square brackets are a hallmark component of arrays; as soon as you see square brackets, you should know you're dealing with an array. The integer inside of the square brackets refers to the size of the array that you need to create. In the above example, we are creating an array that has 20 slots, all of which can be used for storing integer values. However, once you choose your size, your array is stuck that way. So if you need 21 integers in  `emptyArray` instead of 20, you're screwed.
+
+```{image} https://i.gifer.com/XcG0.gif
+:alt: Nervous
+:height: 300px
+```
+<br>If that sounds possibly problematic, don't worry! A ton of people complained about this feature until the creators of Java came up with a solution. Keep reading to hear about what they did.
+
+```{admonition} TL;DR
+:class: warning
+You can declare and initialize a variable to an empty array! However, you have to be really thoughtful about the size that you choose because you can't change it later.
+```
