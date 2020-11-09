@@ -25,20 +25,21 @@
     <script src="../../_static/clipboard.min.js"></script>
     <script src="../../_static/copybutton.js"></script>
     <script src="../../_static/mystnb.js"></script>
+    <script src="../../_static/custom.js"></script>
     <script src="../../_static/sphinx-book-theme.js"></script>
     <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
     <script src="https://unpkg.com/@jupyter-widgets/html-manager@^0.18.0/dist/embed-amd.js"></script>
     <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
     <script >
-        const thebe_selector = ".thebe"
-        const thebe_selector_input = "pre"
-        const thebe_selector_output = ".output"
+        const thebe_selector = ".thebe,.cell"
+        const thebe_selector_input = "pre,.cell_input div.highlight"
+        const thebe_selector_output = ".output,.cell_output"
     </script>
     <script async="async" src="../../_static/sphinx-thebe.js"></script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="5.3. Constructors" href="constructors.html" />
+    <link rel="next" title="5.3. Constructors:" href="constructors.html" />
     <link rel="prev" title="5.1. Class Headers" href="header.html" />
 
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -117,7 +118,12 @@
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="constructors.html">
-     5.3. Constructors
+     5.3. Constructors:
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="instantiation.html">
+     5.4. Instantiation
     </a>
    </li>
   </ul>
@@ -162,7 +168,10 @@
     
     <div class="dropdown-buttons">
         <!-- ipynb file if we had a myst markdown file -->
-        
+        <a class="dropdown-buttons"
+            href="../../_sources/Unit2/SimpleClasses/instance_variables.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download notebook file" data-toggle="tooltip"
+                data-placement="left">.ipynb</button></a>
         <!-- Download raw file -->
         <a class="dropdown-buttons" href="../../_sources/Unit2/SimpleClasses/instance_variables.md"><button type="button"
                 class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
@@ -183,6 +192,26 @@
 
         <!-- Launch buttons -->
 
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
+    <div class="dropdown-buttons">
+        
+        <a class="binder-button" href="https://mybinder.org/v2/gh/SoniaSpindt/csa_textbook/master?urlpath=tree/Unit2/SimpleClasses/instance_variables.md"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
+                data-placement="left"><img class="binder-button-logo"
+                    src="../../_static/images/logo_binder.svg"
+                    alt="Interact on binder">Binder</button></a>
+        
+        
+        
+        <button type="button" class="btn btn-secondary topbarbtn"
+            onclick="initThebeSBT()" title="Launch Thebe" data-toggle="tooltip" data-placement="left"><i
+                class="fas fa-play"></i><span style="margin-left: .4em;">Live Code</span></button>
+        
+    </div>
+</div>
+
     </div>
 
     <!-- Table of contents -->
@@ -202,27 +231,70 @@
                 
   <div class="section" id="instance-variables">
 <h1><span class="section-number">5.2. </span>Instance Variables<a class="headerlink" href="#instance-variables" title="Permalink to this headline">¶</a></h1>
+<p>The first thing that you should include in the body of a class are attributes. Remember those? Attributes are the characteristics that we use to describe objects of a class. The way that we create attributes within our classes is by declaring variables at the very top of our class definition. These are special variables, so they have a special name; they are called <b><i>instance variables</i></b>. Are you putting two and two together right now? Where have you seen the word <b><i>instance</i></b> before? Hmmmmmm?</p>
+<a class="reference internal image-reference" href="https://media.tenor.com/images/cc2e5bc3bbe230320ed6eaa74f259c23/tenor.gif"><img alt="Hmmmmmm" src="https://media.tenor.com/images/cc2e5bc3bbe230320ed6eaa74f259c23/tenor.gif" style="height: 200px;" /></a>
+<p><br>We saw the word <b><i>instance</i></b> when we learned that the keyword <code class="docutils literal notranslate"><span class="pre">new</span></code> tells our computer to create a new object from a class. In other words, these variables will be used to store information that is specific to the objects that we create. And that makes sense because instance variables are attributes! We’re coming full circle now! :D</p>
+<p>What does it look like to actually add instance variables (<em>cough</em> attributes <em>cough</em>) to our class definitions? Here’s our <code class="docutils literal notranslate"><span class="pre">Dog</span></code> example again, except now it contains three instance variables:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">Dog</span><span class="p">{</span>
+  <span class="n">String</span> <span class="n">name</span><span class="p">;</span>
+  <span class="n">String</span> <span class="n">breed</span><span class="p">;</span>
+  <span class="nb">int</span> <span class="n">age</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>And here is our <code class="docutils literal notranslate"><span class="pre">Song</span></code> class:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">Song</span><span class="p">{</span>
+  <span class="n">String</span><span class="p">[]</span> <span class="n">artists</span><span class="p">;</span>
+  <span class="n">double</span> <span class="n">length</span><span class="p">;</span>
+  <span class="n">String</span> <span class="n">genre</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>You may be wondering why we are only declaring the instance variables, instead of declaring and initializing them to a value. Although it is totally possible to initialize our instance variables to values at the top of our class definition, we often save that for later in our Java programs. Think about why that may be.</p>
+<a class="reference internal image-reference" href="https://media.giphy.com/media/1jl173guBKkbvC03rQ/giphy.gif"><img alt="Hmmmmmm" src="https://media.giphy.com/media/1jl173guBKkbvC03rQ/giphy.gif" style="height: 200px;" /></a>
+<p><br>If we were to initialize an instance variable to a particular value at the top of our class, then every object instantiated from the class would have that value for said attribute. If we wait to initialize these variables until later, then we can be specific about what object gets what piece of information. Don’t worry if this isn’t terribly clear right now – we will continue to examine cases where we see both. Here is an example of a class where it might be more appropriate to initialize an instance variable right away:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">Game</span><span class="p">{</span>
+  <span class="nb">int</span> <span class="n">score</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+  <span class="n">boolean</span> <span class="n">hasWon</span> <span class="o">=</span> <span class="n">false</span><span class="p">;</span>
+  <span class="n">String</span> <span class="n">characterChosen</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>In this example, any Game object instantiated from the Game class will have a <code class="docutils literal notranslate"><span class="pre">score</span></code> attribute that is initially set to 0 and a <code class="docutils literal notranslate"><span class="pre">hasWon</span></code> attribute that is set to false. This intuitively makes more sense because most games start where no one has won and everyone’s score is 0. It does not make sense for every dog to be named “Fido” or for every Song to be 2 minutes and 45 seconds long.</p>
+<p>I would also like to say that it’s ok to disagree with the attributes that I have chosen to list within any of the examples above. This is where programming becomes really personal. For example, if you believe that dogs are more than a name, breed, and age, then your class will look different than mine and that’s totally ok. :)</p>
 </div>
 
     <script type="text/x-thebe-config">
     {
         requestKernel: true,
         binderOptions: {
-            repo: "binder-examples/jupyter-stacks-datascience",
+            repo: "SoniaSpindt/csa_textbook",
             ref: "master",
         },
         codeMirrorConfig: {
             theme: "abcdef",
-            mode: "python"
+            mode: "java"
         },
         kernelOptions: {
-            kernelName: "python3",
+            kernelName: "java",
             path: "./Unit2/SimpleClasses"
         },
         predefinedOutput: true
     }
     </script>
-    <script>kernelName = 'python3'</script>
+    <script>kernelName = 'java'</script>
 
               </div>
               
@@ -233,7 +305,7 @@
     <div class='prev-next-bottom'>
         
     <a class='left-prev' id="prev-link" href="header.html" title="previous page"><span class="section-number">5.1. </span>Class Headers</a>
-    <a class='right-next' id="next-link" href="constructors.html" title="next page"><span class="section-number">5.3. </span>Constructors</a>
+    <a class='right-next' id="next-link" href="constructors.html" title="next page"><span class="section-number">5.3. </span>Constructors:</a>
 
     </div>
     <footer class="footer mt-5 mt-md-0">

@@ -56,7 +56,7 @@ String[] patients = {"Jane", "Jack", "Jill"};
 System.out.println(patients);
 ```
 
-If you haven't already executed this program, please do so now. You will notice that when we use the System.out.println statement to display the `patients` array, we see something hella weird: `[Ljava.lang.String;@b2e0fdf`.
+If you haven't already executed this program, please do so now. You will notice that when we use the System.out.println statement to display the `patients` array, we see something hella weird: `[Ljava.lang.String;@b2e0fdf`[^*].
 
 This is how your computer tells you that there is an object stored in a chunk of memory called "b2e0fdf". In other words, this is what it looks like to display the value of a reference variable; it displays the actual reference!
 
@@ -69,10 +69,11 @@ If it helps, this is how our computer will think about the program above:
 :height: 300px
 ```
 
-One last thing! You cannot store values of different <b><i>types</i></b> in a single array. Remember, Java is hella picky when it comes to the types of values that are stored in variables. This trend continues into the use of arrays. If you try to mix values together, like int and double, in a single array, your compiler will yell at you.  
+<br>One last thing! You cannot store values of different <b><i>types</i></b> in a single array. Remember, Java is hella picky when it comes to the types of values that are stored in variables. This trend continues into the use of arrays. If you try to mix values together, like int and double, in a single array, your compiler will yell at you.  
 
 ```{admonition} TL;DR
 :class: warning
 1. Arrays are how we store multiple values in a single variable!
 2. Don't forget to use your square brackets and curly braces when declaring and initializing variables to arrays.
 ```
+[^*]: This might look different for you. The letters and numbers that come after the `@` symbol change every time the program is compiled and executed. 

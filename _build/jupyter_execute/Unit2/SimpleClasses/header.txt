@@ -1,0 +1,34 @@
+Class Headers
+=============
+
+To begin our discussion about classes, let's examine a piece of code that you have been secretly staring at for the last 6 weeks.
+
+```{image} main.png
+:alt: Main Class
+:height: 300px
+```
+
+<br>This is what it looks like to <b><i>declare</i></b> a very simple class in Java. Notice that this program begins with the keyword `class`. This keyword is how we tell our compiler that we are <b><i>declaring</i></b> a new class[^*].
+
+As soon as you write the keyword `class`, you should immediately press the spacebar and start typing the name that you would like your class to have. The name that you choose is up to you but it should always start with a capital letter and it should always match the name of the <b>.java</b> file that you are using to save your code. As you can see in the example above, the name of this class is `Main` and the code lives in a file named `Main.java`. See, they match!
+
+Hold on! You're not quite done. Right after you name your class, you must add a pair of curly braces (`{}`) to your program. Everything contained within these curly braces will be a part of the class definition and is considered the <b><i>body</i></b> of the class. The combination of the keyword `class`, a name of your choosing, and the curly braces is called a <b><i>class header</i></b>. Every class that you create needs a header, and every class header that you write must follow the pattern described above. Here is what it looks like to define a `Dog` class:
+
+class Dog{
+
+}
+
+And here is what it looks like to define a `Song` class:
+
+class Song{
+
+}
+
+These class definitions are currently empty. How do I know? Well, there's nothing in the body of these classes (AKA there is nothing in between the curly braces). Our Main class from above isn't empty though because the "public static void main(String[] args) {}" gobbledygook is found in its body. This means that "public static void main(String[] args) {}" is a part of the `Main` class definition. We won't talk about what this gobbledygook means just yet; instead, you should just know that it must always be included within a class called Main, and that every Java program that you write must have a Main class in it.
+
+Why? The Main class drives the execution of every other class created within your Java program[^**]. Without it, your computer would have no idea where to start reading code. You can think of this as the table of contents at the very beginning of a book you're reading, or the introductory paragraph in an essay that you have written for your English class; it allows our computer to orient itself in the program and get started!
+
+Now that you have your class header, it's important to start thinking about what goes inside of your class definition. What can you put inside of those curly braces?
+
+[^*]: Notice that whenever we're creating something new, we use the term declare? We declare new variables, and now we can declare new classes. :)
+[^**]: Ok, ok, I lied. There are other ways to drive the execution of your Java programs but we won't talk about them in this course. Keep taking CS classes and it will definitely come up though!

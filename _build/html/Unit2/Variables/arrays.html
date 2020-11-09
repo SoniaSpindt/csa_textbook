@@ -158,6 +158,11 @@
    </li>
   </ul>
  </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../SimpleClasses/intro.html">
+   5. Creating Classes
+  </a>
+ </li>
 </ul>
 
 </nav>
@@ -298,18 +303,18 @@
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="nb">int</span><span class="p">[]</span> <span class="n">ids</span> <span class="o">=</span> <span class="p">{</span><span class="mi">0341</span><span class="p">,</span> <span class="mi">2293</span><span class="p">,</span> <span class="mi">7182</span><span class="p">};</span>
 <span class="n">double</span><span class="p">[]</span> <span class="n">temps</span> <span class="o">=</span> <span class="p">{</span><span class="mf">98.6</span><span class="p">,</span> <span class="mf">95.9</span><span class="p">,</span> <span class="mf">104.2</span><span class="p">};</span>
 <span class="n">boolean</span><span class="p">[]</span> <span class="n">test_results</span> <span class="o">=</span> <span class="p">{</span><span class="n">false</span><span class="p">,</span> <span class="n">false</span><span class="p">,</span> <span class="n">true</span><span class="p">};</span>
-<span class="n">String</span><span class="p">[]</span> <span class="n">patients</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;Robert Blah&quot;</span><span class="p">,</span> <span class="s2">&quot;Jane Smith&quot;</span><span class="p">,</span> <span class="s2">&quot;John Doe&quot;</span><span class="p">};</span>
+<span class="n">String</span><span class="p">[]</span> <span class="n">patients</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;Jane&quot;</span><span class="p">,</span> <span class="s2">&quot;Jack&quot;</span><span class="p">,</span> <span class="s2">&quot;Jill&quot;</span><span class="p">};</span>
 <span class="n">System</span><span class="o">.</span><span class="n">out</span><span class="o">.</span><span class="n">println</span><span class="p">(</span><span class="n">patients</span><span class="p">);</span>
 </pre></div>
 </div>
 </div>
 </div>
-<p>If you haven’t already executed this program, please do so now. You will notice that when we use the System.out.println statement to display the <code class="docutils literal notranslate"><span class="pre">patients</span></code> array, we see something hella weird: <code class="docutils literal notranslate"><span class="pre">[Ljava.lang.String;&#64;b2e0fdf</span></code>.</p>
+<p>If you haven’t already executed this program, please do so now. You will notice that when we use the System.out.println statement to display the <code class="docutils literal notranslate"><span class="pre">patients</span></code> array, we see something hella weird: <code class="docutils literal notranslate"><span class="pre">[Ljava.lang.String;&#64;b2e0fdf</span></code><a class="footnote-reference brackets" href="#id2" id="id1">1</a>.</p>
 <p>This is how your computer tells you that there is an object stored in a chunk of memory called “b2e0fdf”. In other words, this is what it looks like to display the value of a reference variable; it displays the actual reference!</p>
 <p>You know what this also means? This means that arrays are objects! I know it’s hard to tell in this case because we can’t check to see if the keyword in our declaration statement is capitalized because there is no <code class="docutils literal notranslate"><span class="pre">array</span></code> keyword to look at. Instead, you will just have to memorize the fact that arrays are objects and the variables that store them are reference variables.</p>
 <p>If it helps, this is how our computer will think about the program above:</p>
-<a class="reference internal image-reference" href="https://media.giphy.com/media/E6HeNCJLpSFF9AqhYK/giphy.gif"><img alt="Notional machine arrays" src="https://media.giphy.com/media/E6HeNCJLpSFF9AqhYK/giphy.gif" style="height: 300px;" /></a>
-<p>One last thing! You cannot store values of different <b><i>types</i></b> in a single array. Remember, Java is hella picky when it comes to the types of values that are stored in variables. This trend continues into the use of arrays. If you try to mix values together, like int and double, in a single array, your compiler will yell at you.</p>
+<a class="reference internal image-reference" href="https://media.giphy.com/media/F7vjIo8UygzD0QU1xP/giphy.gif"><img alt="Notional machine arrays" src="https://media.giphy.com/media/F7vjIo8UygzD0QU1xP/giphy.gif" style="height: 300px;" /></a>
+<p><br>One last thing! You cannot store values of different <b><i>types</i></b> in a single array. Remember, Java is hella picky when it comes to the types of values that are stored in variables. This trend continues into the use of arrays. If you try to mix values together, like int and double, in a single array, your compiler will yell at you.</p>
 <div class="warning admonition">
 <p class="admonition-title">TL;DR</p>
 <ol class="simple">
@@ -317,6 +322,12 @@
 <li><p>Don’t forget to use your square brackets and curly braces when declaring and initializing variables to arrays.</p></li>
 </ol>
 </div>
+<hr class="docutils" />
+<dl class="footnote brackets">
+<dt class="label" id="id2"><span class="brackets"><a class="fn-backref" href="#id1">1</a></span></dt>
+<dd><p>This might look different for you. The letters and numbers that come after the <code class="docutils literal notranslate"><span class="pre">&#64;</span></code> symbol change every time the program is compiled and executed.</p>
+</dd>
+</dl>
 </div>
 
     <script type="text/x-thebe-config">
