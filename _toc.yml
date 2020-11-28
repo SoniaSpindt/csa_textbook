@@ -43,3 +43,7 @@
     - file: Unit2/SimpleClasses/instance_variables
     - file: Unit2/SimpleClasses/constructors
     - file: Unit2/SimpleClasses/instantiation
+
+- file: Unit3/Methods/intro
+  sections:
+    - file: Unit3/Methods/defining

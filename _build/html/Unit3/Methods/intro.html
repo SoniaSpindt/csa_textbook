@@ -1,0 +1,458 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>6. Methods &#8212; AP CSA</title>
+    
+  <link rel="stylesheet" href="../../_static/css/index.73d71520a4ca3b99cfee5594769eaaae.css">
+
+    
+  <link rel="stylesheet"
+    href="../../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+  <link rel="stylesheet"
+    href="../../_static/vendor/open-sans_all/1.44.1/index.css">
+  <link rel="stylesheet"
+    href="../../_static/vendor/lato_latin-ext/1.44.1/index.css">
+
+    
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/sphinx-book-theme.40e2e510f6b7d1648584402491bb10fe.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="../../_static/js/index.3da636dd464baa7582d2.js">
+
+    <script id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+    <script src="../../_static/jquery.js"></script>
+    <script src="../../_static/underscore.js"></script>
+    <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/language_data.js"></script>
+    <script src="../../_static/togglebutton.js"></script>
+    <script src="../../_static/clipboard.min.js"></script>
+    <script src="../../_static/copybutton.js"></script>
+    <script src="../../_static/custom.js"></script>
+    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../../_static/sphinx-book-theme.d31b09fe5c1d09cb49b26a786de4a05d.js"></script>
+    <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
+    <script >
+        const thebe_selector = ".thebe,.cell"
+        const thebe_selector_input = "pre,.cell_input div.highlight"
+        const thebe_selector_output = ".output,.cell_output"
+    </script>
+    <script async="async" src="../../_static/sphinx-thebe.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="6.1. Defining Methods" href="defining.html" />
+    <link rel="prev" title="5.4. Instantiation" href="../../Unit2/SimpleClasses/instantiation.html" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="en" />
+
+
+
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+<a class="navbar-brand text-wrap" href="../../index.html">
+  
+  <img src="../../_static/logo.png" class="logo" alt="logo">
+  
+  
+  <h1 class="site-logo" id="site-title">AP CSA</h1>
+  
+</a>
+</div><form class="bd-search d-flex align-items-center" action="../../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form>
+<nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
+    <ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../intro.html">
+   Welcome to AP CSA
+  </a>
+ </li>
+</ul>
+<ul class="current nav sidenav_l1">
+ <li class="toctree-l1 collapsible-parent">
+  <a class="reference internal" href="../../Unit1/overview.html">
+   1. Classroom Routines
+  </a>
+  <ul class="collapse-ul">
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../Unit1/Routines/exposure.html">
+     1.1. Mondays: Exposure
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../Unit1/Routines/collaboration.html">
+     1.2. Tuesdays: Collaboration
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../Unit1/Routines/revision.html">
+     1.3. Wednesdays: Revision
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../Unit1/Routines/mastery.html">
+     1.4. Thursdays and Fridays: Mastery
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../Unit1/Routines/links.html">
+     1.5. Important Resources
+    </a>
+   </li>
+  </ul>
+  <i class="fas fa-chevron-down">
+  </i>
+ </li>
+ <li class="toctree-l1 collapsible-parent">
+  <a class="reference internal" href="../../Unit1/IntroToOOP/intro.html">
+   2. Object Oriented Programming
+  </a>
+  <ul class="collapse-ul">
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../Unit1/IntroToOOP/objects.html">
+     2.1. Objects
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../Unit1/IntroToOOP/classes.html">
+     2.2. Classes
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../Unit1/IntroToOOP/attributes.html">
+     2.3. Attributes
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../Unit1/IntroToOOP/methods.html">
+     2.4. Methods
+    </a>
+   </li>
+  </ul>
+  <i class="fas fa-chevron-down">
+  </i>
+ </li>
+ <li class="toctree-l1 collapsible-parent">
+  <a class="reference internal" href="../../Unit2/ProgramsInJava/intro.html">
+   3. Programs in Java
+  </a>
+  <ul class="collapse-ul">
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../Unit2/ProgramsInJava/statements.html">
+     3.1. Statements
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../Unit2/ProgramsInJava/compile.html">
+     3.2. Compilation
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../Unit2/ProgramsInJava/execute.html">
+     3.3. Execution
+    </a>
+   </li>
+  </ul>
+  <i class="fas fa-chevron-down">
+  </i>
+ </li>
+ <li class="toctree-l1 collapsible-parent">
+  <a class="reference internal" href="../../Unit2/Variables/intro.html">
+   4. Intro to Variables
+  </a>
+  <ul class="collapse-ul">
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../Unit2/Variables/declare.html">
+     4.1. Declaring Variables
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../Unit2/Variables/initialize.html">
+     4.2. Initializing Variables
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../Unit2/Variables/expressions.html">
+     4.3. Expressions
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../Unit2/Variables/booleans.html">
+     4.4. Booleans
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../Unit2/Variables/boolean_expressions.html">
+     4.5. Boolean Expressions
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../Unit2/Variables/strings.html">
+     4.6. Strings
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../Unit2/Variables/references.html">
+     4.7. Reference Variables
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../Unit2/Variables/string_expressions.html">
+     4.8. Strings in Expressions
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../Unit2/Variables/arrays.html">
+     4.9. Arrays
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../Unit2/Variables/array_size.html">
+     4.10. Size of Arrays
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../Unit2/Variables/arraylists.html">
+     4.11. ArrayLists
+    </a>
+   </li>
+  </ul>
+  <i class="fas fa-chevron-down">
+  </i>
+ </li>
+ <li class="toctree-l1 collapsible-parent">
+  <a class="reference internal" href="../../Unit2/SimpleClasses/intro.html">
+   5. Creating Classes
+  </a>
+  <ul class="collapse-ul">
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../Unit2/SimpleClasses/header.html">
+     5.1. Class Headers
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../Unit2/SimpleClasses/instance_variables.html">
+     5.2. Instance Variables
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../Unit2/SimpleClasses/constructors.html">
+     5.3. Constructors
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../Unit2/SimpleClasses/instantiation.html">
+     5.4. Instantiation
+    </a>
+   </li>
+  </ul>
+  <i class="fas fa-chevron-down">
+  </i>
+ </li>
+ <li class="toctree-l1 current active collapsible-parent">
+  <a class="current reference internal" href="#">
+   6. Methods
+  </a>
+  <ul class="collapse-ul">
+   <li class="toctree-l2">
+    <a class="reference internal" href="defining.html">
+     6.1. Defining Methods
+    </a>
+   </li>
+  </ul>
+  <i class="fas fa-chevron-down">
+  </i>
+ </li>
+</ul>
+
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="row topbar fixed-top container-xl">
+    <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show">
+    </div>
+    <div class="col pl-2 topbar-main">
+        
+        <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+            data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+            aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+            title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+            <i class="fas fa-bars"></i>
+            <i class="fas fa-arrow-left"></i>
+            <i class="fas fa-arrow-up"></i>
+        </button>
+        
+        
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="../../_sources/Unit3/Methods/intro.md"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.md</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+        <!-- Source interaction buttons -->
+
+
+        <!-- Full screen (wrap in <a> to have style consistency -->
+        <a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+                data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+                title="Fullscreen mode"><i
+                    class="fas fa-expand"></i></button></a>
+
+        <!-- Launch buttons -->
+
+    </div>
+
+    <!-- Table of contents -->
+    <div class="d-none d-md-block col-md-2 bd-toc show">
+        
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+        
+              <div>
+                
+  <div class="section" id="methods">
+<h1><span class="section-number">6. </span>Methods<a class="headerlink" href="#methods" title="Permalink to this headline">¶</a></h1>
+<p>You may have noticed that computer scientists are very specific about the language they use to describe different components of a Java program. See, there’s a reason why I ask you to complete those really long vocabulary activities every week! :P. I know that it probably felt a bit excessive at first and maybe a tad unnecessary at times, but I promise, it will payoff to learn these words.</p>
+<p>Why? First of all, the AP CSA exam is a vocabulary test in disguise. Plain. And. Simple. You will be asked to complete tasks that can be perceived as quite difficult only because they are filled with exotic-sounding terminology. If you work to memorize and make sense of the words we encounter in this class, you will instantly know what these questions are asking for, and thus, you will be more likely to provide a sensible response. Uh, do I smell a 5 in your future? I think I do. :)</p>
+<p>More importantly, having a shared language will allow you to communicate your thoughts and ideas in a way that helps others expand upon them. Without this mastery of vocabulary, you will be left trying to describe your plans in a way that often leave your peers and instructors really confused.</p>
+<a class="reference internal image-reference" href="https://www.missmalini.com/wp-content/uploads/2015/10/tumblr_nudj0f6f0e1r91uyxo1_500.gif"><img alt="What do you mean?" src="https://www.missmalini.com/wp-content/uploads/2015/10/tumblr_nudj0f6f0e1r91uyxo1_500.gif" style="height: 200px;" /></a>
+<p><br>So, make our lives easier by continuing to internalize the following five terms:</p>
+<div class="note admonition">
+<p class="admonition-title">Really Important Vocab</p>
+<ol class="simple">
+<li><p>Class</p></li>
+<li><p>Object</p></li>
+<li><p>Attribute</p></li>
+<li><p>State</p></li>
+<li><p>Method</p></li>
+</ol>
+</div>
+<p>We saw these terms at the very beginning of the year, and will continue to learn about them because they are at the heart of being able to create beautiful and sophisticated object oriented programs. So let’s recap a little:</p>
+<p>A <b><i>class</i></b> is the blueprint that your computer follows in order to make an <b><i>object</i></b>. Objects, in turn, have a <b><i>state</i></b>, which is described by class <b><i>attributes</i></b> (<em>cough instance variables cough</em>).</p>
+<p>In many cases, the state of your object is not static; it changes over the lifetime of your Java program! We can act on or make changes to an object’s state using <b><i>methods</i></b>.</p>
+<p>Methods are blocks of code that can be used over and over again to perform a specific action. Think of methods as the recipes of computer science! In the recipe, there are steps that need to be followed, and each step is specific about what needs to happen. Consider the following recipe for “the best chocolate chip cookies ever”:</p>
+<a class="reference internal image-reference" href="../../_images/cookieRecipe.png"><img alt="What do you mean?" src="../../_images/cookieRecipe.png" style="height: 300px;" /></a>
+<p><br>Notice that this recipe, like most recipes, lists the ingredients that are needed at the top, and the steps that need to be performed at the bottom. And if you actually want to make the “best cookies ever”, you can’t just haphazardly perform the steps that you feel like completing, with whatever ingredients that you feel like using that day; you have to follow the recipe EXACTLY as it is written.</p>
+<p>Computers treat methods the same way! They want to make the “best cookies ever”, so they carefully grab the ingredients listed at the top and execute each step in the recipe EXACTLY as it is written, from top to bottom (wouldn’t make sense to follow a recipe from bottom to top now, would it?)</p>
+<p>Obviously, our computers won’t be used to bake cookies this term (boo!). Instead, we will ask our computer to use recipes (<em>cough methods cough</em>) to interact with the objects found in our Java programs. Over the next few weeks, we will learn how to add increasingly more complex methods to our Java programs because this will allow us to manipulate the state of our objects in incredibly useful ways<a class="footnote-reference brackets" href="#id2" id="id1">1</a>.</p>
+<p>So how do you actually add a method to your Java program? Keep reading to find out!</p>
+<div class="warning admonition">
+<p class="admonition-title">TL;DR</p>
+<p>Vocab is reaaaaaally important in this class, so learn your words!</p>
+</div>
+<div class="toctree-wrapper compound">
+</div>
+<hr class="docutils" />
+<dl class="footnote brackets">
+<dt class="label" id="id2"><span class="brackets"><a class="fn-backref" href="#id1">1</a></span></dt>
+<dd><p>If you’re feeling a little freaked out right now, you’re not alone! Methods represent a generally scary time in a programming class because their implementation is heavily dependent on your willingness to experiment. That’s a really uncomfortable sensation for many students to embrace because most of your education has taught you that there’s no time to just see what happens — there is a right answer and a wrong answer, and you better be right because your grade depends on it. This way of thinking is not useful when trying to add a method to your Java program simply because there are so many solutions to the same problem when programming! It’s like asking someone to come up with a recipe for the “best cookies ever” – do you reaaaally think there’s only one recipe that accomplishes this goal? Mmmm probably not. So keep this in mind moving forward; method design and implementation is flexible.</p>
+</dd>
+</dl>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "SoniaSpindt/csa_textbook",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./Unit3/Methods"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+        </div>
+    </div>
+    
+    
+    <div class='prev-next-bottom'>
+        
+    <a class='left-prev' id="prev-link" href="../../Unit2/SimpleClasses/instantiation.html" title="previous page"><span class="section-number">5.4. </span>Instantiation</a>
+    <a class='right-next' id="next-link" href="defining.html" title="next page"><span class="section-number">6.1. </span>Defining Methods</a>
+
+    </div>
+    <footer class="footer mt-5 mt-md-0">
+    <div class="container">
+      <p>
+        
+          By Sonia Spindt<br/>
+        
+            &copy; Copyright 2020.<br/>
+      </p>
+    </div>
+  </footer>
+</main>
+
+
+      </div>
+    </div>
+
+    
+  <script src="../../_static/js/index.3da636dd464baa7582d2.js"></script>
+
+
+    
+  </body>
+</html>
