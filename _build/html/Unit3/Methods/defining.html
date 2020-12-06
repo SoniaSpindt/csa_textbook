@@ -56,6 +56,7 @@
     <script async="async" src="../../_static/sphinx-thebe.js"></script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="6.2. Calling Methods" href="calling.html" />
     <link rel="prev" title="6. Methods" href="intro.html" />
 
     <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -183,7 +184,7 @@
  </li>
  <li class="toctree-l1 collapsible-parent">
   <a class="reference internal" href="../../Unit2/Variables/intro.html">
-   4. Intro to Variables
+   4. Variables
   </a>
   <ul class="collapse-ul">
    <li class="toctree-l2">
@@ -284,6 +285,16 @@
      6.1. Defining Methods
     </a>
    </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="calling.html">
+     6.2. Calling Methods
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="dot_notation.html">
+     6.3. Dot Notation
+    </a>
+   </li>
   </ul>
   <i class="fas fa-chevron-down">
   </i>
@@ -363,8 +374,8 @@
   <div class="section" id="defining-methods">
 <h1><span class="section-number">6.1. </span>Defining Methods<a class="headerlink" href="#defining-methods" title="Permalink to this headline">¶</a></h1>
 <p>In order to create a method in Java, you must <em><strong>define</strong></em> the method first. Think of this as actually writing down the steps of your recipe. It doesn’t mean that you’re going to use that recipe right then and there; it just means that you will be ready to get to work when the time comes.</p>
-<p>It’s the same idea when defining methods! And you will ALWAYS follow this pattern when defining a new method:</p>
-<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="n">modifier</span> <span class="n">returnType</span> <span class="nf">name</span><span class="p">(</span><span class="n">parameter</span> <span class="n">list</span><span class="p">){</span>
+<p>You will ALWAYS follow this pattern when defining a new method:</p>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="n">modifiers</span> <span class="n">returnType</span> <span class="nf">name</span><span class="p">(</span><span class="n">parameter</span> <span class="n">list</span><span class="p">){</span>
 
   <span class="cm">/* Body of method */</span>
 
@@ -372,13 +383,19 @@
 </pre></div>
 </div>
 <p>As you can see, this is a vocabulary nightmare! Every piece of the pattern illustrated above contains a new word used to describe a very specific concept in Java programs (again, vocabulary is important). Let’s break it down a bit more so that we can learn to customize this pattern for our own needs.</p>
-<p><em><strong>Modifier:</strong></em> This is a special keyword that your compiler uses to determine what parts of your Java program can actually use this method. For now, the modifier that you should use when defining a new method is <code class="docutils literal notranslate"><span class="pre">public</span></code>, which just means that the method can be used by any part of your Java program.</p>
-<p><em><strong>Return Type:</strong></em> Like a recipe, your methods will produce some output when followed. Sometimes your methods will produce an integer, other times it will produce a new object from a class that you defined! In any case, your compiler needs you to be explicit about what kind of information is produced by your method. For now, the return type that you should use when defining a new method is <code class="docutils literal notranslate"><span class="pre">void</span></code>. This return type just means that your method will not return any specific type of information. You can assume your method should have a return type of <code class="docutils literal notranslate"><span class="pre">void</span></code> if the body of your method does not contain the keyword <code class="docutils literal notranslate"><span class="pre">return</span></code>. We will talk about what this looks like in our next lesson.</p>
+<p><em><strong>Modifiers:</strong></em> These keywords are used to describe special characteristics of a method. The list of modifiers is quite long, but don’t panic! You have already seen one in action before, <code class="docutils literal notranslate"><span class="pre">public</span></code>. This is specifically known as an <em>access modifier</em> because it describes what files in your program can access and use the method in question. The modifier <code class="docutils literal notranslate"><span class="pre">public</span></code> is the least restrictive of the access modifiers; you can use a <code class="docutils literal notranslate"><span class="pre">public</span></code> method anywhere within your program!</p>
+<p><em><strong>Return Type:</strong></em> Like a recipe, your methods will produce some output. And because Java is a HELLA picky language, you must be be explicit about what kind of information is produced by your method or else your compiler will yell at you (it really doesn’t like surprises). This week, we will practice defining methods whose return type is <code class="docutils literal notranslate"><span class="pre">void</span></code>. This just means that your method will not <em>return</em> any specific type of information when it is used. Don’t worry, we will spend the next few weeks examining cases that require other return types.</p>
 <p><em><strong>Name:</strong></em> This one is self-explanatory; it’s the name of your method! You can choose the name that you give a method but you really should choose something that relates to what the method does. So if you define a method that somehow bakes the best cookies ever, you should consider naming your method <code class="docutils literal notranslate"><span class="pre">BakeBestCookiesEver</span></code>. Notice that the name contains no spaces! Don’t include spaces in your method names because this will result in a compile-time error. Also, don’t start your method names with a number — this will also result in a compile-time error.</p>
 <p><em><strong>Parameter List:</strong></em> This is the ingredient list of method definitions. This lists all of the information that your computer needs to successfully follow the recipe contained within the body of your method (<em>cough all of the statements and expressions found in between of the curly braces cough</em>). For now, your parameter list will be empty (some recipes don’t need any ingredients to work).</p>
 <p>Examine this example Java program, which contains a <code class="docutils literal notranslate"><span class="pre">Character</span></code> class.</p>
 <iframe height="400px" width="100%" src="https://repl.it/@SoniaSpindt1/61-Defining-Methods?lite=true" scrolling="no" frameborder="no" allowtransparency="true" allowfullscreen="true" sandbox="allow-forms allow-pointer-lock allow-popups allow-same-origin allow-scripts allow-modals"></iframe>
 <p>As you can see, the <code class="docutils literal notranslate"><span class="pre">Character</span></code> class contains a method that increases a video game character’s experience level. Its visibility is <code class="docutils literal notranslate"><span class="pre">public</span></code> and its return type is <code class="docutils literal notranslate"><span class="pre">void</span></code>. The name of the method is <code class="docutils literal notranslate"><span class="pre">addExperience</span></code> and its parameter list is empty. The body of the method contains a single statement which is used to increase the value of the attribute <code class="docutils literal notranslate"><span class="pre">experience</span></code> by one every time the method is used.</p>
+<p>You may have noticed that the method definition comes after the class constructor. Although you can technically put methods anywhere within the body of a class, it is a widely accepted practice within the Java programming community to always place method definitions after the constructor. The AP exam will follow this industry trend, so it is important to internalize the following class structure:</p>
+<ol class="simple">
+<li><p>Declare instance variables (attributes) at the top.</p></li>
+<li><p>Define constructors in the middle.</p></li>
+<li><p>Define methods at the bottom.</p></li>
+</ol>
 </div>
 
     <script type="text/x-thebe-config">
@@ -410,6 +427,7 @@
     <div class='prev-next-bottom'>
         
     <a class='left-prev' id="prev-link" href="intro.html" title="previous page"><span class="section-number">6. </span>Methods</a>
+    <a class='right-next' id="next-link" href="calling.html" title="next page"><span class="section-number">6.2. </span>Calling Methods</a>
 
     </div>
     <footer class="footer mt-5 mt-md-0">

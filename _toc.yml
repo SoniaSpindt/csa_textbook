@@ -47,3 +47,5 @@
 - file: Unit3/Methods/intro
   sections:
     - file: Unit3/Methods/defining
+    - file: Unit3/Methods/calling
+    - file: Unit3/Methods/dot_notation

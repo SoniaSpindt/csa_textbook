@@ -1,4 +1,4 @@
-Intro to Variables
+Variables
 ==================
 
 It's time to learn how to create attributes within our Java programs! The way we do this is with a programming concept called <b><i>variables</i></b>. Does this term sound familiar to you? It's possible that you heard about it in your Algebra class, which is a class all about variables! The variables you learned about in your Algebra class are very similar to the variables that you will see and create in this class; in both cases, <b><i>they are the names we give values</i></b>.
