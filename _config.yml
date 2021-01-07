@@ -18,7 +18,7 @@ launch_buttons:
   thebe: true
 
 
-exclude_patterns: []
+exclude_patterns: [Unit1/Routines/links]
 
 execute:
   execute_notebooks: 'off'

@@ -22,7 +22,7 @@ As you can see, this is a vocabulary nightmare! Every piece of the pattern illus
 
 ***Name:*** This one is self-explanatory; it's the name of your method! You can choose the name that you give a method but you really should choose something that relates to what the method does. So if you define a method that somehow bakes the best cookies ever, you should consider naming your method `BakeBestCookiesEver`. Notice that the name contains no spaces! Don't include spaces in your method names because this will result in a compile-time error. Also, don't start your method names with a number --- this will also result in a compile-time error.
 
-***Parameter List:*** This is the ingredient list of method definitions. This lists all of the information that your computer needs to successfully follow the recipe contained within the body of your method (*cough all of the statements and expressions found in between of the curly braces cough*). For now, your parameter list will be empty (some recipes don't need any ingredients to work).  
+***Parameter List:*** This is the ingredient list of method definitions. This lists all of the information that your computer needs to successfully follow the recipe contained within the body of your method (*cough all of the statements and expressions found in between of the parentheses cough*). For now, your parameter list will be empty (some recipes don't need any ingredients to work).  
 
 Examine this example Java program, which contains a `Character` class.
 

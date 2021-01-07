@@ -49,3 +49,10 @@
     - file: Unit3/Methods/defining
     - file: Unit3/Methods/calling
     - file: Unit3/Methods/dot_notation
+    - file: Unit3/Methods/return_int
+    - file: Unit3/Methods/return_double
+    - file: Unit3/Methods/return_boolean
+    - file: Unit3/Methods/return_objects
+    - file: Unit3/Methods/ArrayList_methods
+    - file: Unit3/Methods/GoodReads_database
+    - file: Unit3/Methods/parameters

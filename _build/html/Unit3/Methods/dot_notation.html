@@ -56,6 +56,7 @@
     <script async="async" src="../../_static/sphinx-thebe.js"></script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="6.4. Returning Integers" href="return_int.html" />
     <link rel="prev" title="6.2. Calling Methods" href="calling.html" />
 
     <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -294,6 +295,36 @@
      6.3. Dot Notation
     </a>
    </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="return_int.html">
+     6.4. Returning Integers
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="return_double.html">
+     6.5. Returning Decimals
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="return_boolean.html">
+     6.6. Returning Booleans
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="return_objects.html">
+     6.7. Returning Objects
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="ArrayList_methods.html">
+     6.8. ArrayList Methods
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="GoodReads_database.html">
+     6.9. Goodreads Database Example
+    </a>
+   </li>
   </ul>
   <i class="fas fa-chevron-down">
   </i>
@@ -372,20 +403,21 @@
                 
   <div class="section" id="dot-notation">
 <h1><span class="section-number">6.3. </span>Dot Notation<a class="headerlink" href="#dot-notation" title="Permalink to this headline">¶</a></h1>
-<p>In order to call a method on a specific object, you must use something called <em><strong>dot notation</strong></em>. Dot notation is a really powerful way of accessing and using both the instance variables and methods of a class.</p>
+<p>In order to call a specific object’s method, you must use something called <em><strong>dot notation</strong></em>. Dot notation is a really powerful way of accessing and using both the instance variables and methods of an object.</p>
 <p>More specifically, the various things an object contains–—its instance variables and its methods–—are called the <em><strong>members</strong></em> of that object. The members of an object are accessed using dot notation, which looks like this:</p>
 <div class="highlight-Java notranslate"><div class="highlight"><pre><span></span><span class="n">objectReference</span><span class="p">.</span><span class="na">memberName</span>
 </pre></div>
 </div>
-<p>The objectReference is the name of the reference variable that points to the object in question. The memberName is the instance variable or method name that we are trying to access within the class.</p>
-<p>In our previous example with BTS, we were able to use (<em>cough call cough</em>) our <code class="docutils literal notranslate"><span class="pre">recordAlbum</span></code> method because of dot notation. We can even check that the state of our BTS object was correctly updated by continuing to use dot notation within our Java program like so:</p>
+<p>The objectReference is the name of the reference variable that points to the object in question. The memberName is the instance variable or method name that we are trying to access within the object via the <em><strong>dot operator</strong></em> (the period found in between the object reference and the member name).</p>
+<p>In our previous example with BTS, we were able to call our <code class="docutils literal notranslate"><span class="pre">recordAlbum</span></code> method because of dot notation. We can even check that the state of our BTS object was correctly updated by continuing to use dot notation within our Java program like so:</p>
 <iframe height="400px" width="100%" src="https://repl.it/@SoniaSpindt1/63Example1?lite=true" scrolling="no" frameborder="no" allowtransparency="true" allowfullscreen="true" sandbox="allow-forms allow-pointer-lock allow-popups allow-same-origin allow-scripts allow-modals"></iframe>
-<p>As you can see on lines 12 and 13, we are using dot notation to access the <code class="docutils literal notranslate"><span class="pre">numberOfRecords</span></code> attribute for both the BTS and GlAM objects. The state is different for these two objects because we only called <code class="docutils literal notranslate"><span class="pre">recordAlbum</span></code> on the BTS object, not the GLAM object.</p>
-<p>This also means that we can use dot notation to assign instance variables to new values outside of the class constructor and method definitions. For example, we could have also written the following line of code to increase the number of records BTS has made to 1:</p>
+<p>As you can see on lines 12 and 13, we are using dot notation to access the <code class="docutils literal notranslate"><span class="pre">numberOfRecords</span></code> attribute for both the BTS and GLAM objects. The state is different for these two objects because we only called the BTS object’s <code class="docutils literal notranslate"><span class="pre">recordAlbum</span></code> method, not the GLAM object’s.</p>
+<p>This also means that we can use dot notation to assign instance variables to new values. For example, we could have also written the following line of code to increase the number of records BTS has made to 1:</p>
 <div class="highlight-Java notranslate"><div class="highlight"><pre><span></span><span class="n">BTS</span><span class="p">.</span><span class="na">numberOfAlbums</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>
 </pre></div>
 </div>
-<p>This accomplishes the same thing as our method <code class="docutils literal notranslate"><span class="pre">recordAlbum</span></code>, though it requires more knowledge of the current state of the object by the programmer. This is obviously less preferable than defining the method because this mistakes are more likely to be made this way  — what if this statement was written after BTS released their second album? Then the state of the object would no longer be correct because the programmer simply didn’t remember to write 2 instead of 1.</p>
+<p>This accomplishes the same thing as our method <code class="docutils literal notranslate"><span class="pre">recordAlbum</span></code>, though it requires more knowledge of the current state of the object by the programmer. This is obviously less preferable than defining the method because mistakes are more likely to be made this way  — what if this statement was written after BTS released their second album? Then the state of the object would no longer be correct because the programmer simply forgot to write 2 instead of 1. On the other hand, <code class="docutils literal notranslate"><span class="pre">recordAlbum</span></code> can easily just add 1 to whatever value is currently stored within the <code class="docutils literal notranslate"><span class="pre">numberOfAlbums</span></code> attribute, regardless of what the programmer knows.</p>
+<p>Don’t get me wrong! You’re still going to need to use dot notation to access attributes all the time. Developing this intuition simply takes a bit time and practice. But I promise that over the course of the new few weeks, you will become a dot notation master!</p>
 </div>
 
     <script type="text/x-thebe-config">
@@ -417,6 +449,7 @@
     <div class='prev-next-bottom'>
         
     <a class='left-prev' id="prev-link" href="calling.html" title="previous page"><span class="section-number">6.2. </span>Calling Methods</a>
+    <a class='right-next' id="next-link" href="return_int.html" title="next page"><span class="section-number">6.4. </span>Returning Integers</a>
 
     </div>
     <footer class="footer mt-5 mt-md-0">

@@ -295,6 +295,36 @@
      6.3. Dot Notation
     </a>
    </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="return_int.html">
+     6.4. Returning Integers
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="return_double.html">
+     6.5. Returning Decimals
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="return_boolean.html">
+     6.6. Returning Booleans
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="return_objects.html">
+     6.7. Returning Objects
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="ArrayList_methods.html">
+     6.8. ArrayList Methods
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="GoodReads_database.html">
+     6.9. Goodreads Database Example
+    </a>
+   </li>
   </ul>
   <i class="fas fa-chevron-down">
   </i>
@@ -386,7 +416,7 @@
 <p><em><strong>Modifiers:</strong></em> These keywords are used to describe special characteristics of a method. The list of modifiers is quite long, but don’t panic! You have already seen one in action before, <code class="docutils literal notranslate"><span class="pre">public</span></code>. This is specifically known as an <em>access modifier</em> because it describes what files in your program can access and use the method in question. The modifier <code class="docutils literal notranslate"><span class="pre">public</span></code> is the least restrictive of the access modifiers; you can use a <code class="docutils literal notranslate"><span class="pre">public</span></code> method anywhere within your program!</p>
 <p><em><strong>Return Type:</strong></em> Like a recipe, your methods will produce some output. And because Java is a HELLA picky language, you must be be explicit about what kind of information is produced by your method or else your compiler will yell at you (it really doesn’t like surprises). This week, we will practice defining methods whose return type is <code class="docutils literal notranslate"><span class="pre">void</span></code>. This just means that your method will not <em>return</em> any specific type of information when it is used. Don’t worry, we will spend the next few weeks examining cases that require other return types.</p>
 <p><em><strong>Name:</strong></em> This one is self-explanatory; it’s the name of your method! You can choose the name that you give a method but you really should choose something that relates to what the method does. So if you define a method that somehow bakes the best cookies ever, you should consider naming your method <code class="docutils literal notranslate"><span class="pre">BakeBestCookiesEver</span></code>. Notice that the name contains no spaces! Don’t include spaces in your method names because this will result in a compile-time error. Also, don’t start your method names with a number — this will also result in a compile-time error.</p>
-<p><em><strong>Parameter List:</strong></em> This is the ingredient list of method definitions. This lists all of the information that your computer needs to successfully follow the recipe contained within the body of your method (<em>cough all of the statements and expressions found in between of the curly braces cough</em>). For now, your parameter list will be empty (some recipes don’t need any ingredients to work).</p>
+<p><em><strong>Parameter List:</strong></em> This is the ingredient list of method definitions. This lists all of the information that your computer needs to successfully follow the recipe contained within the body of your method (<em>cough all of the statements and expressions found in between of the parentheses cough</em>). For now, your parameter list will be empty (some recipes don’t need any ingredients to work).</p>
 <p>Examine this example Java program, which contains a <code class="docutils literal notranslate"><span class="pre">Character</span></code> class.</p>
 <iframe height="400px" width="100%" src="https://repl.it/@SoniaSpindt1/61-Defining-Methods?lite=true" scrolling="no" frameborder="no" allowtransparency="true" allowfullscreen="true" sandbox="allow-forms allow-pointer-lock allow-popups allow-same-origin allow-scripts allow-modals"></iframe>
 <p>As you can see, the <code class="docutils literal notranslate"><span class="pre">Character</span></code> class contains a method that increases a video game character’s experience level. Its visibility is <code class="docutils literal notranslate"><span class="pre">public</span></code> and its return type is <code class="docutils literal notranslate"><span class="pre">void</span></code>. The name of the method is <code class="docutils literal notranslate"><span class="pre">addExperience</span></code> and its parameter list is empty. The body of the method contains a single statement which is used to increase the value of the attribute <code class="docutils literal notranslate"><span class="pre">experience</span></code> by one every time the method is used.</p>

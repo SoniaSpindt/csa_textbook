@@ -1,5 +1,5 @@
 Calling Methods
-===============
+======================
 
 Imagine it's the early 2000s and you're living in South Korea as a software engineer. Although Java has only been out for a few years, it is a tool you use everyday at your job at Big Hit Entertainment, managing the database of artists working under the label.
 
@@ -26,7 +26,7 @@ You do good work, so Big Hit Entertainment keeps you around well into the 2000s,
 
 As soon as they sign, you instantiate the BTS object and wait until they produce their first album.
 
-When "2 Cool 4 Skool" debuts, you immediately jump into your Java program and ***call*** `recordAlbum` on your BTS object, like so:
+When "2 Cool 4 Skool" debuts, you immediately jump into your Java program and ***call*** the BTS Object's `recordAlbum` method, like so:
 
 ```Java
 BTS.recordAlbum();
