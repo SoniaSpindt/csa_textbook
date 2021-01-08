@@ -56,3 +56,6 @@
     - file: Unit3/Methods/ArrayList_methods
     - file: Unit3/Methods/GoodReads_database
     - file: Unit3/Methods/parameters
+    - file: Unit3/Methods/definitions_with_parameters
+    - file: Unit3/Methods/calling_with_arguments
+    - file: Unit3/Methods/many_parameters

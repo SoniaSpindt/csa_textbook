@@ -19,4 +19,4 @@ Take a second to explore all of the files found in this Java program, making sur
 :height: 200px
 ```
 
-It's an ArrayList of Review objects!!! This is not the only example of a class that utilizes elements of another class in this program. Where else do you find that our classes are reliant on one another? Is there another way that you would have structured this database? Feel free to fork the repl found above and play around with some of your ideas. :)
+<br>It's an ArrayList of Review objects!!! This is not the only example of a class that utilizes elements of another class in this program. Where else do you find that our classes are reliant on one another? Is there another way that you would have structured this database? Feel free to fork the repl found above and play around with some of your ideas. :)
