@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>6.2. Calling Methods &#8212; AP CSA</title>
+    <title>6.14. Constructors With Parameters &#8212; AP CSA</title>
     
   <link rel="stylesheet" href="../../_static/css/index.73d71520a4ca3b99cfee5594769eaaae.css">
 
@@ -56,8 +56,8 @@
     <script async="async" src="../../_static/sphinx-thebe.js"></script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="6.3. Dot Notation" href="dot_notation.html" />
-    <link rel="prev" title="6.1. Defining Methods" href="defining.html" />
+    <link rel="next" title="6.15. This" href="keyword_this.html" />
+    <link rel="prev" title="6.13. Many Parameters" href="many_parameters.html" />
 
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="en" />
@@ -285,8 +285,8 @@
      6.1. Defining Methods
     </a>
    </li>
-   <li class="toctree-l2 current active">
-    <a class="current reference internal" href="#">
+   <li class="toctree-l2">
+    <a class="reference internal" href="calling.html">
      6.2. Calling Methods
     </a>
    </li>
@@ -345,8 +345,8 @@
      6.13. Many Parameters
     </a>
    </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="constructors_with_parameters.html">
+   <li class="toctree-l2 current active">
+    <a class="current reference internal" href="#">
      6.14. Constructors With Parameters
     </a>
    </li>
@@ -404,7 +404,7 @@
         <!-- ipynb file if we had a myst markdown file -->
         
         <!-- Download raw file -->
-        <a class="dropdown-buttons" href="../../_sources/Unit3/Methods/calling.md"><button type="button"
+        <a class="dropdown-buttons" href="../../_sources/Unit3/Methods/constructors_with_parameters.md"><button type="button"
                 class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
                 data-placement="left">.md</button></a>
         <!-- Download PDF via print -->
@@ -436,28 +436,100 @@
         
               <div>
                 
-  <div class="section" id="calling-methods">
-<h1><span class="section-number">6.2. </span>Calling Methods<a class="headerlink" href="#calling-methods" title="Permalink to this headline">¶</a></h1>
-<p>Imagine it’s the early 2000s and you’re living in South Korea as a software engineer. Although Java has only been out for a few years, it is a tool you use everyday at your job at Big Hit Entertainment, managing the database of artists working under the label.</p>
-<p>On the first day of the job, you begin by declaring a dope <code class="docutils literal notranslate"><span class="pre">Artist</span></code> class that can be used when a new artist signs with the label:</p>
-<iframe height="400px" width="100%" src="https://repl.it/@SoniaSpindt1/62Example1?lite=true" scrolling="no" frameborder="no" allowtransparency="true" allowfullscreen="true" sandbox="allow-forms allow-pointer-lock allow-popups allow-same-origin allow-scripts allow-modals"></iframe>
-<p>As you cans see, you use the constructor to initialize <code class="docutils literal notranslate"><span class="pre">numberAlbums</span></code> and <code class="docutils literal notranslate"><span class="pre">earnings</span></code> to 0 because you think it is safe to assume that every artist newly signed will not have had a chance to record an album and consequently, has made no money.</p>
-<p>The artist will eventually record an album though, so you know you will need to be able to change the value that <code class="docutils literal notranslate"><span class="pre">numberOfAlbums</span></code> is assigned to. You believe its best to handle this with a public method that increases the value of <code class="docutils literal notranslate"><span class="pre">numberOfAlbums</span></code> by one every time it is used.</p>
-<p>You decide to define the method <code class="docutils literal notranslate"><span class="pre">recordAlbum</span></code> in your <code class="docutils literal notranslate"><span class="pre">Artist</span></code> class, like so:</p>
-<div class="highlight-Java notranslate"><div class="highlight"><pre><span></span><span class="kd">public</span> <span class="kt">void</span> <span class="nf">recordAlbum</span><span class="p">(){</span>
-  <span class="n">numberAlbums</span> <span class="o">=</span> <span class="n">numberAlbums</span> <span class="o">+</span> <span class="mi">1</span><span class="p">;</span>
-<span class="p">}</span>  
+  <div class="section" id="constructors-with-parameters">
+<h1><span class="section-number">6.14. </span>Constructors With Parameters<a class="headerlink" href="#constructors-with-parameters" title="Permalink to this headline">¶</a></h1>
+<p>Take a look at this simple <code class="docutils literal notranslate"><span class="pre">Celebrity</span></code> class:</p>
+<div class="highlight-Java notranslate"><div class="highlight"><pre><span></span><span class="kd">class</span> <span class="nc">Celebrity</span><span class="p">{</span>
+  <span class="n">String</span> <span class="n">name</span><span class="p">;</span>
+
+  <span class="kd">public</span> <span class="nf">Celebrity</span><span class="p">(){</span>
+    <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;A new celebrity has been created!&quot;</span><span class="p">);</span>
+  <span class="p">}</span>
+
+  <span class="kd">public</span> <span class="kt">void</span> <span class="nf">setName</span><span class="p">(</span><span class="n">String</span> <span class="n">n</span><span class="p">){</span>
+    <span class="n">name</span> <span class="o">=</span> <span class="n">n</span><span class="p">;</span>
+  <span class="p">}</span>
+<span class="p">}</span>
 </pre></div>
 </div>
-<p>You do good work, so Big Hit Entertainment keeps you around well into the 2000s, long enough to see the creation of the world-famous BTS.</p>
-<iframe height="400px" width="100%" src="https://repl.it/@SoniaSpindt1/62Example2?lite=true" scrolling="no" frameborder="no" allowtransparency="true" allowfullscreen="true" sandbox="allow-forms allow-pointer-lock allow-popups allow-same-origin allow-scripts allow-modals"></iframe>
-<p>As soon as they sign, you instantiate the BTS object and wait until they produce their first album.</p>
-<p>When “2 Cool 4 Skool” debuts, you immediately jump into your Java program and <em><strong>call</strong></em> the BTS Object’s <code class="docutils literal notranslate"><span class="pre">recordAlbum</span></code> method, like so:</p>
-<div class="highlight-Java notranslate"><div class="highlight"><pre><span></span><span class="n">BTS</span><span class="p">.</span><span class="na">recordAlbum</span><span class="p">();</span>
+<p>I bet you noticed that there are a lot of similarities between the structure of the constructor and our method <code class="docutils literal notranslate"><span class="pre">setName</span></code>.
+For example, I notice that both of them start with the modifier <code class="docutils literal notranslate"><span class="pre">public</span></code>. I also notice that both of them have a name, followed by
+a set of parentheses. Does that mean it’s possible to include parameters in our constructors too?</p>
+<a class="reference internal image-reference" href="https://i.pinimg.com/originals/f5/af/0b/f5af0b0ac3ade19b8af88afa25e8e2ab.gif"><img alt="Beyonce - You know it" src="https://i.pinimg.com/originals/f5/af/0b/f5af0b0ac3ade19b8af88afa25e8e2ab.gif" style="height: 200px;" /></a>
+<p><br>You betcha! In fact, in many cases you will want to include parameters in your constructor because it makes instantiating an object
+with a specific state a lot easier. For example, I could assign our <code class="docutils literal notranslate"><span class="pre">name</span></code> instance variable to a value of my choosing if I write my constructor like
+this:</p>
+<div class="highlight-Java notranslate"><div class="highlight"><pre><span></span><span class="kd">class</span> <span class="nc">Celebrity</span><span class="p">{</span>
+  <span class="n">String</span> <span class="n">name</span><span class="p">;</span>
+
+  <span class="kd">public</span> <span class="nf">Celebrity</span><span class="p">(</span><span class="n">String</span> <span class="n">n</span><span class="p">){</span>
+    <span class="n">name</span> <span class="o">=</span> <span class="n">n</span><span class="p">;</span>
+    <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;A new celebrity has been created!&quot;</span><span class="p">);</span>
+  <span class="p">}</span>
+
+  <span class="kd">public</span> <span class="kt">void</span> <span class="nf">setName</span><span class="p">(</span><span class="n">String</span> <span class="n">n</span><span class="p">){</span>
+    <span class="n">name</span> <span class="o">=</span> <span class="n">n</span><span class="p">;</span>
+  <span class="p">}</span>
+<span class="p">}</span>
 </pre></div>
 </div>
-<p>This will update the state of the BTS object to reflect the current state of the band in real life, making it easier for high-level managers to quickly assess the overall performance of the company. A job well done!</p>
-<p>More importantly, this story illustrates how methods can be use to selectively update the state of an object, while leaving the state of other objects unchanged. Let’s examine this pattern a little more deeply on the next page.</p>
+<p>Think of what this allows me to do. I can now make as many Celebrity objects as I would like, all with different states! Don’t believe me? Take a look at this
+main method where I instantiate three very different Celebrity objects using the Celebrity class defined above:</p>
+<div class="highlight-Java notranslate"><div class="highlight"><pre><span></span><span class="kd">class</span> <span class="nc">Main</span><span class="p">{</span>
+  <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="p">(</span><span class="n">String</span><span class="o">[]</span> <span class="n">args</span><span class="p">){</span>
+    <span class="n">Celebrity</span> <span class="n">bey</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Celebrity</span><span class="p">(</span><span class="s">&quot;Beyonce&quot;</span><span class="p">);</span>
+    <span class="n">Celebrity</span> <span class="n">rihrih</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Celebrity</span><span class="p">(</span><span class="s">&quot;Rihanna&quot;</span><span class="p">);</span>
+    <span class="n">Celebrity</span> <span class="n">juice</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Celebrity</span><span class="p">(</span><span class="s">&quot;Juice WRLD&quot;</span><span class="p">);</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>If we didn’t include parameters within our constructor, we would have to write a lot more code. Remember our dot operator?</p>
+<div class="highlight-Java notranslate"><div class="highlight"><pre><span></span><span class="kd">class</span> <span class="nc">Main</span><span class="p">{</span>
+  <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="p">(</span><span class="n">String</span><span class="o">[]</span> <span class="n">args</span><span class="p">){</span>
+    <span class="n">Celebrity</span> <span class="n">bey</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Celebrity</span><span class="p">();</span>
+    <span class="n">bey</span><span class="p">.</span><span class="na">name</span> <span class="o">=</span> <span class="s">&quot;Beyonce&quot;</span><span class="p">;</span>
+    <span class="n">Celebrity</span> <span class="n">rihrih</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Celebrity</span><span class="p">(</span><span class="s">&quot;Rihanna&quot;</span><span class="p">);</span>
+    <span class="n">rihrih</span><span class="p">.</span><span class="na">setName</span><span class="p">(</span><span class="s">&quot;Rihanna&quot;</span><span class="p">);</span>
+    <span class="n">Celebrity</span> <span class="n">juice</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Celebrity</span><span class="p">(</span><span class="s">&quot;Juice WRLD&quot;</span><span class="p">);</span>
+    <span class="n">juice</span><span class="p">.</span><span class="na">setName</span> <span class="o">=</span> <span class="s">&quot;Juice WRLD&quot;</span><span class="p">;</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<a class="reference internal image-reference" href="https://media.tenor.com/images/e589a33608b6f9621e9135a611ad31e3/tenor.gif"><img alt="Rihanna - Doing too much" src="https://media.tenor.com/images/e589a33608b6f9621e9135a611ad31e3/tenor.gif" style="height: 200px;" /></a>
+<p><br>You can add as many parameters to your constructors as you would like! Here is an example of a Celebrity constructor that contains
+all the parameters:</p>
+<div class="highlight-Java notranslate"><div class="highlight"><pre><span></span><span class="kd">class</span> <span class="nc">Celebrity</span><span class="p">{</span>
+  <span class="n">String</span> <span class="n">name</span><span class="p">;</span>
+  <span class="kt">int</span> <span class="n">age</span><span class="p">;</span>
+  <span class="n">String</span> <span class="n">type</span><span class="p">;</span>
+  <span class="kt">boolean</span> <span class="n">isAlive</span><span class="p">;</span>
+
+  <span class="kd">public</span> <span class="nf">Celebrity</span><span class="p">(</span><span class="n">String</span> <span class="n">n</span><span class="p">,</span> <span class="kt">int</span> <span class="n">a</span><span class="p">,</span> <span class="n">String</span> <span class="n">t</span><span class="p">,</span> <span class="kt">boolean</span> <span class="n">d</span><span class="p">){</span>
+    <span class="n">name</span> <span class="o">=</span> <span class="n">n</span><span class="p">;</span>
+    <span class="n">age</span> <span class="o">=</span> <span class="n">a</span><span class="p">;</span>
+    <span class="n">type</span> <span class="o">=</span> <span class="n">t</span><span class="p">;</span>
+    <span class="n">isAlive</span> <span class="o">=</span> <span class="n">d</span><span class="p">;</span>
+    <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;A new celebrity has been created!&quot;</span><span class="p">);</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<div class="highlight-Java notranslate"><div class="highlight"><pre><span></span><span class="kd">class</span> <span class="nc">Main</span><span class="p">{</span>
+  <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="p">(</span><span class="n">String</span><span class="o">[]</span> <span class="n">args</span><span class="p">){</span>
+    <span class="n">Celebrity</span> <span class="n">bey</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Celebrity</span><span class="p">(</span><span class="s">&quot;Beyonce&quot;</span><span class="p">,</span> <span class="mi">39</span><span class="p">,</span> <span class="s">&quot;Singer&quot;</span><span class="p">,</span> <span class="kc">true</span><span class="p">);</span>
+    <span class="n">Celebrity</span> <span class="n">rihrih</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Celebrity</span><span class="p">(</span><span class="s">&quot;Rihanna&quot;</span><span class="p">,</span> <span class="mi">32</span><span class="p">,</span> <span class="s">&quot;Singer&quot;</span><span class="p">,</span> <span class="kc">true</span><span class="p">);</span>
+    <span class="n">Celebrity</span> <span class="n">juice</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Celebrity</span><span class="p">(</span><span class="s">&quot;Juice WRLD&quot;</span><span class="p">,</span> <span class="mi">21</span><span class="p">,</span> <span class="s">&quot;Rapper&quot;</span><span class="p">,</span> <span class="kc">false</span><span class="p">);</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>Once thing is bothering me about my constructor’s parameters though; their names suck! If I look at this code 5 years from now,
+I’m probably not going to remember what I was thinking when I wrote “n”, “a”, “t”, and “d”. I know that I can name parameters whatever I would like but
+I gotta think about what makes my program easier to read, both for me and other programmers reviewing my code.</p>
+<p>But honestly, it feels like I already chose the best names when I declared the instance variables of this class. Is there a way that I
+can name my parameters the same thing and not confuse my computer?</p>
 </div>
 
     <script type="text/x-thebe-config">
@@ -488,8 +560,8 @@
     
     <div class='prev-next-bottom'>
         
-    <a class='left-prev' id="prev-link" href="defining.html" title="previous page"><span class="section-number">6.1. </span>Defining Methods</a>
-    <a class='right-next' id="next-link" href="dot_notation.html" title="next page"><span class="section-number">6.3. </span>Dot Notation</a>
+    <a class='left-prev' id="prev-link" href="many_parameters.html" title="previous page"><span class="section-number">6.13. </span>Many Parameters</a>
+    <a class='right-next' id="next-link" href="keyword_this.html" title="next page"><span class="section-number">6.15. </span>This</a>
 
     </div>
     <footer class="footer mt-5 mt-md-0">

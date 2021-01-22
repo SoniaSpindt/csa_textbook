@@ -18,7 +18,7 @@ However, there are now two words inside of the parentheses! More specifically, w
 
 Another really important thing to notice about this example is the fact that the parameter `name` is being used within the body of the method. This is an important step to follow and yet, many students forget to do it! So, if you are attempting to include parameters in your method definitions, please make sure that you ALWAYS follow these steps:
 
-```{admonition} TL;DR
+```{admonition} Using Parameters
 :class: warning
 1. First, list the type of your parameter.
 2. Then, give your parameter a name.
