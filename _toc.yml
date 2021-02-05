@@ -62,3 +62,9 @@
     - file: Unit3/Methods/constructors_with_parameters
     - file: Unit3/Methods/keyword_this
     - file: Unit3/Methods/javadocs
+
+- file: Unit4/ComplexMethods/intro
+  sections:
+    - file: Unit4/ComplexMethods/internalCalls
+    - file: Unit4/ComplexMethods/private
+    - file: Unit4/ComplexMethods/static
