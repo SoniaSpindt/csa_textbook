@@ -68,3 +68,6 @@
     - file: Unit4/ComplexMethods/internalCalls
     - file: Unit4/ComplexMethods/private
     - file: Unit4/ComplexMethods/static
+    - file: Unit4/ComplexMethods/if_statements
+    - file: Unit4/ComplexMethods/elseif_statements
+    - file: Unit4/ComplexMethods/else_statements
