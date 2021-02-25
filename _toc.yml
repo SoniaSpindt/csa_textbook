@@ -71,3 +71,7 @@
     - file: Unit4/ComplexMethods/if_statements
     - file: Unit4/ComplexMethods/elseif_statements
     - file: Unit4/ComplexMethods/else_statements
+    - file: Unit4/ComplexMethods/while_loops
+    - file: Unit4/ComplexMethods/for_loops
+    - file: Unit4/ComplexMethods/arrays_refresher
+    - file: Unit4/ComplexMethods/enhanced_loops

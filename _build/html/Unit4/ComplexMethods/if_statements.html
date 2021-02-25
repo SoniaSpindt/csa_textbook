@@ -399,6 +399,16 @@
      7.6. Else Statements
     </a>
    </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="while_loops.html">
+     7.7. While Loops
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="for_loops.html">
+     7.8. For Loops
+    </a>
+   </li>
   </ul>
   <i class="fas fa-chevron-down">
   </i>
@@ -526,7 +536,47 @@
 </div>
 <a class="reference internal image-reference" href="../../_images/output2.png"><img alt="Output 2" src="../../_images/output2.png" style="height: 200px;" /></a>
 <p><br> In this case, our computer makes the decision to skip the body of the if statement because the condition now evaluates to false.</p>
-<p>Let’s spice things up and complicate our condition a bit by playing around with some String objects. Strings, as you know, are a sequence of characters contained within quotation marks. This is a string: “oas123 idhao982 idha”. So is this: “”. And like all objects, Strings have methods associated with them. For example, all String objects have a <code class="docutils literal notranslate"><span class="pre">length()</span></code> method. The <code class="docutils literal notranslate"><span class="pre">length()</span></code> method tells us how many characters are found in between those quotation marks, and like all public methods, we can call them anywhere we want by using the dot operator. So what if I wrote this program instead?</p>
+<p>Let’s take a look at an if statement that features a very special mathematical operator called <em><strong>modulo</strong></em>, or <em><strong>MOD</strong></em> for short. This operator is used to determine the remainder that you would get if you were to divide two numbers by one another.</p>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kd">class</span> <span class="nc">Main</span> <span class="p">{</span>
+  <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="p">(</span><span class="n">String</span><span class="o">[]</span> <span class="n">args</span><span class="p">)</span> <span class="p">{</span>
+    <span class="c1">//x is now -10!</span>
+    <span class="kt">int</span> <span class="n">x</span> <span class="o">=</span> <span class="o">-</span><span class="mi">10</span><span class="p">;</span>
+
+    <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;Hi!&quot;</span><span class="p">);</span>
+
+    <span class="c1">//The condition is: x % 2 == 0</span>
+    <span class="k">if</span><span class="p">(</span><span class="n">x</span> <span class="o">%</span> <span class="mi">2</span> <span class="o">==</span> <span class="mi">0</span><span class="p">){</span>
+      <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;x is an even number.&quot;</span><span class="p">);</span>
+    <span class="p">}</span>
+
+    <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;Bye!&quot;</span><span class="p">);</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>In the example above the condition of the if statement is: <code class="docutils literal notranslate"><span class="pre">x</span> <span class="pre">%</span> <span class="pre">2</span> <span class="pre">==</span> <span class="pre">0</span></code>. If I were to translate this condition into an English question, I would probably ask, “Is the remainder of dividing x by 2 equal to zero?”. Yes, yes it is. Why? The variable <code class="docutils literal notranslate"><span class="pre">x</span></code> is -10. When you divide -10 by 2, you get -5. Don’t forget, you also get a remainder of 0! So the <code class="docutils literal notranslate"><span class="pre">x</span> <span class="pre">%</span> <span class="pre">2</span></code> of our condition is secretly turned into 0 by your computer, which means our condition becomes <code class="docutils literal notranslate"><span class="pre">0</span> <span class="pre">==</span> <span class="pre">0</span></code>, and we know this evaluates to true.</p>
+<p>Here is what it would look like to check if a number is odd:</p>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kd">class</span> <span class="nc">Main</span> <span class="p">{</span>
+  <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="p">(</span><span class="n">String</span><span class="o">[]</span> <span class="n">args</span><span class="p">)</span> <span class="p">{</span>
+    <span class="c1">//x is now -10!</span>
+    <span class="kt">int</span> <span class="n">x</span> <span class="o">=</span> <span class="o">-</span><span class="mi">10</span><span class="p">;</span>
+
+    <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;Hi!&quot;</span><span class="p">);</span>
+
+    <span class="c1">//The condition is: x % 2 == 1</span>
+    <span class="k">if</span><span class="p">(</span><span class="n">x</span> <span class="o">%</span> <span class="mi">2</span> <span class="o">==</span> <span class="mi">1</span><span class="p">){</span>
+      <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;x is an odd number.&quot;</span><span class="p">);</span>
+    <span class="p">}</span>
+
+    <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;Bye!&quot;</span><span class="p">);</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>Not much has changed about this program other than the condition of our if statement. Now we have <code class="docutils literal notranslate"><span class="pre">x</span> <span class="pre">%</span> <span class="pre">2</span> <span class="pre">==</span> <span class="pre">1</span></code>, which is asking if the remainder of dividing x by 2 is equal to 1. In this example, the remainder of dividing -10 by 2 is not 1, it’s 0, so the condition will evaluate to false and the body of the if statement will be skipped.</p>
+<p>Let’s spice things up and complicate our condition a bit more by playing around with some String objects. Strings, as you know, are a sequence of characters contained within quotation marks. This is a string: “oas123 idhao982 idha”. So is this: “”. And like all objects, Strings have methods associated with them. Here is a list of the String methods you can expect to see on the exam:</p>
+<a class="reference internal image-reference" href="../../_images/stringMethods.png"><img alt="String Methods" src="../../_images/stringMethods.png" style="height: 200px;" /></a>
+<p>As you can see, all String objects have a <code class="docutils literal notranslate"><span class="pre">length()</span></code> method. The <code class="docutils literal notranslate"><span class="pre">length()</span></code> method tells us how many characters are found in between those quotation marks, and like all public methods, we can call them anywhere we want by using the dot operator. So what if I wrote this program instead?</p>
 <div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kd">class</span> <span class="nc">Main</span> <span class="p">{</span>
   <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="p">(</span><span class="n">String</span><span class="o">[]</span> <span class="n">args</span><span class="p">)</span> <span class="p">{</span>
     <span class="n">String</span> <span class="n">word</span> <span class="o">=</span> <span class="s">&quot;aofinfibnawiufageraewudpauidb&quot;</span><span class="p">;</span>
