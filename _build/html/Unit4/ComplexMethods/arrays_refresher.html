@@ -1,0 +1,654 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>7.9. Revisiting Arrays &#8212; AP CSA</title>
+    
+  <link rel="stylesheet" href="../../_static/css/index.73d71520a4ca3b99cfee5594769eaaae.css">
+
+    
+  <link rel="stylesheet"
+    href="../../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+  <link rel="stylesheet"
+    href="../../_static/vendor/open-sans_all/1.44.1/index.css">
+  <link rel="stylesheet"
+    href="../../_static/vendor/lato_latin-ext/1.44.1/index.css">
+
+    
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/sphinx-book-theme.40e2e510f6b7d1648584402491bb10fe.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="../../_static/js/index.3da636dd464baa7582d2.js">
+
+    <script id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+    <script src="../../_static/jquery.js"></script>
+    <script src="../../_static/underscore.js"></script>
+    <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/language_data.js"></script>
+    <script src="../../_static/togglebutton.js"></script>
+    <script src="../../_static/clipboard.min.js"></script>
+    <script src="../../_static/copybutton.js"></script>
+    <script src="../../_static/custom.js"></script>
+    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../../_static/sphinx-book-theme.d31b09fe5c1d09cb49b26a786de4a05d.js"></script>
+    <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
+    <script >
+        const thebe_selector = ".thebe,.cell"
+        const thebe_selector_input = "pre,.cell_input div.highlight"
+        const thebe_selector_output = ".output,.cell_output"
+    </script>
+    <script async="async" src="../../_static/sphinx-thebe.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="7.10. Enhanced For Loops" href="enhanced_loops.html" />
+    <link rel="prev" title="7.8. For Loops" href="for_loops.html" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="en" />
+
+
+
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+<a class="navbar-brand text-wrap" href="../../index.html">
+  
+  <img src="../../_static/logo.png" class="logo" alt="logo">
+  
+  
+  <h1 class="site-logo" id="site-title">AP CSA</h1>
+  
+</a>
+</div><form class="bd-search d-flex align-items-center" action="../../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form>
+<nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
+    <ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../intro.html">
+   Welcome to AP CSA
+  </a>
+ </li>
+</ul>
+<ul class="current nav sidenav_l1">
+ <li class="toctree-l1 collapsible-parent">
+  <a class="reference internal" href="../../Unit1/overview.html">
+   1. Classroom Routines
+  </a>
+  <ul class="collapse-ul">
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../Unit1/Routines/exposure.html">
+     1.1. Mondays: Exposure
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../Unit1/Routines/collaboration.html">
+     1.2. Tuesdays: Collaboration
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../Unit1/Routines/revision.html">
+     1.3. Wednesdays: Revision
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../Unit1/Routines/mastery.html">
+     1.4. Thursdays and Fridays: Mastery
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../Unit1/Routines/links.html">
+     1.5. Important Resources
+    </a>
+   </li>
+  </ul>
+  <i class="fas fa-chevron-down">
+  </i>
+ </li>
+ <li class="toctree-l1 collapsible-parent">
+  <a class="reference internal" href="../../Unit1/IntroToOOP/intro.html">
+   2. Object Oriented Programming
+  </a>
+  <ul class="collapse-ul">
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../Unit1/IntroToOOP/objects.html">
+     2.1. Objects
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../Unit1/IntroToOOP/classes.html">
+     2.2. Classes
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../Unit1/IntroToOOP/attributes.html">
+     2.3. Attributes
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../Unit1/IntroToOOP/methods.html">
+     2.4. Methods
+    </a>
+   </li>
+  </ul>
+  <i class="fas fa-chevron-down">
+  </i>
+ </li>
+ <li class="toctree-l1 collapsible-parent">
+  <a class="reference internal" href="../../Unit2/ProgramsInJava/intro.html">
+   3. Programs in Java
+  </a>
+  <ul class="collapse-ul">
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../Unit2/ProgramsInJava/statements.html">
+     3.1. Statements
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../Unit2/ProgramsInJava/compile.html">
+     3.2. Compilation
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../Unit2/ProgramsInJava/execute.html">
+     3.3. Execution
+    </a>
+   </li>
+  </ul>
+  <i class="fas fa-chevron-down">
+  </i>
+ </li>
+ <li class="toctree-l1 collapsible-parent">
+  <a class="reference internal" href="../../Unit2/Variables/intro.html">
+   4. Variables
+  </a>
+  <ul class="collapse-ul">
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../Unit2/Variables/declare.html">
+     4.1. Declaring Variables
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../Unit2/Variables/initialize.html">
+     4.2. Initializing Variables
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../Unit2/Variables/expressions.html">
+     4.3. Expressions
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../Unit2/Variables/booleans.html">
+     4.4. Booleans
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../Unit2/Variables/boolean_expressions.html">
+     4.5. Boolean Expressions
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../Unit2/Variables/strings.html">
+     4.6. Strings
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../Unit2/Variables/references.html">
+     4.7. Reference Variables
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../Unit2/Variables/string_expressions.html">
+     4.8. Strings in Expressions
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../Unit2/Variables/arrays.html">
+     4.9. Arrays
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../Unit2/Variables/array_size.html">
+     4.10. Size of Arrays
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../Unit2/Variables/arraylists.html">
+     4.11. ArrayLists
+    </a>
+   </li>
+  </ul>
+  <i class="fas fa-chevron-down">
+  </i>
+ </li>
+ <li class="toctree-l1 collapsible-parent">
+  <a class="reference internal" href="../../Unit2/SimpleClasses/intro.html">
+   5. Creating Classes
+  </a>
+  <ul class="collapse-ul">
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../Unit2/SimpleClasses/header.html">
+     5.1. Class Headers
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../Unit2/SimpleClasses/instance_variables.html">
+     5.2. Instance Variables
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../Unit2/SimpleClasses/constructors.html">
+     5.3. Constructors
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../Unit2/SimpleClasses/instantiation.html">
+     5.4. Instantiation
+    </a>
+   </li>
+  </ul>
+  <i class="fas fa-chevron-down">
+  </i>
+ </li>
+ <li class="toctree-l1 collapsible-parent">
+  <a class="reference internal" href="../../Unit3/Methods/intro.html">
+   6. Methods
+  </a>
+  <ul class="collapse-ul">
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../Unit3/Methods/defining.html">
+     6.1. Defining Methods
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../Unit3/Methods/calling.html">
+     6.2. Calling Methods
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../Unit3/Methods/dot_notation.html">
+     6.3. Dot Notation
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../Unit3/Methods/return_int.html">
+     6.4. Returning Integers
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../Unit3/Methods/return_double.html">
+     6.5. Returning Decimals
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../Unit3/Methods/return_boolean.html">
+     6.6. Returning Booleans
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../Unit3/Methods/return_objects.html">
+     6.7. Returning Objects
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../Unit3/Methods/ArrayList_methods.html">
+     6.8. ArrayList Methods
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../Unit3/Methods/GoodReads_database.html">
+     6.9. Goodreads Database Example
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../Unit3/Methods/parameters.html">
+     6.10. Parameters
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../Unit3/Methods/definitions_with_parameters.html">
+     6.11. Defining Methods with Parameters
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../Unit3/Methods/calling_with_arguments.html">
+     6.12. Arguments
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../Unit3/Methods/many_parameters.html">
+     6.13. Many Parameters
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../Unit3/Methods/constructors_with_parameters.html">
+     6.14. Constructors With Parameters
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../Unit3/Methods/keyword_this.html">
+     6.15. This
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../Unit3/Methods/javadocs.html">
+     6.16. Documentation
+    </a>
+   </li>
+  </ul>
+  <i class="fas fa-chevron-down">
+  </i>
+ </li>
+ <li class="toctree-l1 current active collapsible-parent">
+  <a class="reference internal" href="intro.html">
+   7. Complex Method Design
+  </a>
+  <ul class="current collapse-ul">
+   <li class="toctree-l2">
+    <a class="reference internal" href="internalCalls.html">
+     7.1. Calling Methods within Other Methods
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="private.html">
+     7.2. Private Modifier
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="static.html">
+     7.3. Static Modifier
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="if_statements.html">
+     7.4. If Statements
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="elseif_statements.html">
+     7.5. Else If Statements
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="else_statements.html">
+     7.6. Else Statements
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="while_loops.html">
+     7.7. While Loops
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="for_loops.html">
+     7.8. For Loops
+    </a>
+   </li>
+   <li class="toctree-l2 current active">
+    <a class="current reference internal" href="#">
+     7.9. Revisiting Arrays
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="enhanced_loops.html">
+     7.10. Enhanced For Loops
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="2d_arrays.html">
+     7.11. Two-Dimensional Arrays
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="accessing_values.html">
+     7.12. Accessing and Modifying Values in 2D Arrays
+    </a>
+   </li>
+  </ul>
+  <i class="fas fa-chevron-down">
+  </i>
+ </li>
+</ul>
+
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="row topbar fixed-top container-xl">
+    <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show">
+    </div>
+    <div class="col pl-2 topbar-main">
+        
+        <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+            data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+            aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+            title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+            <i class="fas fa-bars"></i>
+            <i class="fas fa-arrow-left"></i>
+            <i class="fas fa-arrow-up"></i>
+        </button>
+        
+        
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="../../_sources/Unit4/ComplexMethods/arrays_refresher.md"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.md</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+        <!-- Source interaction buttons -->
+
+
+        <!-- Full screen (wrap in <a> to have style consistency -->
+        <a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+                data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+                title="Fullscreen mode"><i
+                    class="fas fa-expand"></i></button></a>
+
+        <!-- Launch buttons -->
+
+    </div>
+
+    <!-- Table of contents -->
+    <div class="d-none d-md-block col-md-2 bd-toc show">
+        
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+        
+              <div>
+                
+  <div class="section" id="revisiting-arrays">
+<h1><span class="section-number">7.9. </span>Revisiting Arrays<a class="headerlink" href="#revisiting-arrays" title="Permalink to this headline">¶</a></h1>
+<p>We have spent a lot of time exploring ArrayLists in our programs. But don’t forget about its ugly step-sibling, arrays! Remember, arrays are a way that you can collect a bunch of values in a single location. However, they are not dynamically sized – that is, their size cannot be changed once they are created.</p>
+<p>Don’t worry, they’re not all that bad. Unlike ArrayLists, we can put primitive value types into arrays! This means that you can chuck a bunch of doubles, ints, and booleans into them and your computer won’t complain.</p>
+<p>Let’s remind ourselves how we declare and initialize a variable to an array. It looks like this:</p>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="c1">//Don&#39;t know what&#39;s going into it yet? Use this statement:</span>
+<span class="n">type</span><span class="o">[]</span> <span class="n">arrayName</span> <span class="o">=</span> <span class="k">new</span> <span class="n">type</span><span class="o">[</span><span class="n">size</span><span class="o">]</span><span class="p">;</span>
+
+<span class="c1">//Know what&#39;s going into it? Use this statement:</span>
+<span class="n">type</span><span class="o">[]</span> <span class="n">arrayName</span> <span class="o">=</span> <span class="p">{</span><span class="n">value1</span><span class="p">,</span> <span class="n">value2</span><span class="p">,</span> <span class="n">valueN</span><span class="p">};</span>
+</pre></div>
+</div>
+<p>BAM! An array is born! You just gotta decide what you want to name the new bundle of joy. :p Well, that and the type of values you want to put into the array.</p>
+<p>You should also remember that we can use index values to talk about the position of an item in an array. Take a look at this array:</p>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="n">String</span><span class="o">[]</span> <span class="n">socialMedias</span> <span class="o">=</span> <span class="p">{</span><span class="s">&quot;Facebook&quot;</span><span class="p">,</span> <span class="s">&quot;Instagram&quot;</span><span class="p">,</span> <span class="s">&quot;Snapchat&quot;</span><span class="p">,</span> <span class="s">&quot;TikTok&quot;</span><span class="p">,</span> <span class="s">&quot;Twitter&quot;</span><span class="p">,</span> <span class="s">&quot;Youtube&quot;</span><span class="p">};</span>
+</pre></div>
+</div>
+<p>“Facebook” is at index 0, “Instagram” is at index 1, “Snapchat” is at index 2, “TikTok” is at index 3, “Twitter” is at index 4, and “Youtube” is at index 5.</p>
+<p>We can use index values in our programs to access and manipulate values in an array. Here is how we would grab the String “Snapchat” and store it in a variable:</p>
+<div class="highlight-Java notranslate"><div class="highlight"><pre><span></span><span class="n">String</span><span class="o">[]</span> <span class="n">socialMedias</span> <span class="o">=</span> <span class="p">{</span><span class="s">&quot;Facebook&quot;</span><span class="p">,</span> <span class="s">&quot;Instagram&quot;</span><span class="p">,</span> <span class="s">&quot;Snapchat&quot;</span><span class="p">,</span> <span class="s">&quot;TikTok&quot;</span><span class="p">,</span> <span class="s">&quot;Twitter&quot;</span><span class="p">,</span> <span class="s">&quot;Youtube&quot;</span><span class="p">};</span>
+<span class="n">String</span> <span class="n">sc</span> <span class="o">=</span> <span class="n">socialMedias</span><span class="o">[</span><span class="mi">2</span><span class="o">]</span><span class="p">;</span>
+</pre></div>
+</div>
+<p>The chunk of code that looks like <code class="docutils literal notranslate"><span class="pre">socialMedias[2]</span></code> is called the <em><strong>index operator</strong></em>. The index operator is used to access values found in particular slots of an array. Whenever you are using the index operator in your program, you want to follow this pattern:</p>
+<div class="highlight-Java notranslate"><div class="highlight"><pre><span></span><span class="n">arrayName</span><span class="o">[</span><span class="n">index</span><span class="o">]</span><span class="p">;</span>
+</pre></div>
+</div>
+<p>In the example above, the array will still contain the String “Snapchat”, but now we have a second variable that contains a copy of that value. If we were to change “Snapchat” to some other String in the array, the variable <code class="docutils literal notranslate"><span class="pre">sc</span></code> will still contain the String “Snapchat”.</p>
+<p>Don’t get too excited! This does not work for ArrayLists. Instead, you have to use the method <code class="docutils literal notranslate"><span class="pre">get(index)</span></code>. So the ArrayList equivalent to the code segment above, would look like this:</p>
+<div class="highlight-Java notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">java.util.ArrayList</span><span class="p">;</span>
+<span class="n">ArrayList</span><span class="o">&lt;</span><span class="n">String</span><span class="o">&gt;</span> <span class="n">socialMedias</span> <span class="o">=</span> <span class="k">new</span> <span class="n">ArrayList</span><span class="o">&lt;</span><span class="n">String</span><span class="o">&gt;</span><span class="p">();</span>
+<span class="n">socialMedias</span><span class="p">.</span><span class="na">add</span><span class="p">(</span><span class="s">&quot;Facebook&quot;</span><span class="p">);</span>
+<span class="n">socialMedias</span><span class="p">.</span><span class="na">add</span><span class="p">(</span><span class="s">&quot;Instagram&quot;</span><span class="p">);</span>
+<span class="n">socialMedias</span><span class="p">.</span><span class="na">add</span><span class="p">(</span><span class="s">&quot;Snapchat&quot;</span><span class="p">);</span>
+<span class="n">socialMedias</span><span class="p">.</span><span class="na">add</span><span class="p">(</span><span class="s">&quot;TikTok&quot;</span><span class="p">);</span>
+<span class="n">socialMedias</span><span class="p">.</span><span class="na">add</span><span class="p">(</span><span class="s">&quot;Twitter&quot;</span><span class="p">);</span>
+<span class="n">socialMedias</span><span class="p">.</span><span class="na">add</span><span class="p">(</span><span class="s">&quot;Youtube&quot;</span><span class="p">);</span>
+<span class="n">String</span> <span class="n">sc</span> <span class="o">=</span> <span class="n">socialMedias</span><span class="p">.</span><span class="na">get</span><span class="p">(</span><span class="mi">2</span><span class="p">);</span>
+</pre></div>
+</div>
+<p>You can also use the index operator to change values at a particular index. Imagine we wanted to change “Youtube” to “Pinterest”. We would need to write this:</p>
+<div class="highlight-Java notranslate"><div class="highlight"><pre><span></span><span class="n">String</span><span class="o">[]</span> <span class="n">socialMedias</span> <span class="o">=</span> <span class="p">{</span><span class="s">&quot;Facebook&quot;</span><span class="p">,</span> <span class="s">&quot;Instagram&quot;</span><span class="p">,</span> <span class="s">&quot;Snapchat&quot;</span><span class="p">,</span> <span class="s">&quot;TikTok&quot;</span><span class="p">,</span> <span class="s">&quot;Twitter&quot;</span><span class="p">,</span> <span class="s">&quot;Youtube&quot;</span><span class="p">};</span>
+<span class="n">socialMedias</span><span class="o">[</span><span class="mi">5</span><span class="o">]</span> <span class="o">=</span> <span class="s">&quot;Pinterest&quot;</span><span class="p">;</span>
+</pre></div>
+</div>
+<p>Here, we are saying, “Take the value found at index 5 of the array socialMedias and change it to Pinterest.” We can complicate our use of the index operator by using it in our loops. Take a look at this example:</p>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kt">int</span><span class="o">[]</span> <span class="n">evenNums</span> <span class="o">=</span> <span class="k">new</span> <span class="kt">int</span><span class="o">[</span><span class="mi">100</span><span class="o">]</span><span class="p">;</span>
+<span class="kt">int</span> <span class="n">number</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+<span class="k">for</span><span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="mi">100</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">){</span>
+  <span class="n">evenNums</span><span class="o">[</span><span class="n">index</span><span class="o">]</span> <span class="o">=</span> <span class="n">number</span><span class="p">;</span>
+  <span class="n">number</span> <span class="o">=</span> <span class="n">number</span> <span class="o">+</span> <span class="mi">2</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>First, this code segment creates an empty array that has 100 slots in it. Then, a variable named <code class="docutils literal notranslate"><span class="pre">number</span></code> is declared and initialized to 0. Finally, we use a for loop to add the current value of <code class="docutils literal notranslate"><span class="pre">number</span></code> to the array.</p>
+<p>Here is the ArrayList equivalent of this program:</p>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="n">ArrayList</span><span class="o">&lt;</span><span class="n">Integer</span><span class="o">&gt;</span> <span class="n">evenNums</span> <span class="o">=</span> <span class="k">new</span> <span class="n">ArrayList</span><span class="o">&lt;</span><span class="n">Integer</span><span class="o">&gt;</span><span class="p">;</span>
+<span class="n">Integer</span> <span class="n">number</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Integer</span><span class="p">(</span><span class="mi">0</span><span class="p">);</span>
+<span class="k">for</span><span class="p">(</span><span class="kt">int</span> <span class="n">index</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="mi">100</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">){</span>
+  <span class="n">evenNums</span><span class="p">.</span><span class="na">set</span><span class="p">(</span><span class="n">index</span><span class="p">,</span> <span class="n">number</span><span class="p">);</span>
+  <span class="n">number</span> <span class="o">=</span> <span class="n">number</span> <span class="o">+</span> <span class="mi">2</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>The ArrayList code segment has two differences I want you to notice. First, we have to use an Integer object instead of the primitive int. This is because ArrayLists can only store object types within them. Second, in order to change a value at a particular index within an ArrayList, we have to use the method <code class="docutils literal notranslate"><span class="pre">set()</span></code>. As you can see, <code class="docutils literal notranslate"><span class="pre">set()</span></code> takes 2 arguments: the index value that you would like to place a value at, and the value itself.</p>
+<p>There is an attribute of arrays that you should know called <code class="docutils literal notranslate"><span class="pre">length</span></code>. This attribute does the same thing as the size() method from the ArrayList class. That is, <code class="docutils literal notranslate"><span class="pre">length</span></code> returns the number of items that can be found in an array. How does one use the length attribute? Take a look at this example:</p>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kt">boolean</span><span class="o">[]</span> <span class="n">covidTestResults</span> <span class="o">=</span> <span class="p">{</span><span class="kc">false</span><span class="p">,</span> <span class="kc">false</span><span class="p">,</span> <span class="kc">false</span><span class="p">,</span> <span class="kc">true</span><span class="p">,</span> <span class="kc">true</span><span class="p">,</span> <span class="kc">true</span><span class="p">,</span> <span class="kc">true</span><span class="p">};</span>
+<span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;Length: &quot;</span> <span class="o">+</span> <span class="n">covidTestResults</span><span class="p">.</span><span class="na">length</span><span class="p">);</span>
+
+<span class="k">for</span><span class="p">(</span><span class="kt">int</span> <span class="n">index</span> <span class="o">=</span> <span class="n">covidTestResults</span><span class="p">.</span><span class="na">length</span><span class="p">;</span> <span class="n">index</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">;</span> <span class="n">index</span><span class="o">--</span><span class="p">){</span>
+  <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;Does patient &quot;</span> <span class="o">+</span> <span class="n">index</span> <span class="o">+</span><span class="s">&quot; have covid? &quot;</span> <span class="o">+</span> <span class="n">covidTestResults</span><span class="o">[</span><span class="n">index</span><span class="o">]</span><span class="p">);</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>Look for where you see the word <code class="docutils literal notranslate"><span class="pre">length</span></code> in the program above. Notice the period before it? That’s your dot operator! Remember, when you want to access the attribute of an object, you need to use the dot operator. This is no different because arrays are objects! The length attribute of arrays is really useful when you are using loops to iterate through an array because it can tell your loop to stop once it hits the very end of an array. What would happen if I changed the program above to look like this instead:</p>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kt">boolean</span><span class="o">[]</span> <span class="n">covidTestResults</span> <span class="o">=</span> <span class="p">{</span><span class="kc">false</span><span class="p">,</span> <span class="kc">false</span><span class="p">,</span> <span class="kc">false</span><span class="p">,</span> <span class="kc">true</span><span class="p">,</span> <span class="kc">true</span><span class="p">,</span> <span class="kc">true</span><span class="p">,</span> <span class="kc">true</span><span class="p">};</span>
+<span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;Length: &quot;</span> <span class="o">+</span> <span class="n">covidTestResults</span><span class="p">.</span><span class="na">length</span><span class="p">);</span>
+
+<span class="k">for</span><span class="p">(</span><span class="kt">int</span> <span class="n">index</span> <span class="o">=</span> <span class="n">covidTestResults</span><span class="p">.</span><span class="na">length</span><span class="p">;</span> <span class="n">index</span> <span class="o">&gt;=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">index</span><span class="o">--</span><span class="p">){</span>
+  <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;Does patient &quot;</span> <span class="o">+</span> <span class="n">index</span> <span class="o">+</span><span class="s">&quot; have covid? &quot;</span> <span class="o">+</span> <span class="n">covidTestResults</span><span class="o">[</span><span class="n">index</span><span class="o">]</span><span class="p">);</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>Not much has changed; I just made the condition of our for loop <code class="docutils literal notranslate"><span class="pre">index</span> <span class="pre">&gt;=</span> <span class="pre">0</span></code>. When you try to run this, you will see the following output:</p>
+<p>Output:</p>
+<a class="reference internal image-reference" href="../../_images/output9.png"><img alt="Out of bounds exception." src="../../_images/output9.png" style="height: 250px;" /></a>
+<p><br>NOOOOOoooo a compile-time error!!!!!!! More specifically, it’s an “Out of Bounds” error!</p>
+<a class="reference internal image-reference" href="https://nerdheist.com/wp-content/uploads/2017/12/What-Excuse-me-Say-what-GIF.gif"><img alt="Gasp! Out of bounds exception." src="https://nerdheist.com/wp-content/uploads/2017/12/What-Excuse-me-Say-what-GIF.gif" style="height: 250px;" /></a>
+<p><br>This is telling us that we tried to access an index that doesn’t exist. In the above example, we are trying to access the value found at index -1. And that’s a problem because there is no such thing as an index of -1! The lowest index value that you will see is 0. You will also get an “Out of Bounds” error when you try to access an index that is greater than the last index of an array.</p>
+<p>I know this might feel like a lot, but I promise we will continue to practice reading and writing methods that specifically deal with iterating through an array. It is really important that you feel comfortable using loops to systematically access or change the values found in arrays and ArrayLists because this will be at least 50% of the content seen on the exam. This is so important, that there’s actually a third type of loop that is specifically used when working with arrays and ArrayLists.</p>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "SoniaSpindt/csa_textbook",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./Unit4/ComplexMethods"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+        </div>
+    </div>
+    
+    
+    <div class='prev-next-bottom'>
+        
+    <a class='left-prev' id="prev-link" href="for_loops.html" title="previous page"><span class="section-number">7.8. </span>For Loops</a>
+    <a class='right-next' id="next-link" href="enhanced_loops.html" title="next page"><span class="section-number">7.10. </span>Enhanced For Loops</a>
+
+    </div>
+    <footer class="footer mt-5 mt-md-0">
+    <div class="container">
+      <p>
+        
+          By Sonia Spindt<br/>
+        
+            &copy; Copyright 2020.<br/>
+      </p>
+    </div>
+  </footer>
+</main>
+
+
+      </div>
+    </div>
+
+    
+  <script src="../../_static/js/index.3da636dd464baa7582d2.js"></script>
+
+
+    
+  </body>
+</html>

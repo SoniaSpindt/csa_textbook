@@ -75,3 +75,5 @@
     - file: Unit4/ComplexMethods/for_loops
     - file: Unit4/ComplexMethods/arrays_refresher
     - file: Unit4/ComplexMethods/enhanced_loops
+    - file: Unit4/ComplexMethods/2d_arrays
+    - file: Unit4/ComplexMethods/accessing_values
