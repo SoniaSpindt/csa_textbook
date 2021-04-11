@@ -80,3 +80,7 @@
     - file: Unit4/ComplexMethods/nested_loops
     - file: Unit4/ComplexMethods/row_major
     - file: Unit4/ComplexMethods/column_major
+
+- file: Unit5/Inheritance/intro
+  sections:
+    - file: Unit5/Inheritance/inheritance_trees
