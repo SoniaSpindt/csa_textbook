@@ -84,3 +84,5 @@
 - file: Unit5/Inheritance/intro
   sections:
     - file: Unit5/Inheritance/inheritance_trees
+    - file: Unit5/Inheritance/extends
+    - file: Unit5/Inheritance/overriding

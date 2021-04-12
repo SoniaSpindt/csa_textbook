@@ -1,0 +1,605 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>8.1. Visualizing Inheritance &#8212; AP CSA</title>
+    
+  <link rel="stylesheet" href="../../_static/css/index.f658d18f9b420779cfdf24aa0a7e2d77.css">
+
+    
+  <link rel="stylesheet"
+    href="../../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+  <link rel="stylesheet"
+    href="../../_static/vendor/open-sans_all/1.44.1/index.css">
+  <link rel="stylesheet"
+    href="../../_static/vendor/lato_latin-ext/1.44.1/index.css">
+
+    
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/sphinx-book-theme.e7340bb3dbd8dde6db86f25597f54a1b.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="../../_static/js/index.d3f166471bb80abb5163.js">
+
+    <script id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+    <script src="../../_static/jquery.js"></script>
+    <script src="../../_static/underscore.js"></script>
+    <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/togglebutton.js"></script>
+    <script src="../../_static/clipboard.min.js"></script>
+    <script src="../../_static/copybutton.js"></script>
+    <script src="../../_static/custom.js"></script>
+    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../../_static/sphinx-book-theme.7d483ff0a819d6edff12ce0b1ead3928.js"></script>
+    <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
+    <script >
+        const thebe_selector = ".thebe,.cell"
+        const thebe_selector_input = "pre,.cell_input div.highlight"
+        const thebe_selector_output = ".output,.cell_output"
+    </script>
+    <script async="async" src="../../_static/sphinx-thebe.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="8.2. Keyword Extends" href="extends.html" />
+    <link rel="prev" title="8. Inheritance" href="intro.html" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="en" />
+
+
+
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+<a class="navbar-brand text-wrap" href="../../index.html">
+  
+  <img src="../../_static/logo.png" class="logo" alt="logo">
+  
+  
+  <h1 class="site-logo" id="site-title">AP CSA</h1>
+  
+</a>
+</div><form class="bd-search d-flex align-items-center" action="../../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form>
+<nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
+    <ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../intro.html">
+   Welcome to AP CSA
+  </a>
+ </li>
+</ul>
+<ul class="current nav sidenav_l1">
+ <li class="toctree-l1 collapsible-parent">
+  <a class="reference internal" href="../../Unit1/overview.html">
+   1. Classroom Routines
+  </a>
+  <ul class="collapse-ul">
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../Unit1/Routines/exposure.html">
+     1.1. Mondays: Exposure
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../Unit1/Routines/collaboration.html">
+     1.2. Tuesdays: Collaboration
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../Unit1/Routines/revision.html">
+     1.3. Wednesdays: Revision
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../Unit1/Routines/mastery.html">
+     1.4. Thursdays and Fridays: Mastery
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../Unit1/Routines/links.html">
+     1.5. Important Resources
+    </a>
+   </li>
+  </ul>
+  <i class="fas fa-chevron-down">
+  </i>
+ </li>
+ <li class="toctree-l1 collapsible-parent">
+  <a class="reference internal" href="../../Unit1/IntroToOOP/intro.html">
+   2. Object Oriented Programming
+  </a>
+  <ul class="collapse-ul">
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../Unit1/IntroToOOP/objects.html">
+     2.1. Objects
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../Unit1/IntroToOOP/classes.html">
+     2.2. Classes
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../Unit1/IntroToOOP/attributes.html">
+     2.3. Attributes
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../Unit1/IntroToOOP/methods.html">
+     2.4. Methods
+    </a>
+   </li>
+  </ul>
+  <i class="fas fa-chevron-down">
+  </i>
+ </li>
+ <li class="toctree-l1 collapsible-parent">
+  <a class="reference internal" href="../../Unit2/ProgramsInJava/intro.html">
+   3. Programs in Java
+  </a>
+  <ul class="collapse-ul">
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../Unit2/ProgramsInJava/statements.html">
+     3.1. Statements
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../Unit2/ProgramsInJava/compile.html">
+     3.2. Compilation
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../Unit2/ProgramsInJava/execute.html">
+     3.3. Execution
+    </a>
+   </li>
+  </ul>
+  <i class="fas fa-chevron-down">
+  </i>
+ </li>
+ <li class="toctree-l1 collapsible-parent">
+  <a class="reference internal" href="../../Unit2/Variables/intro.html">
+   4. Variables
+  </a>
+  <ul class="collapse-ul">
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../Unit2/Variables/declare.html">
+     4.1. Declaring Variables
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../Unit2/Variables/initialize.html">
+     4.2. Initializing Variables
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../Unit2/Variables/expressions.html">
+     4.3. Expressions
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../Unit2/Variables/booleans.html">
+     4.4. Booleans
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../Unit2/Variables/boolean_expressions.html">
+     4.5. Boolean Expressions
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../Unit2/Variables/references.html">
+     4.6. Reference Variables
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../Unit2/Variables/arrays.html">
+     4.7. Arrays
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../Unit2/Variables/array_size.html">
+     4.8. Size of Arrays
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../Unit2/Variables/arraylists.html">
+     4.9. ArrayLists
+    </a>
+   </li>
+  </ul>
+  <i class="fas fa-chevron-down">
+  </i>
+ </li>
+ <li class="toctree-l1 collapsible-parent">
+  <a class="reference internal" href="../../Unit2/SimpleClasses/intro.html">
+   5. Creating Classes
+  </a>
+  <ul class="collapse-ul">
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../Unit2/SimpleClasses/header.html">
+     5.1. Class Headers
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../Unit2/SimpleClasses/instance_variables.html">
+     5.2. Instance Variables
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../Unit2/SimpleClasses/constructors.html">
+     5.3. Constructors
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../Unit2/SimpleClasses/instantiation.html">
+     5.4. Instantiation
+    </a>
+   </li>
+  </ul>
+  <i class="fas fa-chevron-down">
+  </i>
+ </li>
+ <li class="toctree-l1 collapsible-parent">
+  <a class="reference internal" href="../../Unit3/Methods/intro.html">
+   6. Methods
+  </a>
+  <ul class="collapse-ul">
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../Unit3/Methods/defining.html">
+     6.1. Defining Methods
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../Unit3/Methods/calling.html">
+     6.2. Calling Methods
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../Unit3/Methods/dot_notation.html">
+     6.3. Dot Notation
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../Unit3/Methods/return_int.html">
+     6.4. Returning Integers
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../Unit3/Methods/return_double.html">
+     6.5. Returning Decimals
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../Unit3/Methods/return_boolean.html">
+     6.6. Returning Booleans
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../Unit3/Methods/return_objects.html">
+     6.7. Returning Objects
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../Unit3/Methods/ArrayList_methods.html">
+     6.8. ArrayList Methods
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../Unit3/Methods/GoodReads_database.html">
+     6.9. Goodreads Database Example
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../Unit3/Methods/parameters.html">
+     6.10. Parameters
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../Unit3/Methods/definitions_with_parameters.html">
+     6.11. Defining Methods with Parameters
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../Unit3/Methods/calling_with_arguments.html">
+     6.12. Arguments
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../Unit3/Methods/many_parameters.html">
+     6.13. Many Parameters
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../Unit3/Methods/constructors_with_parameters.html">
+     6.14. Constructors With Parameters
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../Unit3/Methods/keyword_this.html">
+     6.15. This
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../Unit3/Methods/javadocs.html">
+     6.16. Documentation
+    </a>
+   </li>
+  </ul>
+  <i class="fas fa-chevron-down">
+  </i>
+ </li>
+ <li class="toctree-l1 collapsible-parent">
+  <a class="reference internal" href="../../Unit4/ComplexMethods/intro.html">
+   7. Complex Method Design
+  </a>
+  <ul class="collapse-ul">
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../Unit4/ComplexMethods/internalCalls.html">
+     7.1. Calling Methods within Other Methods
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../Unit4/ComplexMethods/private.html">
+     7.2. Private Modifier
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../Unit4/ComplexMethods/static.html">
+     7.3. Static Modifier
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../Unit4/ComplexMethods/if_statements.html">
+     7.4. If Statements
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../Unit4/ComplexMethods/elseif_statements.html">
+     7.5. Else If Statements
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../Unit4/ComplexMethods/else_statements.html">
+     7.6. Else Statements
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../Unit4/ComplexMethods/while_loops.html">
+     7.7. While Loops
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../Unit4/ComplexMethods/for_loops.html">
+     7.8. For Loops
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../Unit4/ComplexMethods/arrays_refresher.html">
+     7.9. Revisiting Arrays
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../Unit4/ComplexMethods/enhanced_loops.html">
+     7.10. Enhanced For Loops
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../Unit4/ComplexMethods/2d_arrays.html">
+     7.11. Two-Dimensional Arrays
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../Unit4/ComplexMethods/accessing_values.html">
+     7.12. Accessing and Modifying Values in 2D Arrays
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../Unit4/ComplexMethods/nested_loops.html">
+     7.13. Nested Loops
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../Unit4/ComplexMethods/row_major.html">
+     7.14. Row-Major Traversals
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../Unit4/ComplexMethods/column_major.html">
+     7.15. Column-Major Traversals
+    </a>
+   </li>
+  </ul>
+  <i class="fas fa-chevron-down">
+  </i>
+ </li>
+ <li class="toctree-l1 current active collapsible-parent">
+  <a class="reference internal" href="intro.html">
+   8. Inheritance
+  </a>
+  <ul class="current collapse-ul">
+   <li class="toctree-l2 current active">
+    <a class="current reference internal" href="#">
+     8.1. Visualizing Inheritance
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="extends.html">
+     8.2. Keyword Extends
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="overriding.html">
+     8.3. Overriding Methods
+    </a>
+   </li>
+  </ul>
+  <i class="fas fa-chevron-down">
+  </i>
+ </li>
+</ul>
+
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="topbar container-xl fixed-top">
+    <div class="topbar-contents row">
+        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
+        <div class="col pl-md-4 topbar-main">
+            
+            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-arrow-left"></i>
+                <i class="fas fa-arrow-up"></i>
+            </button>
+            
+            
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="../../_sources/Unit5/Inheritance/inheritance_trees.md"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.md</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+            <!-- Source interaction buttons -->
+
+
+            <!-- Full screen (wrap in <a> to have style consistency -->
+            <a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+                    data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+                    title="Fullscreen mode"><i
+                        class="fas fa-expand"></i></button></a>
+
+            <!-- Launch buttons -->
+
+        </div>
+
+        <!-- Table of contents -->
+        <div class="d-none d-md-block col-md-2 bd-toc show">
+            
+        </div>
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+        
+              <div>
+                
+  <div class="section" id="visualizing-inheritance">
+<h1><span class="section-number">8.1. </span>Visualizing Inheritance<a class="headerlink" href="#visualizing-inheritance" title="Permalink to this headline">¶</a></h1>
+<p>I bet you have taken a class where your teacher has asked you to make a family tree. It may have looked something like this:</p>
+<a class="reference internal image-reference" href="https://i.pinimg.com/originals/71/c4/16/71c416b4c9e68c96e11d2c00d19fa5fe.png"><img alt="Star Wars Family Tree" src="https://i.pinimg.com/originals/71/c4/16/71c416b4c9e68c96e11d2c00d19fa5fe.png" style="height: 500px;" /></a>
+<p><br>Each character in Star Wars is represented by a box. The relationship between two characters is illustrated by both by a line and their position on the page; parents are found above their children, not under them.</p>
+<p>Java programmers borrowed this idea when showing how classes can inherit instance variables and methods from one another. Here is an example of what I’m talking about:</p>
+<a class="reference internal image-reference" href="https://ars.els-cdn.com/content/image/3-s2.0-B9780750661232500049-f04-27-9780750661232.jpg"><img alt="Java Inheritance Tree Example" src="https://ars.els-cdn.com/content/image/3-s2.0-B9780750661232500049-f04-27-9780750661232.jpg" style="height: 300px;" /></a>
+<p><br>This inheritance tree illustrates how three classes – Picture, Photograph and Painting – are related to one another. Each class is represented by a box. In this box, you will find the the name of the class, as well as the names of its instance variables and methods. How can you tell if you’re looking at a variable name or a method name? Look to see if there are parentheses at the end! If it has parentheses, then it is a method name. ;)</p>
+<p>A line is used to represent how each class is related to one another. In the example above, the Picture class is the <em><strong>parent class</strong></em> of the Photograph and Painting classes, and the Photograph and Painting classes are <em><strong>child classes</strong></em> of the Picture class. You can also see this relationship by how each box is positioned on the page; the parent classes are above the child classes!</p>
+<p>Some people prefer to say that the Picture class is the <em><strong>superclass</strong></em> to the Photograph and Painting classes, while the Photograph and Painting classes are <em><strong>subclasses</strong></em> to the Picture class. Why? These terms are more generic than the terms parent and child. Think about where it might be confusing to use “parent” to describe a relationship between classes.</p>
+<p>What if you wanted to talk about the parent class of a parent class? Would that be a grandparent class? No. lol We don’t actually have a term to describe grandparents or great-grandparents in Java. Instead, it we can describe multi-generational relationships with the term “super”.</p>
+<p>You may be wondering what it actually means for a class to inherit code from another class. Well, it just means that a subclass has access to the instance variables, constructors, and methods found within the parent class. We’ll take a look what this looks like over the next few sections of this chapter.</p>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "SoniaSpindt/csa_textbook",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./Unit5/Inheritance"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+        
+        <div class='prev-next-bottom'>
+            
+    <a class='left-prev' id="prev-link" href="intro.html" title="previous page"><span class="section-number">8. </span>Inheritance</a>
+    <a class='right-next' id="next-link" href="extends.html" title="next page"><span class="section-number">8.2. </span>Keyword Extends</a>
+
+        </div>
+        
+        </div>
+    </div>
+    <footer class="footer mt-5 mt-md-0">
+    <div class="container">
+      <p>
+        
+          By Sonia Spindt<br/>
+        
+            &copy; Copyright 2020.<br/>
+      </p>
+    </div>
+  </footer>
+</main>
+
+
+      </div>
+    </div>
+
+    
+  <script src="../../_static/js/index.d3f166471bb80abb5163.js"></script>
+
+
+    
+  </body>
+</html>
