@@ -86,3 +86,6 @@
     - file: Unit5/Inheritance/inheritance_trees
     - file: Unit5/Inheritance/extends
     - file: Unit5/Inheritance/overriding
+    - file: Unit5/Inheritance/super_method
+    - file: Unit5/Inheritance/super_reference
+    - file: Unit5/Inheritance/polymorphism
