@@ -89,3 +89,6 @@
     - file: Unit5/Inheritance/super_method
     - file: Unit5/Inheritance/super_reference
     - file: Unit5/Inheritance/polymorphism
+    - file: Unit5/Inheritance/overloading
+    - file: Unit5/Inheritance/abstract_classes
+    - file: Unit5/Inheritance/interfaces

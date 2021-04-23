@@ -78,7 +78,7 @@ If it doesn't find a matching method in the `Surgeon` class, it will move to the
 
 If it can't find a method with a matching name in any superclass, then it will  yell at you for being an irrational and crazy human. :p
 
-One last thing. You may be wondering if it's possible for doctor objects to use instance variables, constructors and methods found in the `Surgeon` class. It is not possible! Inheritance only works one way.
+One last thing. You may be wondering if it's possible for Doctor objects to use instance variables, constructors and methods found in the `Surgeon` class. It is not possible! Inheritance only works one way.
 
 Here's our hospital simulation if you would like to play around with the code:
 <iframe height="400px" width="100%" src="https://replit.com/@SoniaSpindt1/Example812?lite=true" scrolling="no" frameborder="no" allowtransparency="true" allowfullscreen="true" sandbox="allow-forms allow-pointer-lock allow-popups allow-same-origin allow-scripts allow-modals"></iframe>
